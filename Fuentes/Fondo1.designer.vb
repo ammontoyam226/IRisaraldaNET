@@ -24,11 +24,11 @@ Partial Class Fondo1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fondo1))
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -78,6 +78,7 @@ Partial Class Fondo1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimSeg = New System.Windows.Forms.Timer(Me.components)
         Me.TimRestore = New System.Windows.Forms.Timer(Me.components)
+        Me.BConfiguraciones = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
         CType(Me.SCEscritorio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SCEscritorio.Panel1.SuspendLayout()
@@ -183,45 +184,45 @@ Partial Class Fondo1
         '
         Me.DGAlarmas.AllowUserToAddRows = False
         Me.DGAlarmas.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue
-        Me.DGAlarmas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAlarmas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.LightBlue
+        Me.DGAlarmas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAlarmas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DGAlarmas.ColumnHeadersHeight = 40
         Me.DGAlarmas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGAlarmas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.OldLace
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGAlarmas.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.OldLace
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGAlarmas.DefaultCellStyle = DataGridViewCellStyle8
         Me.DGAlarmas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGAlarmas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.DGAlarmas.EnableHeadersVisualStyles = False
         Me.DGAlarmas.Location = New System.Drawing.Point(0, 0)
         Me.DGAlarmas.Name = "DGAlarmas"
         Me.DGAlarmas.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Orange
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAlarmas.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Orange
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAlarmas.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.DGAlarmas.RowHeadersVisible = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DGAlarmas.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DGAlarmas.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.DGAlarmas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGAlarmas.Size = New System.Drawing.Size(566, 604)
         Me.DGAlarmas.TabIndex = 2
@@ -345,7 +346,7 @@ Partial Class Fondo1
         '
         Me.ToolStrip.Dock = System.Windows.Forms.DockStyle.Left
         Me.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator5, Me.BSalir, Me.ToolStripSeparator6, Me.BCambioUsuario, Me.ToolStripSeparator9, Me.BReportes, Me.ToolStripSeparator12, Me.BUsuarios, Me.ToolStripSeparator13, Me.BProductos, Me.ToolStripSeparator14, Me.BMaquinas, Me.ToolStripSeparator20, Me.BAlarma, Me.ToolStripSeparator1, Me.BServidor, Me.ToolStripSeparator2, Me.BDatosEnLinea, Me.ToolStripSeparator4, Me.BBaseDatos, Me.ToolStripSeparator3})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator5, Me.BSalir, Me.ToolStripSeparator6, Me.BCambioUsuario, Me.ToolStripSeparator9, Me.BReportes, Me.ToolStripSeparator12, Me.BUsuarios, Me.ToolStripSeparator13, Me.BProductos, Me.ToolStripSeparator14, Me.BMaquinas, Me.ToolStripSeparator20, Me.BAlarma, Me.ToolStripSeparator1, Me.BServidor, Me.ToolStripSeparator2, Me.BDatosEnLinea, Me.BBaseDatos, Me.ToolStripSeparator4, Me.BConfiguraciones, Me.ToolStripSeparator3})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(104, 701)
@@ -596,12 +597,22 @@ Partial Class Fondo1
         '
         'TimSeg
         '
-        Me.TimSeg.Enabled = True
         Me.TimSeg.Interval = 1000
         '
         'TimRestore
         '
         Me.TimRestore.Interval = 51111
+        '
+        'BConfiguraciones
+        '
+        Me.BConfiguraciones.AutoSize = False
+        Me.BConfiguraciones.Image = CType(resources.GetObject("BConfiguraciones.Image"), System.Drawing.Image)
+        Me.BConfiguraciones.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.BConfiguraciones.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BConfiguraciones.Name = "BConfiguraciones"
+        Me.BConfiguraciones.Size = New System.Drawing.Size(103, 50)
+        Me.BConfiguraciones.Text = "Base de Datos"
+        Me.BConfiguraciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'Fondo1
         '
@@ -683,5 +694,6 @@ Partial Class Fondo1
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BCambioUsuario As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BConfiguraciones As System.Windows.Forms.ToolStripButton
 
 End Class

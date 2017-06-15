@@ -177,10 +177,10 @@ Partial Class Configuraciones
         '
         Me.TLPConfig.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TLPConfig.ColumnCount = 4
-        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.99999!))
-        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76.0!))
+        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
+        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.00001!))
+        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TLPConfig.Controls.Add(Me.TMinRep4, 3, 5)
         Me.TLPConfig.Controls.Add(Me.TMinRep3, 3, 4)
         Me.TLPConfig.Controls.Add(Me.TMinRep2, 3, 3)
@@ -220,35 +220,38 @@ Partial Class Configuraciones
         'TMinRep4
         '
         Me.TMinRep4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep4.Location = New System.Drawing.Point(633, 171)
+        Me.TMinRep4.Location = New System.Drawing.Point(650, 171)
         Me.TMinRep4.Name = "TMinRep4"
-        Me.TMinRep4.Size = New System.Drawing.Size(71, 20)
+        Me.TMinRep4.Size = New System.Drawing.Size(54, 20)
         Me.TMinRep4.TabIndex = 23
+        Me.TMinRep4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TMinRep3
         '
         Me.TMinRep3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep3.Location = New System.Drawing.Point(633, 137)
+        Me.TMinRep3.Location = New System.Drawing.Point(650, 137)
         Me.TMinRep3.Name = "TMinRep3"
-        Me.TMinRep3.Size = New System.Drawing.Size(71, 20)
+        Me.TMinRep3.Size = New System.Drawing.Size(54, 20)
         Me.TMinRep3.TabIndex = 22
+        Me.TMinRep3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TMinRep2
         '
         Me.TMinRep2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep2.Location = New System.Drawing.Point(633, 105)
+        Me.TMinRep2.Location = New System.Drawing.Point(650, 105)
         Me.TMinRep2.Name = "TMinRep2"
-        Me.TMinRep2.Size = New System.Drawing.Size(71, 20)
+        Me.TMinRep2.Size = New System.Drawing.Size(54, 20)
         Me.TMinRep2.TabIndex = 21
+        Me.TMinRep2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(348, 146)
+        Me.Label12.Location = New System.Drawing.Point(357, 146)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(278, 14)
+        Me.Label12.Size = New System.Drawing.Size(286, 14)
         Me.Label12.TabIndex = 20
         Me.Label12.Text = "Tiempo de Muestro de Sacos Comprobadora 3"
         '
@@ -257,9 +260,9 @@ Partial Class Configuraciones
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(348, 180)
+        Me.Label11.Location = New System.Drawing.Point(357, 180)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(278, 14)
+        Me.Label11.Size = New System.Drawing.Size(286, 14)
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "Tiempo de Muestro de Sacos Comprobadora 4"
         '
@@ -268,9 +271,9 @@ Partial Class Configuraciones
         Me.Label10.AutoSize = True
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label10.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(348, 114)
+        Me.Label10.Location = New System.Drawing.Point(357, 114)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(278, 14)
+        Me.Label10.Size = New System.Drawing.Size(286, 14)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "Tiempo de Muestro de Sacos Comprobadora 2"
         '
@@ -279,84 +282,92 @@ Partial Class Configuraciones
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(348, 82)
+        Me.Label9.Location = New System.Drawing.Point(357, 82)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(278, 14)
+        Me.Label9.Size = New System.Drawing.Size(286, 14)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Tiempo de Muestro de Sacos Comprobadora 1"
         '
         'TSacGrafEnsc2
         '
         Me.TSacGrafEnsc2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc2.Location = New System.Drawing.Point(288, 171)
+        Me.TSacGrafEnsc2.Location = New System.Drawing.Point(297, 171)
         Me.TSacGrafEnsc2.Name = "TSacGrafEnsc2"
         Me.TSacGrafEnsc2.Size = New System.Drawing.Size(53, 20)
         Me.TSacGrafEnsc2.TabIndex = 16
+        Me.TSacGrafEnsc2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TSacGrafEnsc1
         '
         Me.TSacGrafEnsc1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc1.Location = New System.Drawing.Point(288, 137)
+        Me.TSacGrafEnsc1.Location = New System.Drawing.Point(297, 137)
         Me.TSacGrafEnsc1.Name = "TSacGrafEnsc1"
         Me.TSacGrafEnsc1.Size = New System.Drawing.Size(53, 20)
         Me.TSacGrafEnsc1.TabIndex = 15
+        Me.TSacGrafEnsc1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TNoMuestrasEnsc4
         '
         Me.TNoMuestrasEnsc4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc4.Location = New System.Drawing.Point(288, 105)
+        Me.TNoMuestrasEnsc4.Location = New System.Drawing.Point(297, 105)
         Me.TNoMuestrasEnsc4.Name = "TNoMuestrasEnsc4"
         Me.TNoMuestrasEnsc4.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc4.TabIndex = 14
+        Me.TNoMuestrasEnsc4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TMinRep1
         '
         Me.TMinRep1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep1.Location = New System.Drawing.Point(633, 73)
+        Me.TMinRep1.Location = New System.Drawing.Point(650, 73)
         Me.TMinRep1.Name = "TMinRep1"
-        Me.TMinRep1.Size = New System.Drawing.Size(71, 20)
+        Me.TMinRep1.Size = New System.Drawing.Size(54, 20)
         Me.TMinRep1.TabIndex = 13
+        Me.TMinRep1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TNoMuestrasEnsc3
         '
         Me.TNoMuestrasEnsc3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc3.Location = New System.Drawing.Point(288, 73)
+        Me.TNoMuestrasEnsc3.Location = New System.Drawing.Point(297, 73)
         Me.TNoMuestrasEnsc3.Name = "TNoMuestrasEnsc3"
         Me.TNoMuestrasEnsc3.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc3.TabIndex = 12
+        Me.TNoMuestrasEnsc3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TSacGrafEnsc4
         '
         Me.TSacGrafEnsc4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc4.Location = New System.Drawing.Point(633, 41)
+        Me.TSacGrafEnsc4.Location = New System.Drawing.Point(650, 41)
         Me.TSacGrafEnsc4.Name = "TSacGrafEnsc4"
-        Me.TSacGrafEnsc4.Size = New System.Drawing.Size(71, 20)
+        Me.TSacGrafEnsc4.Size = New System.Drawing.Size(54, 20)
         Me.TSacGrafEnsc4.TabIndex = 11
+        Me.TSacGrafEnsc4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TNoMuestrasEnsc2
         '
         Me.TNoMuestrasEnsc2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc2.Location = New System.Drawing.Point(288, 41)
+        Me.TNoMuestrasEnsc2.Location = New System.Drawing.Point(297, 41)
         Me.TNoMuestrasEnsc2.Name = "TNoMuestrasEnsc2"
         Me.TNoMuestrasEnsc2.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc2.TabIndex = 10
+        Me.TNoMuestrasEnsc2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TSacGrafEnsc3
         '
         Me.TSacGrafEnsc3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc3.Location = New System.Drawing.Point(633, 9)
+        Me.TSacGrafEnsc3.Location = New System.Drawing.Point(650, 9)
         Me.TSacGrafEnsc3.Name = "TSacGrafEnsc3"
-        Me.TSacGrafEnsc3.Size = New System.Drawing.Size(71, 20)
+        Me.TSacGrafEnsc3.Size = New System.Drawing.Size(54, 20)
         Me.TSacGrafEnsc3.TabIndex = 9
+        Me.TSacGrafEnsc3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(348, 50)
+        Me.Label8.Location = New System.Drawing.Point(357, 50)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(278, 14)
+        Me.Label8.Size = New System.Drawing.Size(286, 14)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Sacos a Graficar Ensc. 4"
         '
@@ -365,9 +376,9 @@ Partial Class Configuraciones
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(348, 18)
+        Me.Label7.Location = New System.Drawing.Point(357, 18)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(278, 14)
+        Me.Label7.Size = New System.Drawing.Size(286, 14)
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "Sacos a Graficar Ensc. 3"
         '
@@ -378,7 +389,7 @@ Partial Class Configuraciones
         Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(4, 180)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(277, 14)
+        Me.Label6.Size = New System.Drawing.Size(286, 14)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Sacos a Graficar Ensc. 2"
         '
@@ -389,7 +400,7 @@ Partial Class Configuraciones
         Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(4, 146)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(277, 14)
+        Me.Label5.Size = New System.Drawing.Size(286, 14)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Sacos a Graficar Ensc. 1"
         '
@@ -400,7 +411,7 @@ Partial Class Configuraciones
         Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(4, 114)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(277, 14)
+        Me.Label4.Size = New System.Drawing.Size(286, 14)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Muestras a Comprobar en Ensc. 4"
         '
@@ -411,7 +422,7 @@ Partial Class Configuraciones
         Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(4, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(277, 14)
+        Me.Label3.Size = New System.Drawing.Size(286, 14)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Muestras a Comprobar en Ensc. 3"
         '
@@ -422,7 +433,7 @@ Partial Class Configuraciones
         Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(4, 50)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(277, 14)
+        Me.Label2.Size = New System.Drawing.Size(286, 14)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Muestras a Comprobar en Ensc. 2"
         '
@@ -433,17 +444,18 @@ Partial Class Configuraciones
         Me.Label1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(4, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(277, 14)
+        Me.Label1.Size = New System.Drawing.Size(286, 14)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Muestras a Comprobar en Ensc. 1"
         '
         'TNoMuestrasEnsc1
         '
         Me.TNoMuestrasEnsc1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc1.Location = New System.Drawing.Point(288, 9)
+        Me.TNoMuestrasEnsc1.Location = New System.Drawing.Point(297, 9)
         Me.TNoMuestrasEnsc1.Name = "TNoMuestrasEnsc1"
         Me.TNoMuestrasEnsc1.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc1.TabIndex = 1
+        Me.TNoMuestrasEnsc1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BCancelar
         '
