@@ -1,0 +1,197 @@
+
+199%s2%e                 P199.02  Port      2
+200%s1%e                 P200.01  Baud  19200
+201%s1%e                 P201.01  Data  8bits
+202%s0%e                 P202.00  Prty  none
+203%s0%e                 P203.00  Stop  1bit
+204%s0%e                 P204.00  Flow  none
+205%s2%e                 P205.02  Recv  Intrp
+206%s0%e                 P206.00  Full  delay
+207%s128%e               P207.    TxBf    128
+208%s1024%e              P208.    RxBf   1024
+216%s0%e                 P216.00  TmOut Disbl
+217%s0%e                 P217.00  NoNUL Disbl
+218%s.013%e              P218.    RxTrm  <CR>
+219%s%c999%e             Clear all existing setups
+219%s1%e%e               P219.01  RxIn#     1
+220%sReporteS%e          P220.    RxNam ReporteS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  1
+ReporteS%e
+%e80.58%e                  Inter
+
+224%s80%e                P224.80  RxMac     80
+
+219%s2%e%e               P219.02  RxIn#     2
+220%sBorraReporteS%e     P220.    RxNam BorraReporteS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  2
+BorraReporteS%e
+%e80.58%e                  Inter
+
+224%s81%e                P224.81  RxMac     81
+
+219%s3%e%e               P219.03  RxIn#     3
+220%sPruebaComM%e        P220.    RxNam PruebaComM
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  3
+PruebaComM%e
+%e80.58%e                  Inter
+
+224%s82%e                P224.82  RxMac     82
+
+219%s4%e%e               P219.04  RxIn#     4
+220%sLiberaComM%e        P220.    RxNam LiberaComM
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  4
+LiberaComM%e
+%e80.58%e                  Inter
+
+224%s83%e                P224.83  RxMac     83
+
+219%s5%e%e               P219.05  RxIn#     5
+220%sProductoS%e         P220.    RxNam ProductoS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  5
+ProductoS%e
+%e80.58%e                  Inter
+
+224%s84%e                P224.84  RxMac     84
+
+219%s6%e%e               P219.06  RxIn#     6
+220%sUsuarioS%e          P220.    RxNam UsuarioS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  6
+UsuarioS%e
+%e80.58%e                  Inter
+
+224%s86%e                P224.86  RxMac     86
+
+219%s7%e%e               P219.07  RxIn#     7
+220%sActHoraGSE%e        P220.    RxNam ActHoraGSE
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  7
+ActHoraGSE%e
+%e80.49%e                  Inter
+
+224%s87%e                P224.87  RxMac     87
+
+219%s8%e%e               P219.07  RxIn#     7
+220%sMaquinaS%e        P220.    RxNam ActHoraGSE
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  7
+MaquinaS%e
+%e80.58%e                  Inter
+
+224%s88%e                P224.87  RxMac     87
+
+
+681%s44%e                P681.34  Var.#    34
+682%sMsgPC%e         P682.    VName NombreMaq
+684%s2%e                 P684.02  VSave Auto
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s30%e                P689.25  Ssize    25
+
+
+989%s1%e%e             P989.    CusTx   171
+990%sMsgPC1%e            P990.    TxNam MsgPC1
+991%s0%e                 P991.00  Send: Off
+992%s2%e                 P992.03  Port  Comm3
+993%s0%e                 P993.00  CSMtn Ignrd
+994%s0%e                 P994.    Mot'n None!
+998%s0%e                 P998.00  Cont. Disbl
+999%s0%e                 P999.00  LmtAc  no
+4999.1%s%c%e           P1000.  Custom Transmit #171
+.256%e                     <CR> <LF>
+INIMSGPC1$%e
+%e80.44%e16530%e%e        MsgPC  Format = 16530
+FINMSGPC1$%e
+.256%e                     <CR> <LF>
+
+
+19999.81%s%c%e           P10001.  Macro #81
+A%%)%e                    081:0004 flush keys
+10,5%%y%e                  081:0032 Database Operation
+80.44P="REPORTES BORRADOS"%%o%e     081:0026 send entry
+1.2%%Q%e
+
+
+19999.82%s%c%e           P10001.  Macro #82
+A%%)%e                    082:0004 flush keys
+80.44P="COMUNICACIONES OK"%%o%e     082:0026 send entry
+1.2%%Q%e
+
+
+9990%s84%e%e             P9990.   Mac.#    84
+9991%sRecProd%e    P9991.   MName RecProdRefMaq
+9992%s1%e                P9992.1  Invok Immed
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.84%s%c%e           P10001.  Macro #84
+A%%)%e
+80.58P==1%%o%e
+2%%"%e                     084:0038 select port
+ENVIARPRODUCTOS%%$%e   084:0059 send entry
+%%N%e
+10,1%%y%e                  084:0006 Database Operation
+%%S%e                      084:0014 sound beeper
+16,1;2%%y%e                084:0022 Database Operation
+1%%@%e                     084:0033 set delay
+%%S%e                      084:0035 sound beeper
+2%%"%e                     084:0038 select port
+80.44P="PRODUCTOS RECIBIDOS"%%o%e   084:0059 send entry
+1.2%%Q%e
+%%E%e
+
+
+19999.86%s%c%e           P10001.  Macro #86
+A%%)%e                     087:0003 flush keys
+80.58P==1%%o%e
+2%%"%e                     084:0038 select port
+ENVIARUSUARIOS%%$%e   084:0059 send entry
+%%N%e
+10,4%%y%e                  086:0006 Database Operation
+%%S%e                      086:0008 sound beeper
+16,4;2%%y%e                086:0016 Database Operation
+1%%@%e                     086:0019 set delay
+%%S%e                      086:0021 sound beeper
+2%%"%e                     086:0024 select port
+80.44P="USUARIOS RECIBIDOS"%%o%e    086:0044 send entry
+1.2%%Q%e
+%%E%e
+
+19999.87%s%c%e           P10001.  Macro #87
+A%%)%e                     087:0003 flush keys
+80.49P==0%%o%e             087:0014 Math or Compare
+%%|%e                      087:0016 OR
+80.49P<1312535761%%o%e     087:0035 Math or Compare
+87%%B%e                    087:0039 break
+%%E%e                      087:0041 end if 
+11P=80.49P%%o%e            087:0053 Math or Compare
+80.44P="HORA Y FECHA ACTUALIZADAS"%%o%e087:0080 send entry
+1.2%%Q%e
+
+
+9990%s88%e%e             P9990.   Mac.#    84
+9991%sRecRefMaq%e    P9991.   MName RecProdRefMaq
+9992%s1%e                P9992.1  Invok Immed
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.88%s%c%e           P10001.  Macro #84
+A%%)%e                     087:0003 flush keys
+80.58P==1%%o%e
+2%%"%e                     084:0038 select port
+ENVIARMAQUINAS%%$%e   084:0059 send entry
+%%N%e
+10,3%%y%e                  084:0012 Database Operation
+%%S%e                      084:0014 sound beeper
+16,3;2%%y%e                084:0030 Database Operation
+1%%@%e                     084:0033 set delay
+%%S%e                      084:0035 sound beeper
+80.44P="MAQUINAS RECIBIDAS"%%$%e   084:0059 send entry
+1.2%%Q%e
+%%E%e
+

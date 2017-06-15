@@ -1,0 +1,1808 @@
+WARNING: This file will do a SAVE if no errors occur!
+         (SAVE will ALWAYS be done on indicators prior to Firmware 493)
+
+Downloaded from INDICATOR MODEL: 0560 with Firmware Level 595
+
+100%s23640%i%e           Access Setup Modes, Allowing Changes
+
+1,20K%d                   Set LCD to small font, to speed up data transfer
+P1,20c,F4%C               Clear four lines of LCD
+
+50001%s%c%e              Deallocate Macro Trace Buffer
+
+60040%s32%e%e            P60040.  Setup RAM        32K
+
+60050%s0%e%e             P60050.  P-RamSize      Disbl
+
+179%s0%e                 P179.00  Count Disbl
+
+
+680%s60%e%e              P680.60  #Vars =  60
+
+
+590%s0%e%e               P590.00  DSD   None
+
+199%s1%e                 P199.01  Port      1
+205%s1%e                 P205.01  Recv  Std
+
+108%s1%e                 P108.01  Scale     1
+109%s2%e                 P109.02  Scl 1 Enbld
+110%s6000.000000%e       P110.    F.S. 6000.
+111%s15%e                P111.15  1div1 1.
+112%s30%e                P112.    ZTAp 3.0 d
+113%s35%e                P113.    ZTDl 3.5 s
+114%s15%e                P114.    Motn 1.5 d
+115%s5%e                 P115.    MtDl 0.5 s
+116%s10%e                P116.10  Fltr1 8.0sA
+117%s1%e                 P117.    Rate 0.1 s
+118%s12%e                P118.12  Zrng1 100.%%
+119%s0%e                 P119.00  Lnrz1 Disbl
+122%s12%e                P122.12  RTZ 1 100.%%
+123%s0%e                 P123.00  RMac1 None!
+126%s0.000000%e          P126.    L.R. 0.000
+127%s15%e                P127.15  LDiv1 1.
+128%s0.000000%e          P128.    M.R. 0.000
+129%s9%e                 P129.09  MDiv1 .01
+130%s0%e                 P130.00  Rnge1 Gross
+131%s3%e                 P131.03  Unit1 g
+132%s3%e                 P132.03  Unit1 g
+133%s3%e                 P133.03  Unit1 g
+134%s3%e                 P134.03  Unit1 g
+135%s60.000000%e         P135.    RMP. 60.00
+136%s2%e                 P136.02  RTU.1 hr
+
+108%s2%e                 P108.02  Scale     2
+109%s0%e                 P109.00  Scl 2 Disbl
+
+108%s3%e                 P108.03  Scale     3
+109%s0%e                 P109.00  Scl 3 Disbl
+
+108%s4%e                 P108.04  Scale     4
+109%s0%e                 P109.00  Scl 4 Disbl
+
+
+142%s1%e                 P142.01  DspCZ Enbld
+
+143%sO%e                 P143.    OLNam O
+144%sM%e                 P144.    MtNam M
+145%sS%e                 P145.    StNam S
+146%sO%e                 P146.    ULNam O
+147%sE%e                 P147.    ErNam E
+
+150%s3%e                 P150.03  UNITS= g
+151%s????1%e             P151.    Unam1= ????1
+152%s1.000000%e          P152.    Ucon1= 1.000
+153%s????2%e             P153.    Unam2= ????2
+154%s1.000000%e          P154.    Ucon2= 1.000
+
+162%s1%e                 P162.01  TrNEG Enbld
+163%s1%e                 P163.01  TrRND Enbld
+
+164%s1%e                 P164.01  NZtrk Enbld
+
+170%s1%e                 P170.01  AnOut     1
+171%s0%e                 P171.00  AOut1 Disbl
+
+170%s2%e                 P170.02  AnOut     2
+171%s0%e                 P171.00  AOut2 Disbl
+
+170%s3%e                 P170.03  AnOut     3
+171%s0%e                 P171.00  AOut3 Disbl
+
+170%s4%e                 P170.04  AnOut     4
+171%s0%e                 P171.00  AOut4 Disbl
+
+
+179%s0%e                 P179.00  Count Disbl
+
+194%s0%e                 P194.00  PrEnb Disbl
+
+199%s1%e                 P199.01  Port      1
+200%s1%e                 P200.01  Baud  19200
+201%s1%e                 P201.01  Data  8bits
+202%s0%e                 P202.00  Prty  none
+203%s0%e                 P203.00  Stop  1bit
+204%s0%e                 P204.00  Flow  none
+205%s1%e                 P205.01  Recv  Std
+206%s0%e                 P206.00  Full  delay
+207%s128%e               P207.    TxBf    128
+208%s256%e               P208.    RxBf    256
+216%s0%e                 P216.00  TmOut Disbl
+217%s0%e                 P217.00  NoNUL Disbl
+218%s.010%e              P218.    RxTrm  <LF>
+219%s%c999%e             P219.00  RxIn# None!  Clear all existing setups
+
+
+199%s2%e                 P199.02  Port      2
+200%s1%e                 P200.01  Baud  19200
+201%s1%e                 P201.01  Data  8bits
+202%s0%e                 P202.00  Prty  none
+203%s0%e                 P203.00  Stop  1bit
+204%s0%e                 P204.00  Flow  none
+205%s2%e                 P205.02  Recv  Intrp
+206%s0%e                 P206.00  Full  delay
+207%s128%e               P207.    TxBf    128
+208%s1024%e              P208.    RxBf   1024
+216%s0%e                 P216.00  TmOut Disbl
+217%s0%e                 P217.00  NoNUL Disbl
+218%s.013%e              P218.    RxTrm  <CR>
+219%s%c999%e             Clear all existing setups
+219%s1%e%e               P219.01  RxIn#     1
+220%sReporteS%e          P220.    RxNam ReporteS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  1
+ReporteS%e
+%e80.58%e                  Inter
+
+224%s80%e                P224.80  RxMac     80
+
+219%s2%e%e               P219.02  RxIn#     2
+220%sBorraReporteS%e     P220.    RxNam BorraReporteS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  2
+BorraReporteS%e
+%e80.58%e                  Inter
+
+224%s81%e                P224.81  RxMac     81
+
+219%s3%e%e               P219.03  RxIn#     3
+220%sPruebaComM%e        P220.    RxNam PruebaComM
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  3
+PruebaComM%e
+%e80.58%e                  Inter
+
+224%s82%e                P224.82  RxMac     82
+
+219%s4%e%e               P219.04  RxIn#     4
+220%sLiberaComM%e        P220.    RxNam LiberaComM
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  4
+LiberaComM%e
+%e80.58%e                  Inter
+
+224%s83%e                P224.83  RxMac     83
+
+219%s5%e%e               P219.05  RxIn#     5
+220%sProductoS%e         P220.    RxNam ProductoS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  5
+ProductoS%e
+%e80.58%e                  Inter
+
+224%s84%e                P224.84  RxMac     84
+
+219%s6%e%e               P219.06  RxIn#     6
+220%sUsuarioS%e          P220.    RxNam UsuarioS
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  6
+UsuarioS%e
+%e80.58%e                  Inter
+
+224%s86%e                P224.86  RxMac     86
+
+219%s7%e%e               P219.07  RxIn#     7
+220%sActHoraGSE%e        P220.    RxNam ActHoraGSE
+221%s1%e                 P221.01  RxTyp Line
+222%s                    P222.  Comm Port #2 Input Interpreter #  7
+ActHoraGSE%e
+%e80.49%e                  Inter
+
+224%s87%e                P224.87  RxMac     87
+
+
+199%s3%e                 P199.03  Port      3
+200%s2%e                 P200.02  Baud  9600
+201%s1%e                 P201.01  Data  8bits
+202%s0%e                 P202.00  Prty  none
+203%s0%e                 P203.00  Stop  1bit
+204%s2%e                 P204.02  Flow  Xon
+205%s1%e                 P205.01  Recv  Std
+206%s0%e                 P206.00  Full  delay
+207%s512%e               P207.    TxBf    512
+208%s2048%e              P208.    RxBf   2048
+216%s0%e                 P216.00  TmOut Disbl
+217%s0%e                 P217.00  NoNUL Disbl
+218%s.010%e              P218.    RxTrm  <LF>
+219%s%c999%e             P219.00  RxIn# None!  Clear all existing setups
+
+
+
+240%s4%e                 P240.04  Width     4
+
+241%s0%e                 P241.00  SgnJu Right
+
+250%s0%e                 P250.00  RS485 Disbl
+
+
+290%s0%e                 P290.00  Echo  Off
+291%s2%e                 P291.02  Start <STX>^B=02
+292%s3%e                 P292.03  End   <ETX>^C=03
+293%s0%e                 P293.00  RmDsp Disbl
+
+300%s0.0%e               P300.00  MODE0 BRUTO
+301%s1.0%e               P301.01  MODE1 NETO
+302%s2.0%e               P302.02  MODE2 TARA
+303%s99%e                P303.99  MODE3 None!
+304%s99%e                P304.99  MODE4 None!
+305%s99%e                P305.99  MODE5 None!
+306%s99%e                P306.99  MODE6 None!
+307%s99%e                P307.99  MODE7 None!
+308%s99%e                P308.99  MODE8 None!
+309%s99%e                P309.99  MODE9 None!
+
+400%s%c                  P400.    PIN   None!
+401%s123%e               P401.    QCAL  123
+402%s23640%e             P402.    Lmt'd 23640
+
+410%s9990%e%e            P410.    OIML  Disbl
+411%s0%e                 P411.00  EPSON USA
+412%s0%e                 P412.00  PrSET Disbl
+413%s0%e                 P413.00  LANG  USA
+
+420%s2%e                 P420.02  Dsply AUTO
+421%s2%e                 P421.02  WtThr 6d
+422%s5%e                 P422.05  TmOut 5min
+
+430%s13%e                P430.13  Contr    13
+431%s0%e                 P431.00  InvLS Disbl
+440%s0%e                 P440.00  NTEP  Disbl
+
+450%s9990%c              P450.    Keypd 22Key
+
+451%s6%e                 P451.06  KyRpt Fast
+
+460%s3%e                 P460.03  Beepr Low
+
+500%s%c                  P500.36  Time  15:24
+501%s%c                  P501.14  Date  10/06
+502%s1%e                 P502.01  TDAcc Enbld
+503%s0%e                 P503.00  AM/PM  no
+504%s1%e                 P504.01  Style Int'l
+
+590%s0%e%e               P590.00  DSD   None
+
+
+600%sBRUTO%e             P600.    Gross BRUTO
+601%sNETO%e              P601.    Net   NETO
+602%sTARA%e              P602.    Tare  TARA
+603%s%c                  P603.    GrTOT None!
+604%s%c                  P604.    GrT+C None!
+605%s%c                  P605.    GrT-C None!
+606%s%c                  P606.    NtTOT None!
+607%s%c                  P607.    NtT+C None!
+608%s%c                  P608.    NtT-C None!
+609%s%c                  P609.    Accum None!
+610%s%c                  P610.    Scale# None!
+611%s%c                  P611.    Tm/Dt None!
+
+615%s%c                  P615.    AvGrs None!
+616%s%c                  P616.    AvNet None!
+618%s%c                  P618.    PkGrs None!
+619%s%c                  P619.    PkNet None!
+620%s%c                  P620.    RndGr None!
+621%s%c                  P621.    RndNt None!
+623%s%c                  P623.    Rate  None!
+624%s%c                  P624.    FreFl None!
+625%s%c                  P625.    FutGr None!
+626%s%c                  P626.    FutNt None!
+627%s%c                  P627.    FrFl2 None!
+628%s%c                  P628.    FuGr2 None!
+629%s%c                  P629.    FuNt2 None!
+640%s%c                  P640.    GrAll None!
+641%s%c                  P641.    NeAll None!
+642%s%c                  P642.    TrAll None!
+643%s%c                  P643.    GTAll None!
+644%s%c                  P644.    NTAll None!
+650%s%c                  P650.    PrPer None!
+651%s%c                  P651.    PrPay None!
+652%s%c                  P652.    PrTot None!
+
+660%s2%e                 P660.02  TotSv Auto
+
+661%s0%e                 P661.00  TarSv NoSav
+
+680%s60%e%e              P680.60  #Vars =  60
+
+681%s1%e                 P681.01  Var.#     1
+682%sReference%e         P682.    VName Reference
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s10%e                P689.10  Ssize    10
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s2%e                 P681.02  Var.#     2
+682%sProdName%e          P682.    VName ProdName
+684%s2%e                 P684.02  VSave Auto
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s25%e                P689.25  Ssize    25
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s3%e                 P681.03  Var.#     3
+682%sNomWeight%e         P682.    VName NomWeight
+684%s2%e                 P684.02  VSave Auto
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s4%e                 P681.04  Var.#     4
+682%sTimeDate%e          P682.    VName TimeDate
+684%s2%e                 P684.02  VSave Auto
+685%s1%e                 P685.01  VLock Enbld
+686%s2%e                 P686.02  VType U-Int
+688%s1%e                 P688.01  IStyl TmDat
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s5%e                 P681.05  Var.#     5
+682%sIndex%e             P682.    VName Index
+684%s2%e                 P684.02  VSave Auto
+685%s1%e                 P685.01  VLock Enbld
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s6%e                 P681.06  Var.#     6
+682%sNetWeight%e         P682.    VName NetWeight
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s7%e                 P681.07  Var.#     7
+682%sSamNumber%e         P682.    VName SamNumber
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s8%e                 P681.08  Var.#     8
+682%sAverage%e           P682.    VName Average
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s9%e                 P681.09  Var.#     9
+682%sStDev%e             P682.    VName StDev
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s10%e                P681.10  Var.#    10
+682%sStatFlag%e          P682.    VName StatFlag
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s11%e                P681.11  Var.#    11
+682%sCalculos%e          P682.    VName Calculos
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s12%e                P681.12  Var.#    12
+682%sTarget%e            P682.    VName Target
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s3%e                 P687.03  FStyl  3 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s13%e                P681.13  Var.#    13
+682%sToler%e             P682.    VName Toler
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s14%e                P681.14  Var.#    14
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s15%e                P681.15  Var.#    15
+682%sSupCode%e           P682.    VName SupCode
+684%s2%e                 P684.02  VSave Auto
+685%s1%e                 P685.01  VLock Enbld
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s16%e                P681.16  Var.#    16
+682%sOpCode%e            P682.    VName OpCode
+684%s2%e                 P684.02  VSave Auto
+685%s1%e                 P685.01  VLock Enbld
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s17%e                P681.17  Var.#    17
+682%sLRange%e            P682.    VName LRange
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s1%e                 P686.01  VType Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s18%e                P681.18  Var.#    18
+682%sURange%e            P682.    VName URange
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s1%e                 P686.01  VType Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s19%e                P681.19  Var.#    19
+682%sPesoFinal%e         P682.    VName PesoFinal
+684%s0%e                 P684.00  VSave NoSav
+685%s1%e                 P685.01  VLock Enbld
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s20%e                P681.20  Var.#    20
+682%sWieigFlag%e         P682.    VName WieigFlag
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s21%e                P681.21  Var.#    21
+682%sACCESS%e            P682.    VName ACCESS
+684%s0%e                 P684.00  VSave NoSav
+685%s1%e                 P685.01  VLock Enbld
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s22%e                P681.22  Var.#    22
+682%sACCESS%e            P682.    VName ACCESS
+684%s0%e                 P684.00  VSave NoSav
+685%s1%e                 P685.01  VLock Enbld
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s23%e                P681.23  Var.#    23
+682%sTareLimit%e         P682.    VName TareLimit
+684%s2%e                 P684.02  VSave Auto
+685%s1%e                 P685.01  VLock Enbld
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s24%e                P681.24  Var.#    24
+682%sRangoCap%e          P682.    VName RangoCap
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s25%e                P681.25  Var.#    25
+682%sUpeRange%e          P682.    VName UpeRange
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s26%e                P681.26  Var.#    26
+682%sMaquina%e           P682.    VName Maquina
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s27%e                P681.27  Var.#    27
+682%sBoqAux%e            P682.    VName BoqAux
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s2%e                 P689.02  Ssize     2
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s28%e                P681.28  Var.#    28
+682%sCalculos%e          P682.    VName Calculos
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s29%e                P681.29  Var.#    29
+682%sNetoActual%e        P682.    VName NetoActual
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s3%e                 P687.03  FStyl  3 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s30%e                P681.30  Var.#    30
+682%sNetoAnterior%e      P682.    VName NetoAnterior
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s2%e                 P687.02  FStyl  2 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s31%e                P681.31  Var.#    31
+682%sAuxFecha%e          P682.    VName AuxFecha
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s1%e                 P688.01  IStyl TmDat
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s32%e                P681.32  Var.#    32
+682%sFechaStr%e          P682.    VName FechaStr
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s20%e                P689.20  Ssize    20
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s33%e                P681.33  Var.#    33
+682%sHoraStr%e           P682.    VName HoraStr
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s10%e                P689.10  Ssize    10
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s34%e                P681.34  Var.#    34
+682%sNombreMaq%e         P682.    VName NombreMaq
+684%s2%e                 P684.02  VSave Auto
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s25%e                P689.25  Ssize    25
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s35%e                P681.35  Var.#    35
+682%sLote%e              P682.    VName Lote
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s10%e                P689.10  Ssize    10
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s36%e                P681.36  Var.#    36
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s37%e                P681.37  Var.#    37
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s38%e                P681.38  Var.#    38
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s39%e                P681.39  Var.#    39
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s40%e                P681.40  Var.#    40
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s41%e                P681.41  Var.#    41
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s42%e                P681.42  Var.#    42
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s43%e                P681.43  Var.#    43
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s44%e                P681.44  Var.#    44
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s45%e                P681.45  Var.#    45
+682%s%c                  P682.    VName None!
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s46%e                P681.46  Var.#    46
+682%sTaraEmp%e           P682.    VName TaraEmp
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s47%e                P681.47  Var.#    47
+682%sCodOperario%e       P682.    VName CodOperario
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s15%e                P689.15  Ssize    15
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s48%e                P681.48  Var.#    48
+682%sOperario%e          P682.    VName Operario
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s20%e                P689.20  Ssize    20
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s49%e                P681.49  Var.#    49
+682%sInterpDate%e        P682.    VName InterpDate
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s50%e                P681.50  Var.#    50
+682%sContReport%e        P682.    VName ContReport
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s51%e                P681.51  Var.#    51
+682%sRepReference%e      P682.    VName RepReference
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s10%e                P689.10  Ssize    10
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s52%e                P681.52  Var.#    52
+682%sRepNomWeight%e      P682.    VName RepNomWeight
+684%s2%e                 P684.02  VSave Auto
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s6%e                 P687.06  FStyl Auto
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s53%e                P681.53  Var.#    53
+682%sRepMaquina%e        P682.    VName RepMaquina
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s2%e                 P686.02  VType U-Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s54%e                P681.54  Var.#    54
+682%sRepNetWeight%e      P682.    VName RepNetWeight
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s55%e                P681.55  Var.#    55
+682%sRepFechaStr%e       P682.    VName RepFechaStr
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s20%e                P689.20  Ssize    20
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s56%e                P681.56  Var.#    56
+682%sRepHoraStr%e        P682.    VName RepHoraStr
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s10%e                P689.10  Ssize    10
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s57%e                P681.57  Var.#    57
+682%sRepLote%e           P682.    VName RepLote
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s10%e                P689.10  Ssize    10
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s58%e                P681.58  Var.#    58
+682%sInterprete%e        P682.    VName Interprete
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s1%e                 P686.01  VType Int
+688%s0%e                 P688.00  IStyl Numbr
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s59%e                P681.59  Var.#    59
+682%sRepCodOperario%e    P682.    VName RepCodOperario
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s3%e                 P686.03  VType Strng
+689%s15%e                P689.15  Ssize    15
+690%s0%e                 P690.00  SkpEr Disbl
+
+681%s60%e                P681.60  Var.#    60
+682%sRepTaraEmp%e        P682.    VName RepTaraEmp
+684%s0%e                 P684.00  VSave NoSav
+685%s0%e                 P685.00  VLock Disbl
+686%s0%e                 P686.00  VType Float
+687%s1%e                 P687.01  FStyl  1 dp
+690%s0%e                 P690.00  SkpEr Disbl
+
+
+698%s0%e%e               P698.00  FRMdB Size: None!
+
+699%s%c999%e             Clear all existing setups
+699%s1%e%e               P699.01  DB #:     1
+700%sPRODUCTOS%e         P700.    DBNam PRODUCTOS
+701%s80.1%e              P701.80  Col01 Reference
+702%s80.2%e              P702.80  Col02 ProdName
+703%s80.3%e              P703.80  Col03 NomWeight
+704%s80.13%e             P704.80  Col04 Toler
+705%s80.24%e             P705.80  Col05 RangoCap
+
+699%s2%e%e               P699.02  DB #:     2
+700%sDatos%e             P700.    DBNam Datos
+701%s80.51%e             P701.80  Col01 RepReference
+702%s80.52%e             P702.80  Col02 RepNomWeight
+703%s80.53%e             P703.80  Col03 RepMaquina
+704%s80.54%e             P704.80  Col04 RepNetWeight
+705%s80.55%e             P705.80  Col05 RepFechaStr
+706%s80.56%e             P706.80  Col06 RepHoraStr
+707%s80.57%e             P707.80  Col07 RepLote
+708%s80.59%e             P708.80  Col08 RepCodOperario
+709%s80.60%e             P709.80  Col09 RepTaraEmp
+
+699%s3%e%e               P699.03  DB #:     3
+700%sLISMAQ%e            P700.    DBNam LISMAQ
+701%s80.26%e             P701.80  Col01 Maquina
+702%s80.34%e             P702.80  Col02 NombreMaq
+
+699%s4%e%e               P699.04  DB #:     4
+700%sLISUSUARIOS%e       P700.    DBNam LISUSUARIOS
+701%s80.47%e             P701.80  Col01 CodOperario
+702%s80.48%e             P702.80  Col02 Operario
+
+699%s5%e%e               P699.05  DB #:     5
+700%sCopyDatos%e         P700.    DBNam CopyDatos
+701%s80.51%e             P701.80  Col01 RepReference
+702%s80.52%e             P702.80  Col02 RepNomWeight
+703%s80.53%e             P703.80  Col03 RepMaquina
+704%s80.54%e             P704.80  Col04 RepNetWeight
+705%s80.55%e             P705.80  Col05 RepFechaStr
+706%s80.56%e             P706.80  Col06 RepHoraStr
+707%s80.57%e             P707.80  Col07 RepLote
+708%s80.60%e             P708.80  Col08 RepTaraEmp
+709%s80.59%e             P709.80  Col09 RepCodOperario
+
+
+800%s0%e                 P800.00  Selct Enbld
+801%s0%e                 P801.00  Zero  Enbld
+802%s0%e                 P802.00  Tare  Enbld
+803%s4%e                 P803.04  Units Mc  4
+804%s0%e                 P804.00  SSlct Enbld
+805%s80%e                P805.80  Print Mc 80
+806%s0%e                 P806.00  IDUse IDKey
+807%s0%e                 P807.00  Enter Enbld
+808%s0%e                 P808.00  Clear Enbld
+809%s0%e                 P809.00  DecPt Enbld
+810%s0%e                 P810.00   '0'  Enbld
+811%s0%e                 P811.00   '1'  Enbld
+812%s0%e                 P812.00   '2'  Enbld
+813%s0%e                 P813.00   '3'  Enbld
+814%s0%e                 P814.00   '4'  Enbld
+815%s0%e                 P815.00   '5'  Enbld
+816%s0%e                 P816.00   '6'  Enbld
+817%s0%e                 P817.00   '7'  Enbld
+818%s0%e                 P818.00   '8'  Enbld
+819%s0%e                 P819.00   '9'  Enbld
+820%s0%e                 P820.00  AnyKy Enbld
+
+840%s0%e                 P840.00  Alpha N&U&L
+841%s0%e                 P841.00  Atime 1 sec
+
+890%s0%e                 P890.00  >LED< Off
+
+980%s10%e                P980.    TxRat 1.0 s
+
+989%s%c999%e             Clear all existing setups
+989%s31%e%e              P989.31  CusTx    31
+990%sPCReport%e          P990.    TxNam PCReport
+991%s0%e                 P991.00  Send: Off
+992%s1%e                 P992.01  Port  Comm1
+993%s0%e                 P993.00  CSMtn Ignrd
+994%s0%e                 P994.    Mot'n None!
+998%s0%e                 P998.00  Cont. Disbl
+999%s0%e                 P999.00  LmtAc  no
+4999.31%s%c%e            P1000.  Custom Transmit # 31
+%e80.51%e16385%e%e         RepRe  Format = 16385
+,%e
+%e80.52%e16385%e%e         RepNo  Format = 16385
+,%e
+%e80.53%e16385%e%e         RepMa  Format = 16385
+,%e
+%e80.54%e16385%e%e         RepNe  Format = 16385
+,%e
+%e80.55%e16641%e%e         RepFe  Format = 16641
+,%e
+%e80.56%e16641%e%e         RepHo  Format = 16641
+,%e
+%e80.57%e16385%e%e         RepLo  Format = 16385
+,%e
+%e80.59%e16385%e%e         RepCo  Format = 16385
+,%e
+%e80.60%e16385%e%e         RepTa  Format = 16385
+.256%e                     <CR> <LF>
+
+
+
+5099%s%c999%e           Clear All Setpoints
+
+5099%s1%e                P5099.1  Setpt     1
+5100%s1%e                P5100.1  SPTyp Outpt
+5101%sOver%e             P5101.   SPNam Over
+5110%s0%e                P5110.0  Activ Above
+5111%s0.000000%e         P5111.   AcDly 0.00
+5112%s10%e               P5112.   AcMac    10
+5113%s1%e                P5113.1  AcMtn Inhib
+5114%s80.18%e            P5114.   ALPar URange
+5130%s1%e                P5130.1  Deact Below
+5131%s0.000000%e         P5131.   DeDly 0.00
+5132%s0%e                P5132.0  DeMac None!
+5133%s1%e                P5133.1  DeMtn Inhib
+5134%s80.18%e            P5134.   DLPar URange
+5150%s1.1%e              P5150.1  CmPar NETO
+
+5099%s2%e                P5099.2  Setpt     2
+5100%s1%e                P5100.1  SPTyp Outpt
+5101%sPongaMues%e        P5101.   SPNam PongaMues
+5110%s1%e                P5110.1  Activ Below
+5111%s0.000000%e         P5111.   AcDly 0.00
+5112%s11%e               P5112.   AcMac    11
+5113%s1%e                P5113.1  AcMtn Inhib
+5114%s80.23%e            P5114.   ALPar TareLimit
+5130%s0%e                P5130.0  Deact Above
+5131%s0.000000%e         P5131.   DeDly 0.00
+5132%s0%e                P5132.0  DeMac None!
+5133%s0%e                P5133.0  DeMtn Ign'd
+5134%s80.23%e            P5134.   DLPar TareLimit
+5150%s0.1%e              P5150.0  CmPar BRUTO
+
+5099%s3%e                P5099.3  Setpt     3
+5100%s1%e                P5100.1  SPTyp Outpt
+5101%sInRange%e          P5101.   SPNam InRange
+5110%s2%e                P5110.2  Activ Betwn
+5111%s0.000000%e         P5111.   AcDly 0.00
+5112%s12%e               P5112.   AcMac    12
+5113%s1%e                P5113.1  AcMtn Inhib
+5114%s80.17%e            P5114.   ALPar LRange
+5115%s80.18%e            P5115.   AUPar URange
+5130%s3%e                P5130.3  Deact Outsd
+5131%s0.000000%e         P5131.   DeDly 0.00
+5132%s0%e                P5132.0  DeMac None!
+5133%s0%e                P5133.0  DeMtn Ign'd
+5134%s80.17%e            P5134.   DLPar LRange
+5135%s80.18%e            P5135.   DUPar URange
+5150%s1.1%e              P5150.1  CmPar NETO
+
+5099%s48%e               P5099.   Setpt    48
+5100%s1%e                P5100.1  SPTyp Outpt
+5101%s%c                 P5101.   SPNam None!
+5110%s4%e                P5110.4  Activ Alwys
+5111%s0.000000%e         P5111.   AcDly 0.00
+5112%s100%e              P5112.   AcMac   100
+5113%s0%e                P5113.0  AcMtn Ign'd
+5130%s5%e                P5130.5  Deact Never
+5131%s0.000000%e         P5131.   DeDly 0.00
+5132%s0%e                P5132.0  DeMac None!
+
+
+7000%s%c%e               P6001.  Modbus Register Map Setup
+
+9980%s0%e                P9980.0  Abort None!
+
+9981%s0%e                P9981.0  Abort Menu
+
+9990%s%c999%e            Clear all existing setups
+9990%s1%e%e              P9990.1  Mac.#     1
+9991%s%c                 P9991.   MName None!
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.1%s%c%e            P10001.  Macro # 1
+A%%)%e                     001:0003 flush keys
+80.58P=0%%o%e              001:0013 Math or Compare
+REPORTAR%%$%e              001:0023 send entry
+-2%%!%e                    001:0027 kb/com control
+1,20i%%d%e                 001:0034 display on/off
+80.47P==""%%o%e            001:0046 Math or Compare
+4C%%^%e                    001:0050 call/go to macro
+%%E%e                      001:0052 end if 
+Pa%%C%e                    001:0056 Display text
+Cod. ProdP1,1,F2%%C%e      001:0074 Display text
+1AK%%j%e                   001:0079 if Key held
+4,2,10,10b,f2%%K%e         001:0094 Get operator input on 4x20 display
+=80.1P%%o%e                001:0102 Math or Compare
+1,1,80.1%%y%e              001:0112 Database Operation
+4%%_%e                     001:0115 if dbase error
+REF. NO ENCONTRADAP7,1,F2%%C%e001:0142 Display text
+%%P%e                      001:0144 pause
+Pa%%C%e                    001:0148 Display text
+0AK%%j%e                   001:0153 if Key held
+2%%!%e                     001:0156 kb/com control
+100%%^%e                   001:0161 call/go to macro
+%%B%e                      001:0163 break
+%%N%e                      001:0165 if not
+Pa%%C%e                    001:0169 Display text
+Ref. P1,1,F2%%C%e          001:0183 Display text
+80.1P%%o%e                 001:0190 Math or Compare
+P1,10,F2%%C%e              001:0200 Display text
+80.2P%%o%e                 001:0207 Math or Compare
+P4,1,F2%%C%e               001:0216 Display text
+80.17P=80.3P-80.24P%%o%e   001:0237 Math or Compare
+80.18P=80.3P+80.24P%%o%e   001:0258 Math or Compare
+2%%^%e                     001:0261 call/go to macro
+%%E%e                      001:0263 end if 
+
+
+9990%s2%e%e              P9990.2  Mac.#     2
+9991%sStop%e             P9991.   MName Stop
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.2%s%c%e            P10001.  Macro # 2
+%%)%e                      002:0002 flush keys
+-2%%!%e                    002:0006 kb/com control
+P6,1c%%C%e                 002:0013 Display text
+MQ.o BOQ?P7,1c,F2%%C%e     002:0032 Display text
+7,24,2,2nb,f2%%K%e         002:0047 Get operator input on 4x20 display
+=80.26P%%o%e               002:0056 Math or Compare
+1,3,80.26%%y%e             002:0067 Database Operation
+4%%_%e                     002:0070 if dbase error
+Pa%%C%e                    002:0074 Display text
+MAQ. NO ENCONTRADAP7,1,F2%%C%e002:0101 Display text
+%%P%e                      002:0103 pause
+Pa%%C%e                    002:0107 Display text
+2%%!%e                     002:0110 kb/com control
+100%%^%e                   002:0115 call/go to macro
+%%N%e                      002:0117 if not
+P6,1c%%C%e                 002:0124 Display text
+P7,1c%%C%e                 002:0131 Display text
+MAQP6,1c,F1%%C%e           002:0144 Display text
+80.26P%%o%e                002:0152 Math or Compare
+P6,8,F1%%C%e               002:0161 Display text
+80.34P%%o%e                002:0169 Math or Compare
+P6,12F1%%C%e               002:0178 Display text
+%%P%e                      002:0180 pause
+%%E%e                      002:0182 end if 
+P7,1c%%C%e                 002:0189 Display text
+LOTEP7,1c,F2%%C%e          002:0203 Display text
+7,11,10,10b,f2%%K%e        002:0219 Get operator input on 4x20 display
+=80.35P%%o%e               002:0228 Math or Compare
+80.36P=0%%o%e              002:0238 Math or Compare
+P7,1c%%C%e                 002:0245 Display text
+TARA EMP.P7,1c,F2%%C%e     002:0264 Display text
+7,20,4,4b,f2%%K%e          002:0278 Get operator input on 4x20 display
+=80.46P%%o%e               002:0287 Math or Compare
+2%%!%e                     002:0290 kb/com control
+11%%^%e                    002:0294 call/go to macro
+
+
+9990%s3%e%e              P9990.3  Mac.#     3
+9991%sMaqBoq%e           P9991.   MName MaqBoq
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.3%s%c%e            P10001.  Macro # 3
+A%%)%e                     003:0003 flush keys
+-2%%!%e                    003:0007 kb/com control
+MQ.o BOQ?P7,1c,F2%%C%e     003:0026 Display text
+80.26P%%o%e                003:0034 Math or Compare
+P7,35,F2%%C%e              003:0044 Display text
+7,24,2,2nb,f2%%K%e         003:0059 Get operator input on 4x20 display
+=80.26P%%o%e               003:0068 Math or Compare
+2%%!%e                     003:0071 kb/com control
+
+
+9990%s4%e%e              P9990.4  Mac.#     4
+9991%sCambiaUsuario%e    P9991.   MName CambiaUsuario
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.4%s%c%e            P10001.  Macro # 4
+A%%)%e                     004:0003 flush keys
+-2%%!%e                    004:0007 kb/com control
+1,20i%%d%e                 004:0014 display on/off
+x%%d%e                     004:0017 display on/off
+Pa%%C%e                    004:0021 Display text
+Cod. Usuario:P1,1,F2%%C%e  004:0043 Display text
+4,2,10,10nb*,f2%%K%e       004:0060 Get operator input on 4x20 display
+=80.47P%%o%e               004:0069 Math or Compare
+1,4,80.47%%y%e             004:0080 Database Operation
+4%%_%e                     004:0083 if dbase error
+USUARIO NOP4,1,F2%%C%e     004:0102 Display text
+REGISTRADOP6,1,F2%%C%e     004:0121 Display text
+80.47P=""%%o%e             004:0132 Math or Compare
+80.48P=""%%o%e             004:0143 Math or Compare
+%%P%e                      004:0145 pause
+Pa%%C%e                    004:0149 Display text
+2%%!%e                     004:0152 kb/com control
+100%%^%e                   004:0157 call/go to macro
+1%%B%e                     004:0160 break
+%%B%e                      004:0162 break
+%%N%e                      004:0164 if not
+Pa%%C%e                    004:0168 Display text
+Nombre:P1,1,F2%%C%e        004:0184 Display text
+80.48P%%o%e                004:0192 Math or Compare
+P5,1,F2%%C%e               004:0201 Display text
+%%P%e                      004:0203 pause
+X%%d%e                     004:0206 display on/off
+%%E%e                      004:0208 end if 
+
+
+9990%s10%e%e             P9990.   Mac.#    10
+9991%sOver%e             P9991.   MName Over
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.10%s%c%e           P10001.  Macro #10
+80.1P!=0%%o%e              010:0010 Math or Compare
+1%%O%e                     010:0013 if  setpoint on
+PESO FUERA DE RANGO CAPT.P8,16,f1%%C%e010:0048 Display text
+%%S%e                      010:0050 sound beeper
+%%E%e                      010:0052 end if 
+
+
+9990%s11%e%e             P9990.   Mac.#    11
+9991%sWeight%e           P9991.   MName Weight
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.11%s%c%e           P10001.  Macro #11
+-2%%!%e                    011:0004 kb/com control
+2%%O%e                     011:0007 if  setpoint on
+	%%{%e                      011:0009 Start Group
+	80.1P!=0%%o%e              011:0019 Math or Compare
+	Tara Emp.P3,1c,F1%%C%e     011:0038 Display text
+	80.46P%%o%e                011:0046 Math or Compare
+	P3,11,F1%%C%e              011:0056 Display text
+	P7,1c%%C%e                 011:0063 Display text
+	LOTEP6,1c,F2%%C%e          011:0077 Display text
+	80.35P%%o%e                011:0085 Math or Compare
+	P6,10,F2%%C%e              011:0095 Display text
+	MAQP7,30,F1%%C%e           011:0108 Display text
+	80.26P%%o%e                011:0116 Math or Compare
+	P7,35,F1%%C%e              011:0126 Display text
+	MUEST.P8,1c,F1%%C%e        011:0142 Display text
+	80.36P%%o%e                011:0150 Math or Compare
+	P8,8,F1%%C%e               011:0159 Display text
+	PONGA LA MUESTRA P8,21,f1%%C%e011:0186 Display text
+	%%z%e                      011:0188 zero
+	2.1P=80.46P%%o%e           011:0201 Math or Compare
+	1.1%%s%e                   011:0206 select
+	%%E%e                      011:0208 end if 
+	%%}%e                      011:0210 End Group
+%%N%e                      011:0212 if not
+     LIMPIAR LA BASCULAP8,16c,F1%%C%e011:0246 Display text
+%%E%e                      011:0248 end if 
+2%%!%e                     011:0251 kb/com control
+%%)%e                      011:0253 flush keys
+
+
+9990%s12%e%e             P9990.   Mac.#    12
+9991%sEndStab%e          P9991.   MName EndStab
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.12%s%c%e           P10001.  Macro #12
+-2%%!%e                    012:0004 kb/com control
+80.1P!=0%%o%e              012:0014 Math or Compare
+85C%%^%e                   012:0019 call/go to macro
+	%%{%e                      012:0021 Start Group
+	80.6P=1.1P%%o%e            012:0033 Math or Compare
+	80.31P=11P%%o%e            012:0045 Math or Compare
+	80.32P=80.31.21250P%%o%e   012:0066 Math or Compare
+	80.33P=80.31.18499P%%o%e   012:0087 Math or Compare
+	80.6P>80.3P+80.13P%%o%e    012:0107 Math or Compare
+	PESO ALTO MUESTRA!!P8,21,F1%%C%e012:0136 Display text
+	%%P%e                      012:0138 pause
+	%%E%e                      012:0140 end if 
+	80.6P<80.3P-80.13P%%o%e    012:0160 Math or Compare
+	PESO BAJO MUESTRA!!P8,21,F1%%C%e012:0189 Display text
+	%%P%e                      012:0191 pause
+	%%E%e                      012:0193 end if 
+	80.6P>80.3P+80.24P%%o%e    012:0213 Math or Compare
+	MUESTRA NO VALIDA!P8,21,F1%%C%e012:0241 Display text
+	%%P%e                      012:0243 pause
+	2%%!%e                     012:0246 kb/com control
+	*%%B%e                     012:0249 break
+	%%E%e                      012:0251 end if 
+	80.6P<80.3P-80.24P%%o%e    012:0271 Math or Compare
+	MUESTRA NO VALIDA!P8,21,F1%%C%e012:0299 Display text
+	%%P%e                      012:0301 pause
+	2%%!%e                     012:0304 kb/com control
+	*%%B%e                     012:0307 break
+	%%E%e                      012:0309 end if 
+	%%}%e                      012:0311 End Group
+80.36P=80.36P+1%%o%e       012:0328 Math or Compare
+80.51P=80.1P%%o%e          012:0342 Math or Compare
+80.52P=80.3P%%o%e          012:0356 Math or Compare
+80.53P=80.26P%%o%e         012:0371 Math or Compare
+80.54P=80.6P%%o%e          012:0385 Math or Compare
+80.55P=80.32P%%o%e         012:0400 Math or Compare
+80.56P=80.33P%%o%e         012:0415 Math or Compare
+80.57P=80.35P%%o%e         012:0430 Math or Compare
+80.59P=80.47P%%o%e         012:0445 Math or Compare
+80.60P=80.46P%%o%e         012:0460 Math or Compare
+3,2%%y%e                   012:0465 Database Operation
+80.58P=0%%o%e              012:0475 Math or Compare
+REPORTAR%%$%e              012:0485 send entry
+RETIRE LA MUESTRA P8,21,F1%%C%e012:0513 Display text
+%%E%e                      012:0515 end if 
+2%%!%e                     012:0518 kb/com control
+%%)%e                      012:0520 flush keys
+
+
+9990%s80%e%e             P9990.   Mac.#    80
+9991%sReport%e           P9991.   MName Report
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.80%s%c%e           P10001.  Macro #80
+A%%)%e                     080:0003 flush keys
+@ENVIA REPORTES A PC%%T%e  080:0025 tag position
+5,5%%y%e                   080:0030 Database Operation
+0%%_%e                     080:0033 if dbase error
+2%%"%e                     080:0036 select port
+13,10%%&%e                 080:0043 send code
+INIREPORT,%%$%e            080:0055 send entry
+13,10%%&%e                 080:0062 send code
+80.50P=0%%o%e              080:0072 Math or Compare
+@SEND NEXT ROW TO PCr%%T%e 080:0095 tag position
+	%%{%e                      080:0097 Start Group
+	0%%_%e                     080:0100 if dbase error
+		%%{%e                      080:0102 Start Group
+		80.50P<20%%o%e             080:0113 Math or Compare
+		31.2%%Q%e                  080:0119 custom transmit
+		80.50P+=1%%o%e             080:0130 Math or Compare
+		6,5%%y%e                   080:0135 Database Operation
+		@SEND NEXT ROW TO PCr%%J%e 080:0158 jump to tag
+		%%E%e                      080:0160 end if 
+		%%}%e                      080:0162 End Group
+	%%E%e                      080:0164 end if 
+	%%}%e                      080:0166 End Group
+FINREPORT,%%$%e            080:0178 send entry
+13,10%%&%e                 080:0185 send code
+5,5%%y%e                   080:0190 Database Operation
+INICOPYREPORT,%%$%e        080:0206 send entry
+13,10%%&%e                 080:0213 send code
+80.50P=0%%o%e              080:0223 Math or Compare
+@SEND NEXT ROW TO PCrRD%%T%e080:0248 tag position
+	%%{%e                      080:0250 Start Group
+	0%%_%e                     080:0253 if dbase error
+		%%{%e                      080:0255 Start Group
+		80.50P<20%%o%e             080:0266 Math or Compare
+		31.2%%Q%e                  080:0272 custom transmit
+		80.50P+=1%%o%e             080:0283 Math or Compare
+		6,5%%y%e                   080:0288 Database Operation
+		@SEND NEXT ROW TO PCrRD%%J%e080:0313 jump to tag
+		%%E%e                      080:0315 end if 
+		%%}%e                      080:0317 End Group
+	%%E%e                      080:0319 end if 
+	%%}%e                      080:0321 End Group
+FINCOPYREPORT,%%$%e        080:0337 send entry
+13,10%%&%e                 080:0344 send code
+%%N%e                      080:0346 if not
+80.50P=0%%o%e              080:0356 Math or Compare
+@MAKE ROW EN DBCOPY PC%%T%e080:0380 tag position
+5,2%%y%e                   080:0385 Database Operation
+	%%{%e                      080:0387 Start Group
+	0%%_%e                     080:0390 if dbase error
+	3,5%%y%e                   080:0395 Database Operation
+	8,2%%y%e                   080:0400 Database Operation
+	80.50P+=1%%o%e             080:0411 Math or Compare
+		%%{%e                      080:0413 Start Group
+		80.50P<20%%o%e             080:0424 Math or Compare
+		@MAKE ROW EN DBCOPY PC%%J%e080:0448 jump to tag
+		%%N%e                      080:0450 if not
+		@ENVIA REPORTES A PC%%J%e  080:0472 jump to tag
+		%%E%e                      080:0474 end if 
+		%%}%e                      080:0476 End Group
+	%%N%e                      080:0478 if not
+	5,5%%y%e                   080:0483 Database Operation
+		%%{%e                      080:0485 Start Group
+		0%%_%e                     080:0488 if dbase error
+		@ENVIA REPORTES A PC%%J%e  080:0510 jump to tag
+		%%E%e                      080:0512 end if 
+		%%}%e                      080:0514 End Group
+	%%E%e                      080:0516 end if 
+	%%}%e                      080:0518 End Group
+%%E%e                      080:0520 end if 
+2%%)%e                     080:0523 flush keys
+
+
+9990%s81%e%e             P9990.   Mac.#    81
+9991%sBorraReport%e      P9991.   MName BorraReport
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.81%s%c%e           P10001.  Macro #81
+A1%%)%e                    081:0004 flush keys
+2%%"%e                     081:0007 select port
+REPORTES BORRADOS%%$%e     081:0026 send entry
+10,5%%y%e                  081:0032 Database Operation
+
+
+9990%s82%e%e             P9990.   Mac.#    82
+9991%sPruebaCom%e        P9991.   MName PruebaCom
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.82%s%c%e           P10001.  Macro #82
+A1%%)%e                    082:0004 flush keys
+2%%"%e                     082:0007 select port
+COMUNICACIONES OK%%$%e     082:0026 send entry
+
+
+9990%s83%e%e             P9990.   Mac.#    83
+9991%sPtoLibre%e         P9991.   MName PtoLibre
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.83%s%c%e           P10001.  Macro #83
+A1%%)%e                    083:0004 flush keys
+2,1%%H%e                   083:0009 Set input 'x' to mode 'y'
+%%S%e                      083:0011 sound beeper
+PUERTO 2 LIBRE%%$%e        083:0027 send entry
+13,10%%&%e                 083:0034 send code
+
+
+9990%s84%e%e             P9990.   Mac.#    84
+9991%sRecProdRefMaq%e    P9991.   MName RecProdRefMaq
+9992%s1%e                P9992.1  Invok Immed
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.84%s%c%e           P10001.  Macro #84
+10,1%%y%e                  084:0006 Database Operation
+10,3%%y%e                  084:0012 Database Operation
+%%S%e                      084:0014 sound beeper
+16,1;2%%y%e                084:0022 Database Operation
+16,3;2%%y%e                084:0030 Database Operation
+1%%@%e                     084:0033 set delay
+%%S%e                      084:0035 sound beeper
+2%%"%e                     084:0038 select port
+PRODUCTOS RECIBIDOS%%$%e   084:0059 send entry
+
+
+9990%s85%e%e             P9990.   Mac.#    85
+9991%sVerifComm%e        P9991.   MName VerifComm
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s0%e                P9994.0  LmtAc  no
+
+19999.85%s%c%e           P10001.  Macro #85
+A%%)%e                     085:0003 flush keys
+2%%"%e                     085:0006 select port
+80.58P==1%%o%e             085:0017 Math or Compare
+%%N%e                      085:0019 if not
+SIN COMM CON PC!P8,21,F1%%C%e085:0045 Display text
+1%%@%e                     085:0048 set delay
+%%P%e                      085:0050 pause
+%%P%e                      085:0052 pause
+%%E%e                      085:0054 end if 
+
+
+9990%s86%e%e             P9990.   Mac.#    86
+9991%sRecUsuarios%e      P9991.   MName RecUsuarios
+9992%s1%e                P9992.1  Invok Immed
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.86%s%c%e           P10001.  Macro #86
+10,4%%y%e                  086:0006 Database Operation
+%%S%e                      086:0008 sound beeper
+16,4;2%%y%e                086:0016 Database Operation
+1%%@%e                     086:0019 set delay
+%%S%e                      086:0021 sound beeper
+2%%"%e                     086:0024 select port
+USUARIOS RECIBIDOS%%$%e    086:0044 send entry
+
+
+9990%s87%e%e             P9990.   Mac.#    87
+9991%sActHoraGSE%e       P9991.   MName ActHoraGSE
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.87%s%c%e           P10001.  Macro #87
+A%%)%e                     087:0003 flush keys
+80.49P==0%%o%e             087:0014 Math or Compare
+%%|%e                      087:0016 OR
+80.49P<1312535761%%o%e     087:0035 Math or Compare
+87%%B%e                    087:0039 break
+%%E%e                      087:0041 end if 
+11P=80.49P%%o%e            087:0053 Math or Compare
+HORA Y FECHA ACTUALIZADAS%%$%e087:0080 send entry
+
+
+9990%s93%e%e             P9990.   Mac.#    93
+9991%sBorraRepPC%e       P9991.   MName BorraRepPC
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.93%s%c%e           P10001.  Macro #93
+A%%)%e                     093:0003 flush keys
+10,5%%y%e                  093:0009 Database Operation
+
+
+9990%s100%e%e            P9990.   Mac.#   100
+9991%sPresentacion%e     P9991.   MName Presentacion
+9992%s0%e                P9992.0  Invok  Std
+9993%s0%e                P9993.0  Menu  Disbl
+9994%s1%e                P9994.1  LmtAc  yes
+
+19999.100%s%c%e          P10001.  Macro #100
+A%%)%e                     100:0003 flush keys
+x%%d%e                     100:0006 display on/off
+Pa%%C%e                    100:0010 Display text
+80.36P=0%%o%e              100:0020 Math or Compare
+80.47P=""%%o%e             100:0031 Math or Compare
+80.48P=""%%o%e             100:0042 Math or Compare
+1,1,8,40W6B%%C%e           100:0055 Display text
+ COLANTA SAN PEDROP3,2,F2%%C%e100:0082 Display text
+JORGE E. JARAMILLO . & Cia LtdaP6,5,F1%%C%e100:0122 Display text
+Manizales - Noviembre de 2010P7,7,F1%%C%e100:0160 Display text
+2%%@%e                     100:0163 set delay
+%%P%e                      100:0165 pause
+Pa%%C%e                    100:0169 Display text
+X%%d%e                     100:0172 display on/off
+1,1H%%d%e                  100:0178 display on/off
+2,2%%H%e                   100:0183 Set input 'x' to mode 'y'
+OPRIMA F1 PARA INICIAR PESAJEP7,1,f1%%C%e100:0221 Display text
+*%%B%e                     100:0224 break
+
+
+
+50000%s0%e               P50000.  LmtAc  no
+
+
+
+60000%s%c                P60000.  FrIns  8192
+60001%s%c                P60001.  See P60040
+60002%s%c                P60002.  RAMsz  128K
+60003%s%c                P60003.  RAMdy 49152
+60004%s%c                P60004.  RAMav 16390
+60005%s%c                P60005.  MTBsz 22416
+60006%s%c                P60006.  FType   AMD
+60007%s%c                P60007.  FSize 1024K
+60008%s%c                P60008.  F Avl  268K
+
+60010%s%c                P60010.  OpRAMPhys       256K
+
+60011%s%c                P60011.  OpRAMInit       256K
+60012%s%c                P60012.  OpRAMAvail  219764 B
+60013%s%c                P60013.  OpRAMUsed    42380 B
+60014%s%c                P60014.  OpRAMBlock  219474 B
+60015%s%c                P60015.  OpRAMDsdUd       0 B
+60016%s%c                P60016.  OpRAMa2dUd       0 B
+60017%s%c                P60017.  OpRAMsrlUd       0 B
+60018%s%c                P60018.  OpBat Good
+
+60020%s%c                P60020.  dbRAMUsed     9500 B
+
+60021%s%c                P60021.  dBaseErrorNot  Found
+
+60030%s1%e               P60030.  DB #:     1
+60031%sPRODUCTOS%e       P60031.  DBNam PRODUCTOS
+60032%s%c                P60032.  NumOfRows        144
+60033%s%c                P60033.  BytesUsed       8716
+60034%s%c                P60034.  Bytes/Row         74
+
+60030%s2%e               P60030.  DB #:     2
+60031%sDatos%e           P60031.  DBNam Datos
+60032%s%c                P60032.  NumOfRows          0
+60033%s%c                P60033.  BytesUsed         88
+60034%s%c                P60034.  Bytes/Row        132
+
+60030%s3%e               P60030.  DB #:     3
+60031%sLISMAQ%e          P60031.  DBNam LISMAQ
+60032%s%c                P60032.  NumOfRows         13
+60033%s%c                P60033.  BytesUsed        506
+60034%s%c                P60034.  Bytes/Row         48
+
+60030%s4%e               P60030.  DB #:     4
+60031%sLISUSUARIOS%e     P60031.  DBNam LISUSUARIOS
+60032%s%c                P60032.  NumOfRows          1
+60033%s%c                P60033.  BytesUsed         98
+60034%s%c                P60034.  Bytes/Row         62
+
+60030%s5%e               P60030.  DB #:     5
+60031%sCopyDatos%e       P60031.  DBNam CopyDatos
+60032%s%c                P60032.  NumOfRows          0
+60033%s%c                P60033.  BytesUsed         92
+60034%s%c                P60034.  Bytes/Row        132
+
+
+60040%s32%c              P60040.  Setup RAM        32K
+
+60041%s%c                P60041.  SetupBytes     32768
+60042%s%c                P60042.  SetupAvail     27701
+60043%s%c                P60043.  SetupUsed       5067
+
+60050%s0%c               P60050.  P-RamSize      Disbl
+
+
+60090%s%e                P60090.  16MHz Clock
+60091%s%e                P60091.      0 RomWS
+60092%s%e                P60092.  FastT RamWS
+
+60100%s%c                P60100.  c GSEis an  AWT  brand  c1995-2009
+60101%s%c                P60101.  450560-11595
+60102%s%c                P60102.  May202011
+60103%s%c                P60103.  BLB560bj1564
+60104%s%c                P60104.  B04042007
+60105%s%c                P60105.
+60106%s%c                P60106.  0057337993
+
+60200%s%c                P60200.  B SN133197
+60201%s%c                P60201.  AuditTrail OIML  00016
+60202%s%c                P60202.  I SN929938
+60203%s%c                P60203.  AuditTrail Cal.  00006
+60204%s%c                P60204.  AuditTrail Setup 00017
+60205%s%c                P60205.  MUST!CHECK
+
+
+
+61099%s1%e               P61099.  Scale     1
+61100%s%c                P61100.  Crrnt mv/v
+61101%s  2.655746%c      P61101.   CAL Factr   2.655746
+61102%s-1037.576294%c    P61102.  ReZro Wght -1037.576294
+61103%s  3.360000%c      P61103.  ZrTrk Wght   3.360000
+61104%s1%c               P61104.  CZero   25%%
+61105%s   2994951%c      P61105.  Fine Zero     2994951
+61106%s3%c               P61106.  CGain   200
+61107%s  1.900000%c      P61107.  Fine Gain    1.900000
+61108%s   1009.18%c      P61108.  TotalGain     1009.18
+61110%s     80203%c      P61110.  Zero Adj25     80203
+61111%s    -20271%c      P61111.  Zero Adj50    -20271
+61112%s   -222038%c      P61112.  Zero Ad100   -222038
+61113%s  0.942903%c      P61113.  Gain Adj1   0.942903
+61114%s  0.946751%c      P61114.  Gain Adj2   0.946751
+61115%s  0.955969%c      P61115.  Gain Adj4   0.955969
+61116%s  0.957124%c      P61116.  Gain Adj8   0.957124
+61117%s     -5535%c      P61117.  AIN  NROff     -5535
+61118%s     -6716%c      P61118.  AIN  NROff     -6716
+61119%s     -7204%c      P61119.  AIN  NROff     -7204
+61120%s     -8649%c      P61120.  AIN  NROff     -8649
+61121%s     -1957%c      P61121.  VREF NROff      -1957
+61122%s 133197%c         P61122.  SN:  133197
+61123%sGOOD!%c           P61123.  BckUp GOOD!
+61150%s    0%c           P61150.  #ofLC     0
+
+
+
+
+
+64100%s0%c               P64100.  LnCnt     0
+64101%s0%c               P64101.  ErCnt     0
+64102%sNone!%c           P64102.  1stEr None!
+64103%s0%c               P64103.  Debug Off
+
+
+1H%d                     Set LCD to large font
+P1,20c,F4%C               Clear four lines of LCD
+
+64102%sSaveOnNoErr%e     View errors after uploading!
+%z%`%`%`%`%`%`%`%c%e     Saving Setup Changes
+
+
+Initializing Variables, Non-Volatile Data
+2.1P=0%o
+3.1P=0%o
+6.1P=0%o
+9.1P=0%o
+24.1P=0%o
+27.1P=0%o
+80.1P="1540"%o
+80.2P="QUESO BLANCO 500 G"%o
+80.3P=500%o
+80.4P=1002371548%o
+80.5P=0%o
+80.6P=0%o
+80.7P=0%o
+80.8P=0%o
+80.9P=0%o
+80.10P=0%o
+80.11P=0%o
+80.12P=0%o
+80.13P=15%o
+80.14P=0%o
+80.15P=1234580%o
+80.16P=0%o
+80.17P=450%o
+80.18P=550%o
+80.19P=0%o
+80.20P=0%o
+80.21P=0%o
+80.22P=0%o
+80.23P=50%o
+80.24P=50%o
+80.25P=0%o
+80.26P=3%o
+80.27P=""%o
+80.28P=0%o
+80.29P=0%o
+80.30P=0%o
+80.31P=0%o
+80.32P=""%o
+80.33P=""%o
+80.34P="TORRE 3 Q.BLANCO"%o
+80.35P="1042"%o
+80.36P=0%o
+80.37P=0%o
+80.38P=0%o
+80.39P=0%o
+80.40P=0%o
+80.41P=0%o
+80.42P=0%o
+80.43P=0%o
+80.44P=0%o
+80.45P=0%o
+80.46P=0%o
+80.47P="1"%o
+80.48P="OPERARIO"%o
+80.49P=1402392697%o
+80.50P=0%o
+80.51P=""%o
+80.52P=2000%o
+80.53P=0%o
+80.54P=0%o
+80.55P=""%o
+80.56P=""%o
+80.57P=""%o
+80.58P=1%o
+80.59P=""%o
+80.60P=0%o
+
+
+*****************************************************************************
+************* Downloading Databases with CLEAR DATABASE COMMAND *************
+*****************************************************************************
+10,1%y
+16,1;0%y
+"4054","AREQUIPE DOY PACK X 1000 G",1000,15.0,100.0
+"DROPPED","",0,0.0,0.0
+"CONNECT","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"DROPPED","",0,0.0,0.0
+"CONNECT","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"ReporteS1","",0,0.0,0.0
+"PruebaComM0","",0,0.0,0.0
+"ProductoS0","",0,0.0,0.0
+"4054","AREQUIPE DOY PACK X 1000 G",1000,15.0,100.0
+"4053","AREQUIPE DOY PACK X 250 G",250,9.0,50.0
+"4010","AREQUIPE X 250 G",250,9.0,50.0
+"4005","AREQUIPE X 500 G",500,15.0,50.0
+"4726","CEREAL ARITOS FRUTADOS",15.9,0.5,10.0
+"4724","CEREAL ARROZ CHOCOLATE",23.9,0.5,10.0
+"4732","CEREAL AZUCARADO",24.9,0.5,10.0
+"4730","CEREAL DESAYUNO",34.9,0.5,10.0
+"4401","CEREAL KID",16.4,0.5,10.0
+"1958","CHEDDAR BLOQUE",12000,2000.0,4000.0
+"1960","CHEDDAR CU¥A",300,200.0,210.0
+"1959","CHEDDAR PEQUE¥O",3500,200.0,1500.0
+"3580","CREMA AGRIA A GRANEL X 4000 G",4000,60.0,250.0
+"3585","CREMA AGRIA X 400 G",400,12.0,50.0
+"1416","CUAJADA X 500 G",500,15.0,50.0
+"2097","DOBLE CREMA 1000G",1000,15.0,100.0
+"2050","DOBLE CREMA 2.5 KG",2500,37.5,150.0
+"2060","DOBLE CREMA 250 G",250,9.0,50.0
+"2055","DOBLE CREMA 450 G",450,13.5,50.0
+"1950","EMMENTAL BLOQUE",6500,1000.0,2500.0
+"1951","EMMENTAL CU¥A",300,200.0,210.0
+"1805","FUNDIDO BLOQUE",2500,500.0,1000.0
+"1954","GRUYERE BLOQUE",6500,1000.0,2500.0
+"1955","GRUYERE CU¥A",300,200.0,210.0
+"1781","HOLANDES X 1000 G",1000,15.0,100.0
+"1765","HOLANDES X 2000 G",2000,30.0,150.0
+"1775","HOLANDES X 250 G",250,9.0,50.0
+"1770","HOLANDES X 475 G",475,14.2,50.0
+"1971","IBERICO CU¥A",250,100.0,200.0
+"1970","IBERICO GRANDE",3500,200.0,1500.0
+"1972","IBERICO PEQUE¥O",1200,200.0,600.0
+"0805","LACTOSUERO POLVO COLANTA A",25000,180.0,1000.0
+"43856","LACTOSUERO POLVO COLANTA C",25000,180.0,1000.0
+"0820","LACTOSUERO PORLVO COLANTA R",25000,180.0,1000.0
+"0550","LP DESCREMADA COLANTA A.",25000,180.0,1000.0
+"064397","LP DESCREMADA COLANTA C",25000,180.0,1000.0
+"0555","LP DESCREMADA COLANTA R",25000,180.0,1000.0
+"0549","LP DESLACTOSADA COALNTA R",25000,180.0,1000.0
+"0542","LP DESLACTOSADA COLANTA A",25000,180.0,1000.0
+"064036","LP DESLACTOSADA COLANTA C",25000,180.0,1000.0
+"0505","LP ENTERA COLANTA A",25000,180.0,1000.0
+"0582","LP ENTERA COLANTA C",25000,180.0,1000.0
+"0508","LP ENTERA COLANTA R",25000,180.0,1000.0
+"0506","LP ENTERA MONTEFRIO A",25000,180.0,1000.0
+"064174","LP ENTERA MONTEFRIO C",25000,180.0,1000.0
+"064173","LP ENTERA MONTEFRIO R",25000,180.0,1000.0
+"1964","MANCHEGO CUNA",250,100.0,200.0
+"1963","MANCHEGO GRANDE",3500,200.0,1500.0
+"1965","MANCHEGO PEQUEÑO",1200,200.0,600.0
+"4091","MANJAR BLANCO X 250 G",250,9.0,50.0
+"4025","MINI AREQUIPE X 50 G",50,4.5,10.0
+"1967","MONTERREY X 2000 G",2000,30.0,150.0
+"1968","MONTERREY X 250 G",250,9.0,50.0
+"1966","MONTERREY X 475 G",475,14.2,50.0
+"2042","MOZZARELLA 1000G",1000,15.0,100.0
+"2035","MOZZARELLA 250G",250,9.0,50.0
+"2010","MOZZARELLA 4000G PDN",4000,60.0,250.0
+"2030","MOZZARELLA 450G",450,13.5,50.0
+"2046","MOZZARELLA CUBICADO",6000,90.0,350.0
+"2045","MOZZARELLA DOMINO CUBICADO",6000,90.0,350.0
+"02027","MOZZARELLA DOMINOS 1000G",1000,15.0,100.0
+"2070","MOZZARELLA TAJADO 2000 G",2000,30.0,150.0
+"2080","MOZZARELLA TAJADO 250 G",250,9.0,50.0
+"2075","MOZZARELLA TAJADO 500 G",500,15.0,50.0
+"2025","MOZZARELLA X 2500 G",2500,37.5,150.0
+"2027","MOZZARELLA X 2500 G PESO VARIA",2500,1000.0,1000.0
+"2072","MOZZARRELLA TAJADO 1000G",1000,15.0,100.0
+"1900","PARMESANO BLOQUE",11000,2000.0,8000.0
+"1906","PARMESANO CU¥A",800,200.0,500.0
+"1985","PECORINO BLOQUE",2000,200.0,1000.0
+"1979","PECORINO CU¥A",300,200.0,210.0
+"4205","PETITO X 90 G X 2",180,8.1,50.0
+"1940","PROVOLONE CU¥A",300,200.0,210.0
+"2020","QUESILLO 250 G",250,9.0,50.0
+"2005","QUESILLO 2500 G",2500,37.5,150.0
+"2004","QUESILLO 2500 P VARIABLE",2500,1000.0,1000.0
+"2015","QUESILLO 450 G",450,13.5,50.0
+"2001","QUESILLO PERA 50 G",50,4.0,20.0
+"1407","QUESITO MONTEFRIO 220 G",220,9.0,50.0
+"1635","QUESO A GRANEL",8000,3000.0,6000.0
+"1520","QUESO BLANCO 1000 G",1000,15.0,100.0
+"1521","QUESO BLANCO 125 G",125,5.6,50.0
+"1517","QUESO BLANCO 2000 G",2000,30.0,150.0
+"1519","QUESO BLANCO 2000 G PESO VARIA",2000,1000.0,1000.0
+"1545","QUESO BLANCO 250 G",250,9.0,50.0
+"1540","QUESO BLANCO 500 G",500,15.0,50.0
+"1552","QUESO BLANCO CAMPESINO X 250 G",250,9.0,50.0
+"1549","QUESO BLANCO LIGHT",250,9.0,50.0
+"1633","QUESO COSTE¥O",10000,1500.0,2000.0
+"2505","QUESO CREMA A GRANEL X 4000 G",4000,60.0,250.0
+"2529","QUESO CREMA SLIGHT X 230 G",230,9.0,50.0
+"2520","QUESO CREMA X 230 G",230,9.0,50.0
+"2527","QUESO CREMA X 40 G",40,3.6,20.0
+"2515","QUESO CREMA X 400 G",400,12.0,50.0
+"1305","QUESO IND.TIPO A",10000,1500.0,2000.0
+"1307","QUESO IND.TIPO B",10000,1500.0,2000.0
+"1566","QUESO PARA ASAR",2500,37.5,150.0
+"2630","RICOTA X 200 G",200,9.0,50.0
+"2625","RICOTTA X 230 G",230,9.0,50.0
+"3588","SUERO COSTEÑO X 230 G",230,9.0,50.0
+"1952","TILSIT BLOQUE",6500,1000.0,2500.0
+"1953","TILSIT CU¥A",300,200.0,210.0
+"4333","YOGUR BENECOL BOTELLA X 100 G",100,4.5,50.0
+"4330","YOGUR BENECOL GARRAFA X 1000 G",1000,15.0,100.0
+"4430","YOGUR BOLSA X 1000 G",1000,15.0,100.0
+"4415","YOGUR BOLSA X 120 G",120,5.4,50.0
+"4422","YOGUR BOLSA X 150 G",150,6.8,50.0
+"4452","YOGUR BOLSA X 200 G",200,9.0,50.0
+"4586","YOGUR GARRAFA X 1000 G",1000,15.0,100.0
+"4309","YOGUR GARRAFA X 1750 G",1750,26.2,100.0
+"4519","YOGUR GARRAFA X 750 G",750,15.0,50.0
+"4637","YOGUR KUMIS BOLSA X 1000 G",1000,15.0,100.0
+"4636","YOGUR KUMIS BOLSA X 200 G",200,9.0,50.0
+"4625","YOGUR KUMIS GARRAFA X 1000 G",1000,15.0,100.0
+"4630","YOGUR KUMIS GARRAFA X 750 G",750,15.0,50.0
+"4644","YOGUR KUMIS VASO X 150 G",150,6.8,50.0
+"4631","YOGUR KUMIS VASO X 200 G",200,6.0,50.0
+"4740","YOGUR S. BOOM GARRAFA X 10",1045.4,10.0,100.0
+"4731","YOGUR S. BOOM VASO X 170 G",170,7.7,50.0
+"4550","YOGUR VASO X 150 G",150,6.8,50.0
+"4308","YOGUR VASO X 200 G",200,6.0,50.0
+"4461","YOGUR YAGUR BOLSA X 1000 G",1000,15.0,100.0
+"4574","YOGUR YAGUR BOLSA X 150 G",150,6.8,50.0
+"4473","YOGUR YAGUR BOLSA X 200 G",200,9.0,50.0
+"4464","YOGUR YAGUR VASO X 150 G",150,6.8,50.0
+"4496","YOGUR YAGUR VASO X 200 G",200,6.0,50.0
+ENDofDB
+10,3%y
+16,3;0%y
+1,"TORRE 1 Q.BLANCO"
+2,"TORRE 2 Q.BLANCO"
+3,"TORRE 3 Q.BLANCO"
+4,"QUESO MOZZARELLA"
+5,"QUESO INDUSTRIAL"
+7,"CEREAL"
+8,"QUESO HOLANDES"
+9,"SECADOR 1"
+10,"SECADOR 2"
+11,"AREQUIPE"
+12,"UNTABLES"
+13,"LECHES CULTIVADAS"
+31,"LLENADORA 3 BOQ 3A"
+ENDofDB
+10,4%y
+16,4;0%y
+"1","OPERARIO"
+ENDofDB
+
+%e                       Exiting Setup
+

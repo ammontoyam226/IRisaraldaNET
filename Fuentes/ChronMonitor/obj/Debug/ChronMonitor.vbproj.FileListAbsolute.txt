@@ -1,0 +1,43 @@
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\bin\Debug\ChronMonitor.exe
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\bin\Debug\ChronMonitor.pdb
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\bin\Debug\ChronMonitor.xml
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ResolveAssemblyReference.cache
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ChronMonitor.FormPPal.resources
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ChronMonitor.Resources.resources
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ChronMonitor.vbproj.GenerateResource.Cache
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ChronMonitor.exe
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ChronMonitor.xml
+C:\Software\PQA\Fuentes\ChronMonitor\ChronMonitor\obj\Debug\ChronMonitor.pdb
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.exe
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.xml
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.pdb
+C:\Software\PQA\Fuentes\ChronMonitor\bin\Debug\ChronMonitor.exe
+C:\Software\PQA\Fuentes\ChronMonitor\bin\Debug\ChronMonitor.pdb
+C:\Software\PQA\Fuentes\ChronMonitor\bin\Debug\ChronMonitor.xml
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ResolveAssemblyReference.cache
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.FormPPal.resources
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.Resources.resources
+C:\Software\PQA\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.vbproj.GenerateResource.Cache
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\bin\Debug\ChronMonitor.exe
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\bin\Debug\ChronMonitor.pdb
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\bin\Debug\ChronMonitor.xml
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\ResolveAssemblyReference.cache
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.FormPPal.resources
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.Resources.resources
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.exe
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.xml
+D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.pdb
+D:\GD\Colanta\Caribe (Medellín)\NET\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.FormPPal.resources
+D:\GD\Colanta\Caribe (Medellín)\NET\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.Resources.resources
+D:\GD\Colanta\Caribe (Medellín)\NET\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.vbproj.GenerateResource.Cache
+D:\GD\Colanta\Caribe (Medellín)\NET\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.exe
+D:\GD\Colanta\Caribe (Medellín)\NET\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.xml
+D:\GD\Colanta\Caribe (Medellín)\NET\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.pdb
+D:\GD\Colanta\Caribe (Medellín)\NET\ChronMonitor.exe
+D:\GD\Colanta\Caribe (Medellín)\NET\ChronMonitor.pdb
+D:\GD\Colanta\Caribe (Medellín)\NET\ChronMonitor.xml
+C:\Tecni\Colanta\Caribe_Medellin\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.exe
+C:\Tecni\Colanta\Caribe_Medellin\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.xml
+C:\Tecni\Colanta\Caribe_Medellin\Fuentes\ChronMonitor\obj\Debug\ChronMonitor.pdb

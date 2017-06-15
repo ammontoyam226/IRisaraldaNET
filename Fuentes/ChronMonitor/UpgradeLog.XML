@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ChronMonitor">
+</Property><Property Name="Archivo de la solución" Value="D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\ChronMonitor.sln">
+</Property><Property Name="Archivo de opciones de usuario" Value="D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\ChronMonitor.suo">
+</Property><Property Name="Date" Value="martes, 06 de mayo de 2014">
+</Property><Property Name="Time" Value="09:46 a.m.">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ChronMonitor.sln" Description="La copia D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\ChronMonitor.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="" Source="ChronMonitor.suo" Description="La copia D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\ChronMonitor.suo del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="ChronMonitor.vbproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\ChronMonitor.vbproj">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="ChronMonitor.vbproj.user" Description="La copia de seguridad D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\ChronMonitor.vbproj.user del archivo se ha creado correctamente">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="FormPPal.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\FormPPal.vb">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="FormPPal.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\FormPPal.Designer.vb">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\AssemblyInfo.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\Application.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\Application.Designer.vb">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\Resources.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\Resources.Designer.vb">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\Settings.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\Settings.Designer.vb">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\Application.myapp" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\Application.myapp">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\Settings.settings" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\Settings.settings">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="02 Network.ico" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\02 Network.ico">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="FormPPal.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\FormPPal.resx">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="My Project\Resources.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\Software\Italcol\GironP1\ChronoSoftNet\Fuentes\ChronMonitor\Backup\My Project\Resources.resx">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="ChronMonitor.vbproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="ChronMonitor" Source="ChronMonitor.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ChronMonitor.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="ChronMonitor.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ChronMonitor" Source="ChronMonitor.vbproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>

@@ -1,0 +1,51 @@
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Acceso.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.AcercaD.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.BasedeDatos.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.ConfigIP.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.DatosEnLinea.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Fondo1.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.GraficasProceso1.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Maquinas.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Productos.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Resources.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Reportes.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Servidor.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Start.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.Usuarios.resources
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChrColantaFunza.vbproj.GenerateResource.Cache
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\RdlCompile.cache
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\RdlCompile.compiled
+D:\GD\Colanta\Funza\NET\ChronoSoftNet.exe.config
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+D:\GD\Colanta\Funza\NET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
+D:\GD\Colanta\Funza\NET\ChronoSoftNet.exe
+D:\GD\Colanta\Funza\NET\ChronoSoftNet.pdb
+D:\GD\Colanta\Funza\NET\ChronoSoftNet.xml
+C:\Tecni\Colanta\Funza\ChronoSoftNet.exe.config
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChrColantaFunza.vbprojResolveAssemblyReference.cache
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Acceso.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.AcercaD.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.BasedeDatos.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.ConfigIP.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.DatosEnLinea.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Fondo1.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.GraficasProceso1.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Maquinas.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Productos.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Resources.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Reportes.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Servidor.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Start.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChronoSoftNet.Usuarios.resources
+C:\Tecni\Colanta\Funza\Fuentes\obj\x86\Debug\ChrColantaFunza.vbproj.GenerateResource.Cache
+C:\Tecni\Colanta\Funza\ChronoSoftNet.exe
+C:\Tecni\Colanta\Funza\ChronoSoftNet.pdb
+C:\Tecni\Colanta\Funza\ChronoSoftNet.xml
+C:\Tecni\Ingenio Risaralda\ChronoSoftNet.exe.config
+C:\Tecni\Ingenio Risaralda\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
+C:\Tecni\Ingenio Risaralda\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+C:\Tecni\Ingenio Risaralda\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
