@@ -123,7 +123,7 @@ Partial Class AcercaD
         Me.RichTextBox5.Location = New System.Drawing.Point(272, 155)
         Me.RichTextBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RichTextBox5.Name = "RichTextBox5"
-        Me.RichTextBox5.Size = New System.Drawing.Size(223, 21)
+        Me.RichTextBox5.Size = New System.Drawing.Size(239, 21)
         Me.RichTextBox5.TabIndex = 20
         Me.RichTextBox5.Text = "Tecnimática S.A.S. Colombia  "
         '
