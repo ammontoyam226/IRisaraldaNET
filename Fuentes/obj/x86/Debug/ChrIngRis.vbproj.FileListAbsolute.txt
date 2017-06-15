@@ -33,3 +33,6 @@ C:\Users\avargase\Documents\GitHub\IRisaraldaNET\ChronoSoftNet.exe.config
 C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
 C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
 >>>>>>> d338ddd6dcfff13a680d7b07474d8e909688bea6
+C:\Users\CristianMauricio\Documents\GitHub\IRisaraldaNET\ChronoSoftNet.exe.config
+C:\Users\CristianMauricio\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+C:\Users\CristianMauricio\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
