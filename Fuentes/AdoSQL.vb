@@ -50,6 +50,18 @@ Public Class AdoSQL
             MsgError(ex.ToString)
         End Try
     End Sub
+
+    Public Sub Close()
+        Try
+            Adaptador.Dispose()
+            CBuiler.Dispose()
+            Ds.Dispose()
+            DataTable.Dispose()
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
+
     Public Sub Update()
         Try
             If NewReg = "NEW" Then Datatabla.Rows.Add(Me.RecordSet)

@@ -24,3 +24,6 @@ C:\Tecni\Ingenio Risaralda\ChronoSoftNet.exe
 C:\Tecni\Ingenio Risaralda\ChronoSoftNet.pdb
 C:\Tecni\Ingenio Risaralda\ChronoSoftNet.xml
 C:\Tecni\Ingenio Risaralda\Fuentes\obj\x86\Debug\ChrIngRis.vbprojResolveAssemblyReference.cache
+D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.exe.config
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
