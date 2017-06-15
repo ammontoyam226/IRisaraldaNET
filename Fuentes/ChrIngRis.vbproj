@@ -170,6 +170,12 @@
     <Compile Include="ConfigIP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Configuraciones.Designer.vb">
+      <DependentUpon>Configuraciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Connection.vb" />
     <Compile Include="CrystalRep.vb" />
     <Compile Include="DatosEnLinea.Designer.vb">
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigIP.resx">
       <DependentUpon>ConfigIP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones.resx">
+      <DependentUpon>Configuraciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatosEnLinea.resx">
       <DependentUpon>DatosEnLinea.vb</DependentUpon>
