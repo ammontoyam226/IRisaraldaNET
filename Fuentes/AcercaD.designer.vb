@@ -125,7 +125,7 @@ Partial Class AcercaD
         Me.RichTextBox5.Name = "RichTextBox5"
         Me.RichTextBox5.Size = New System.Drawing.Size(223, 21)
         Me.RichTextBox5.TabIndex = 20
-        Me.RichTextBox5.Text = "Tecnimática S.A.S. Colombia"
+        Me.RichTextBox5.Text = "Tecnimática S.A.S. Colombia   3334"
         '
         'RichTextBox6
         '

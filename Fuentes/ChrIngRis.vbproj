@@ -159,11 +159,6 @@
     <Compile Include="BasedeDatos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChrColFunDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChrColFunDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConfigIP.Designer.vb">
       <DependentUpon>ConfigIP.vb</DependentUpon>
     </Compile>
@@ -317,17 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ChrColFunDataSet.xsc">
-      <DependentUpon>ChrColFunDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ChrColFunDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ChrColFunDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ChrColFunDataSet.xss">
-      <DependentUpon>ChrColFunDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
