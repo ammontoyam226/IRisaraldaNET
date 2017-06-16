@@ -195,7 +195,7 @@ Public Class Fondo1
             '    MsgBox("No tiene permiso para ejecutar la acción solicitada", MsgBoxStyle.Information)
             '    Exit Sub
             'End If
-            Ensaque.ShowDialog()
+            'Ensaque.ShowDialog()
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try

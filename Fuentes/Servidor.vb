@@ -152,7 +152,7 @@ Public Class Servidor
             Next
 
             RutaArchivarGSE = Ruta + "Aplanos\GSE"
-            Ensaque.Ensaque_Load(Nothing, Nothing)
+            'Ensaque.Ensaque_Load(Nothing, Nothing)
 
         Catch ex As Exception
             MsgError(ex.ToString)
@@ -674,26 +674,26 @@ Public Class Servidor
             'CamposSac(Index) = RenglonesSac(Index)(1).Split(",")
             CamposSac(Index) = RepSac(Index).Split(",")
 
-            Ensaque.TConsec(Index).Text = CamposSac(Index)(1)
-            Ensaque.TCodProd(Index).Text = CamposSac(Index)(3)
-            Ensaque.TPesSac(Index).Text = CamposSac(Index)(5)
-            Ensaque.TPesoTot(Index).Text = CamposSac(Index)(7)
-            Ensaque.TPreset(Index).Text = CamposSac(Index)(9)
-            Ensaque.TStat(Index).Text = CamposSac(Index)(11)
-            Ensaque.TBandChk(Index).Text = CamposSac(Index)(13)
-            Ensaque.TSacChk(Index).Text = CamposSac(Index)(15)
-            Ensaque.TPesoUlt(Index).Text = CamposSac(Index)(17)
-            Ensaque.TSacUnder(Index).Text = CamposSac(Index)(19)
-            Ensaque.TSacOver(Index).Text = CamposSac(Index)(21)
+            'Ensaque.TConsec(Index).Text = CamposSac(Index)(1)
+            'Ensaque.TCodProd(Index).Text = CamposSac(Index)(3)
+            'Ensaque.TPesSac(Index).Text = CamposSac(Index)(5)
+            'Ensaque.TPesoTot(Index).Text = CamposSac(Index)(7)
+            'Ensaque.TPreset(Index).Text = CamposSac(Index)(9)
+            'Ensaque.TStat(Index).Text = CamposSac(Index)(11)
+            'Ensaque.TBandChk(Index).Text = CamposSac(Index)(13)
+            'Ensaque.TSacChk(Index).Text = CamposSac(Index)(15)
+            'Ensaque.TPesoUlt(Index).Text = CamposSac(Index)(17)
+            'Ensaque.TSacUnder(Index).Text = CamposSac(Index)(19)
+            'Ensaque.TSacOver(Index).Text = CamposSac(Index)(21)
 
 
-            If Ensaque.TStat(Index).Text = 1 Then
-                WriteFile(Ruta + "APlanos\Sac" + Index.ToString + "_" + Now.ToString("yyMMdd") + ".txt", Now.ToString("HH:mm:ss") + " " + RepSac(Index))
-            End If
+            'If Ensaque.TStat(Index).Text = 1 Then
+            '    WriteFile(Ruta + "APlanos\Sac" + Index.ToString + "_" + Now.ToString("yyMMdd") + ".txt", Now.ToString("HH:mm:ss") + " " + RepSac(Index))
+            'End If
 
-            If ValAnt(Index) <> Eval(Ensaque.TPesSac(Index).Text) Then
-                ValAnt(Index) = Ensaque.TPesSac(Index).Text
-            End If
+            'If ValAnt(Index) <> Eval(Ensaque.TPesSac(Index).Text) Then
+            '    ValAnt(Index) = Ensaque.TPesSac(Index).Text
+            'End If
 
         Catch ex As Exception
             MsgError(ex.ToString)

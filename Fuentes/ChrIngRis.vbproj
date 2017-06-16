@@ -185,12 +185,6 @@
     <Compile Include="DatosGraf.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ensaque.designer.vb">
-      <DependentUpon>Ensaque.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ensaque.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Fondo1.designer.vb">
       <DependentUpon>Fondo1.vb</DependentUpon>
     </Compile>
@@ -280,9 +274,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatosGraf.resx">
       <DependentUpon>DatosGraf.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ensaque.resx">
-      <DependentUpon>Ensaque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fondo1.resx">
       <DependentUpon>Fondo1.vb</DependentUpon>

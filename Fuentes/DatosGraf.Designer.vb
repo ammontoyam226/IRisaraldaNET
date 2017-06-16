@@ -27,17 +27,28 @@ Partial Class DatosGraf
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BSalir = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DGPesos = New System.Windows.Forms.DataGridView()
+        Me.TMensaje = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TCodProd = New System.Windows.Forms.TextBox()
+        Me.TNomProd = New System.Windows.Forms.TextBox()
+        Me.TPeso = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TPesoReal = New System.Windows.Forms.Label()
+        Me.TPresKg = New System.Windows.Forms.TextBox()
+        Me.TProm = New System.Windows.Forms.TextBox()
+        Me.TMaquina = New System.Windows.Forms.TextBox()
+        Me.TFecha = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TBascula = New System.Windows.Forms.TextBox()
+        Me.TID = New System.Windows.Forms.TextBox()
+        Me.TMenSacChK = New System.Windows.Forms.Label()
+        Me.BGrafEnsac = New System.Windows.Forms.Button()
+        Me.BGrafRep = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGPesos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -46,7 +57,7 @@ Partial Class DatosGraf
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.BSalir, Me.ToolStripSeparator9})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(404, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(396, 25)
         Me.ToolStrip1.TabIndex = 38
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -69,23 +80,23 @@ Partial Class DatosGraf
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 25)
         '
-        'DataGridView1
+        'DGPesos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(250, 72)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(113, 163)
-        Me.DataGridView1.TabIndex = 39
+        Me.DGPesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGPesos.Location = New System.Drawing.Point(250, 72)
+        Me.DGPesos.Name = "DGPesos"
+        Me.DGPesos.Size = New System.Drawing.Size(113, 158)
+        Me.DGPesos.TabIndex = 39
         '
-        'Label1
+        'TMensaje
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(89, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(302, 13)
-        Me.Label1.TabIndex = 40
-        Me.Label1.Text = "Peso de los sacos Programados para ser Graficados"
+        Me.TMensaje.AutoSize = True
+        Me.TMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TMensaje.Location = New System.Drawing.Point(57, 29)
+        Me.TMensaje.Name = "TMensaje"
+        Me.TMensaje.Size = New System.Drawing.Size(302, 13)
+        Me.TMensaje.TabIndex = 40
+        Me.TMensaje.Text = "Peso de los sacos Programados para ser Graficados"
         '
         'Label2
         '
@@ -97,35 +108,37 @@ Partial Class DatosGraf
         Me.Label2.TabIndex = 41
         Me.Label2.Text = "Producto:"
         '
-        'TextBox1
+        'TCodProd
         '
-        Me.TextBox1.Location = New System.Drawing.Point(32, 72)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 42
+        Me.TCodProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.TCodProd.Location = New System.Drawing.Point(32, 72)
+        Me.TCodProd.Name = "TCodProd"
+        Me.TCodProd.Size = New System.Drawing.Size(100, 20)
+        Me.TCodProd.TabIndex = 42
         '
-        'TextBox2
+        'TNomProd
         '
-        Me.TextBox2.Location = New System.Drawing.Point(32, 98)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(201, 20)
-        Me.TextBox2.TabIndex = 43
+        Me.TNomProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TNomProd.Location = New System.Drawing.Point(32, 98)
+        Me.TNomProd.Name = "TNomProd"
+        Me.TNomProd.Size = New System.Drawing.Size(201, 20)
+        Me.TNomProd.TabIndex = 43
         '
-        'Label3
+        'TPeso
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 139)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 44
-        Me.Label3.Text = "PresKg:"
+        Me.TPeso.AutoSize = True
+        Me.TPeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TPeso.Location = New System.Drawing.Point(29, 139)
+        Me.TPeso.Name = "TPeso"
+        Me.TPeso.Size = New System.Drawing.Size(44, 13)
+        Me.TPeso.TabIndex = 44
+        Me.TPeso.Text = "PresKg:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(29, 210)
+        Me.Label4.Location = New System.Drawing.Point(29, 212)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 45
@@ -135,42 +148,150 @@ Partial Class DatosGraf
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(29, 187)
+        Me.Label5.Location = New System.Drawing.Point(29, 188)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(51, 13)
         Me.Label5.TabIndex = 46
         Me.Label5.Text = "Máquina:"
         '
-        'Label6
+        'TPesoReal
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(29, 163)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(54, 13)
-        Me.Label6.TabIndex = 47
-        Me.Label6.Text = "Promedio:"
+        Me.TPesoReal.AutoSize = True
+        Me.TPesoReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TPesoReal.Location = New System.Drawing.Point(29, 163)
+        Me.TPesoReal.Name = "TPesoReal"
+        Me.TPesoReal.Size = New System.Drawing.Size(54, 13)
+        Me.TPesoReal.TabIndex = 47
+        Me.TPesoReal.Text = "Promedio:"
+        '
+        'TPresKg
+        '
+        Me.TPresKg.Location = New System.Drawing.Point(109, 132)
+        Me.TPresKg.Name = "TPresKg"
+        Me.TPresKg.Size = New System.Drawing.Size(71, 20)
+        Me.TPresKg.TabIndex = 48
+        Me.TPresKg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TProm
+        '
+        Me.TProm.Location = New System.Drawing.Point(109, 158)
+        Me.TProm.Name = "TProm"
+        Me.TProm.Size = New System.Drawing.Size(71, 20)
+        Me.TProm.TabIndex = 49
+        Me.TProm.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TMaquina
+        '
+        Me.TMaquina.Location = New System.Drawing.Point(109, 184)
+        Me.TMaquina.Name = "TMaquina"
+        Me.TMaquina.Size = New System.Drawing.Size(71, 20)
+        Me.TMaquina.TabIndex = 50
+        Me.TMaquina.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TFecha
+        '
+        Me.TFecha.Location = New System.Drawing.Point(109, 210)
+        Me.TFecha.Name = "TFecha"
+        Me.TFecha.Size = New System.Drawing.Size(100, 20)
+        Me.TFecha.TabIndex = 51
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(186, 139)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(20, 13)
+        Me.Label7.TabIndex = 52
+        Me.Label7.Text = "Kg"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(187, 163)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(20, 13)
+        Me.Label9.TabIndex = 54
+        Me.Label9.Text = "Kg"
+        '
+        'TBascula
+        '
+        Me.TBascula.Location = New System.Drawing.Point(270, 175)
+        Me.TBascula.Name = "TBascula"
+        Me.TBascula.Size = New System.Drawing.Size(71, 20)
+        Me.TBascula.TabIndex = 55
+        Me.TBascula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TID
+        '
+        Me.TID.Location = New System.Drawing.Point(270, 202)
+        Me.TID.Name = "TID"
+        Me.TID.Size = New System.Drawing.Size(71, 20)
+        Me.TID.TabIndex = 56
+        Me.TID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TMenSacChK
+        '
+        Me.TMenSacChK.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TMenSacChK.ForeColor = System.Drawing.Color.Red
+        Me.TMenSacChK.Location = New System.Drawing.Point(40, 245)
+        Me.TMenSacChK.Name = "TMenSacChK"
+        Me.TMenSacChK.Size = New System.Drawing.Size(302, 44)
+        Me.TMenSacChK.TabIndex = 57
+        Me.TMenSacChK.Text = "El punto seleccionado de la Grafica equivale a un saco Chequeado, en donde el pro" & _
+    "medio es el peso del saco."
+        Me.TMenSacChK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'BGrafEnsac
+        '
+        Me.BGrafEnsac.Location = New System.Drawing.Point(267, 81)
+        Me.BGrafEnsac.Name = "BGrafEnsac"
+        Me.BGrafEnsac.Size = New System.Drawing.Size(75, 23)
+        Me.BGrafEnsac.TabIndex = 58
+        Me.BGrafEnsac.Text = "BGrafEnsac"
+        Me.BGrafEnsac.UseVisualStyleBackColor = True
+        '
+        'BGrafRep
+        '
+        Me.BGrafRep.Location = New System.Drawing.Point(267, 109)
+        Me.BGrafRep.Name = "BGrafRep"
+        Me.BGrafRep.Size = New System.Drawing.Size(75, 23)
+        Me.BGrafRep.TabIndex = 59
+        Me.BGrafRep.Text = "BGrafRep"
+        Me.BGrafRep.UseVisualStyleBackColor = True
         '
         'DatosGraf
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(404, 256)
-        Me.Controls.Add(Me.Label6)
+        Me.ClientSize = New System.Drawing.Size(396, 298)
+        Me.Controls.Add(Me.BGrafRep)
+        Me.Controls.Add(Me.BGrafEnsac)
+        Me.Controls.Add(Me.TMenSacChK)
+        Me.Controls.Add(Me.TID)
+        Me.Controls.Add(Me.TBascula)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.TFecha)
+        Me.Controls.Add(Me.TMaquina)
+        Me.Controls.Add(Me.TProm)
+        Me.Controls.Add(Me.TPresKg)
+        Me.Controls.Add(Me.TPesoReal)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TPeso)
+        Me.Controls.Add(Me.TNomProd)
+        Me.Controls.Add(Me.TCodProd)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.TMensaje)
+        Me.Controls.Add(Me.DGPesos)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "DatosGraf"
-        Me.Text = "DatosGraf"
+        Me.Text = "Datos Saco Graficado"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGPesos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -179,13 +300,24 @@ Partial Class DatosGraf
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BSalir As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents DGPesos As System.Windows.Forms.DataGridView
+    Friend WithEvents TMensaje As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents TCodProd As System.Windows.Forms.TextBox
+    Friend WithEvents TNomProd As System.Windows.Forms.TextBox
+    Friend WithEvents TPeso As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents TPesoReal As System.Windows.Forms.Label
+    Friend WithEvents TPresKg As System.Windows.Forms.TextBox
+    Friend WithEvents TProm As System.Windows.Forms.TextBox
+    Friend WithEvents TMaquina As System.Windows.Forms.TextBox
+    Friend WithEvents TFecha As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents TBascula As System.Windows.Forms.TextBox
+    Friend WithEvents TID As System.Windows.Forms.TextBox
+    Friend WithEvents TMenSacChK As System.Windows.Forms.Label
+    Friend WithEvents BGrafEnsac As System.Windows.Forms.Button
+    Friend WithEvents BGrafRep As System.Windows.Forms.Button
 End Class
