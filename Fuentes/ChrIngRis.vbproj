@@ -159,11 +159,6 @@
     <Compile Include="BasedeDatos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChrColFunDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChrColFunDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConfigIP.Designer.vb">
       <DependentUpon>ConfigIP.vb</DependentUpon>
     </Compile>
@@ -184,10 +179,10 @@
     <Compile Include="DatosEnLinea.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ensaque.designer.vb">
-      <DependentUpon>Ensaque.vb</DependentUpon>
+    <Compile Include="DatosGraf.Designer.vb">
+      <DependentUpon>DatosGraf.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ensaque.vb">
+    <Compile Include="DatosGraf.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fondo1.designer.vb">
@@ -277,8 +272,8 @@
     <EmbeddedResource Include="DatosEnLinea.resx">
       <DependentUpon>DatosEnLinea.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ensaque.resx">
-      <DependentUpon>Ensaque.vb</DependentUpon>
+    <EmbeddedResource Include="DatosGraf.resx">
+      <DependentUpon>DatosGraf.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fondo1.resx">
       <DependentUpon>Fondo1.vb</DependentUpon>
@@ -317,17 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ChrColFunDataSet.xsc">
-      <DependentUpon>ChrColFunDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ChrColFunDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ChrColFunDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ChrColFunDataSet.xss">
-      <DependentUpon>ChrColFunDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

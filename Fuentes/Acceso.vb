@@ -90,8 +90,8 @@ Public Class Acceso
 
             'Se creo este usuario para que se pueda abrir automaticamente en el servidor 
             If ServCHR Or ServComM Then
-                TUsuario.Text = "SERVIDOR"
-                TClave.Text = "SERVIDOR"
+                TUsuario.Text = "A"
+                TClave.Text = "A"
                 BOk_Click(Nothing, Nothing)
             End If
 
