@@ -253,7 +253,7 @@ Partial Class Configuraciones
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(286, 14)
         Me.Label12.TabIndex = 20
-        Me.Label12.Text = "Tiempo de Muestro de Sacos Comprobadora 3"
+        Me.Label12.Text = "Tiempo de Muestreo de Sacos Comprobadora 3"
         '
         'Label11
         '
@@ -264,7 +264,7 @@ Partial Class Configuraciones
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(286, 14)
         Me.Label11.TabIndex = 19
-        Me.Label11.Text = "Tiempo de Muestro de Sacos Comprobadora 4"
+        Me.Label11.Text = "Tiempo de Muestreo de Sacos Comprobadora 4"
         '
         'Label10
         '
@@ -275,7 +275,7 @@ Partial Class Configuraciones
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(286, 14)
         Me.Label10.TabIndex = 18
-        Me.Label10.Text = "Tiempo de Muestro de Sacos Comprobadora 2"
+        Me.Label10.Text = "Tiempo de Muestreo de Sacos Comprobadora 2"
         '
         'Label9
         '
@@ -286,7 +286,7 @@ Partial Class Configuraciones
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(286, 14)
         Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Tiempo de Muestro de Sacos Comprobadora 1"
+        Me.Label9.Text = "Tiempo de Muestreo de Sacos Comprobadora 1"
         '
         'TSacGrafEnsc2
         '
