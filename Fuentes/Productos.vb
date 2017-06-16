@@ -46,7 +46,7 @@
             If DVarios.RecordCount = 0 Then Return
 
             TNombre.Text = DVarios.RecordSet("NOMBRE")
-            TRangoCap.Text = DVarios.RecordSet("RANGOCAPT")
+            'TRangoCap.Text = DVarios.RecordSet("RANGOCAPT")
             TPresEmpKg.Text = DVarios.RecordSet("TOLERANCIA")
             TPresKg.Text = DVarios.RecordSet("PESONOM")
             'TLimInf.Text = DVarios.RecordSet("LIMINF")
