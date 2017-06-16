@@ -181,7 +181,7 @@ Public Class Acceso
                 VerAlarmas = True
                 Fondo1.SCEscritorio.Panel1Collapsed = False
                 Fondo1.SCEscritorio.SplitterDistance = 604
-                'Fondo1.BServidor_Click(Nothing, Nothing)
+                Fondo1.BServidor_Click(Nothing, Nothing)
             Else
                 Fondo1.SCEscritorio.Panel1Collapsed = True
             End If
