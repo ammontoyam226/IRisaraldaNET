@@ -352,4 +352,12 @@ Public Class Fondo1
             MsgError(ex.ToString)
         End Try
     End Sub
+
+    Private Sub BEmpaque_Click(sender As System.Object, e As System.EventArgs) Handles BEmpaque.Click
+        Try
+            Empaque.ShowDialog()
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
 End Class

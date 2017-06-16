@@ -5,7 +5,6 @@ D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Config
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Configuraciones.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.DatosEnLinea.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.DatosGraf.resources
-D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Ensaque.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Fondo1.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.GraficasProceso1.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Maquinas.resources
@@ -25,3 +24,5 @@ D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
 D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.exe
 D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.pdb
 D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.xml
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChrIngRis.vbprojResolveAssemblyReference.cache
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Empaque.resources

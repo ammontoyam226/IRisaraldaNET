@@ -53,6 +53,9 @@ Module VariablesGlobales
     Public Sesion As String
     Public VerAlarmas As Boolean
 
+
+    Public NMaq As Integer
+
 #End Region
 
 #Region "Funcion que reemplaza al VAL, no interesa la configuracion decimal 'EVAL'"

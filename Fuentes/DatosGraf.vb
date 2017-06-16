@@ -56,6 +56,7 @@
                 TProm.Text = Prom.ToString
             End If
 
+            DPesos.Close()
             DPesos.Open("select * from PESOS where MAQUINA=" + Trim(TMaquina.Text) + " and ID=" + Trim(TID.Text) + " and BASCULA=" + Trim(TBascula.Text))
             DGPesos.DataSource = DPesos.DataTable
 
