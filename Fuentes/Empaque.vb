@@ -45,6 +45,7 @@ Public Class Empaque
     'Variables
     Dim PesoAnt(5) As Single
     Dim ContTolva(5) As Integer
+    Dim MesDia(5) As Integer
 
     Dim Maq(5) As Integer
     Dim ContMaq(5) As Integer
@@ -380,7 +381,7 @@ Public Class Empaque
                     'Verifica tolerancias
                     If Eval(TPesoUltB(Index + 10).Text) < (Eval(DProd(Index).RecordSet("PresKg")) - DProd(Index).RecordSet("TolInfEmp")) Then           'Bajo Peso
                         Alarma("Saco con Bajo Peso Báscula 1 ensacadora " + Trim(Index) + " Saco " + Trim(TSacos(Index).Text) + " Peso Saco " + Trim(Eval(TPesoUltB(Index + 10).Text)) + " Kg")
-                        
+
 
                         DVariosConfig(Index).Open("select * from VARIOSCONFIG where DESCRIPCION='ConsPesosUnOvSac'")
 
@@ -412,7 +413,7 @@ Public Class Empaque
                         Alarma("Saco con Sobre Peso Báscula 1 ensacadora " + Trim(Index) + " Saco " + Trim(TSacos(Index).Text) + " Peso Saco " + Trim(Eval(TPesoUltB(Index + 10).Text)) + " Kg")
 
                         DVariosConfig(Index).Open("select * from VARIOSCONFIG where DESCRIPCION='ConsPesosUnOvSac'")
-                        
+
 
                         DPesosUnOvSac(Index).Open(" select * from PESOSUNOVSAC where MAQUINA=0") 'Lo abro Vacío
 
@@ -628,6 +629,67 @@ Public Class Empaque
                 End If
 
 
+            End If
+
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub FNuevoEmp1_Click(sender As System.Object, e As System.EventArgs) Handles FNuevoEmp1.Click
+        Try
+            Dim Index As Int32 = FNuevoEmp.Index(CType(sender, Button))
+
+            MesDia(Index) = Format(Now, "MMdd")
+
+            Evento("Inicia ciclo de empaque Máq." + Trim(Index))
+
+            DVariosConfig(Index).Open("select * from VARIOSCONFIG where DESCRIPCION='ConsEmpaque" + Trim(Index) + "'")
+
+            DEmpaque(Index).AddNew()
+            DEmpaque(Index).RecordSet("Cont ") = DVariosConfig(Index).RecordSet("Cantidad") + 1   ' Autonúmerico Esperar para Oracle
+            DEmpaque(Index).RecordSet("CodProd ") = CLeft(TCodProd(Index).Text, 20)
+            DEmpaque(Index).RecordSet("NomProd ") = CLeft(TNomProd(Index).Text, 20)
+            DEmpaque(Index).RecordSet("ContBasc ") = TContBasc(Index).Text
+            DEmpaque(Index).RecordSet("Maquina ") = Index
+            DEmpaque(Index).RecordSet("PresKg ") = Eval(TPresKg(Index).Text)
+            DEmpaque(Index).RecordSet("MesDia ") = MesDia
+            DEmpaque(Index).RecordSet("Acumulado ") = AcumuladoB
+            DEmpaque(Index).RecordSet("Acumulado2 ") = 0
+
+            DEmpaque(Index).RecordSet("SacOkB ") = SacOkB(Index)
+            DEmpaque(Index).RecordSet("SacChkB ") = SacChkB(Index)
+            DEmpaque(Index).RecordSet("SacUnderB ") = SacUnderB(Index)
+            DEmpaque(Index).RecordSet("SacOverB ") = SacOverB(Index)
+            DEmpaque(Index).RecordSet("SacOkA ") = 0
+            DEmpaque(Index).RecordSet("SacUnderA ") = 0
+            DEmpaque(Index).RecordSet("SacOverA ") = 0
+            DEmpaque(Index).RecordSet("SacChkA ") = 0
+
+            DEmpaque(Index).RecordSet("Fecha ") = FechaC()
+            DEmpaque(Index).RecordSet("Fecha2 ") = FechaC()
+            DEmpaque(Index).RecordSet("FECHAF ") = Now
+            DEmpaque(Index).RecordSet("FECHAF2 ") = Now
+            DEmpaque(Index).Update()
+
+            DVariosConfig(Index).RecordSet("Cantidad ") = DVariosConfig(Index).RecordSet("Cantidad") + 1
+            DVariosConfig(Index).Update()
+
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub TCodProd1_TextChanged(sender As System.Object, e As System.EventArgs) Handles TCodProd1.TextChanged
+        Try
+            Dim Index As Int32 = FNuevoEmp.Index(CType(sender, Button))
+            If Eval(TCodProd(Index).Text) = 0 Then Exit Sub
+
+            DProd(Index).Open("select * from PRODUCTOS where CODPROD='" + Trim(TCodProd(Index).Text) + "'")
+
+            If DProd(Index).RecordCount > 0 Then
+                TNomProd(Index).Text = Trim(CLeft(DProd(Index).RecordSet("NomProd"), 30))
+                TPresKg(Index).Text = Trim(DProd(Index).RecordSet("PresKg"))
             End If
 
         Catch ex As Exception

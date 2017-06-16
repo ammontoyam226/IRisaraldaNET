@@ -23,9 +23,9 @@ Partial Class Empaque
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empaque))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BSalir = New System.Windows.Forms.ToolStripButton()
@@ -33,6 +33,7 @@ Partial Class Empaque
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TPEmp1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BProcesa = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TSacxMin1 = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -101,7 +102,6 @@ Partial Class Empaque
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.BProcesa = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TPEmp1.SuspendLayout()
@@ -216,6 +216,16 @@ Partial Class Empaque
         Me.GroupBox1.TabIndex = 37
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Empacadora 1"
+        '
+        'BProcesa
+        '
+        Me.BProcesa.Location = New System.Drawing.Point(250, 243)
+        Me.BProcesa.Name = "BProcesa"
+        Me.BProcesa.Size = New System.Drawing.Size(75, 23)
+        Me.BProcesa.TabIndex = 84
+        Me.BProcesa.Text = "BProcesa"
+        Me.BProcesa.UseVisualStyleBackColor = True
+        Me.BProcesa.Visible = False
         '
         'Label1
         '
@@ -355,17 +365,17 @@ Partial Class Empaque
         '
         'ChTorta1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.ChTorta1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.ChTorta1.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.ChTorta1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChTorta1.Legends.Add(Legend2)
         Me.ChTorta1.Location = New System.Drawing.Point(352, 20)
         Me.ChTorta1.Name = "ChTorta1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.ChTorta1.Series.Add(Series1)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.ChTorta1.Series.Add(Series2)
         Me.ChTorta1.Size = New System.Drawing.Size(268, 217)
         Me.ChTorta1.TabIndex = 68
         Me.ChTorta1.Text = "Chart1"
@@ -897,16 +907,6 @@ Partial Class Empaque
         Me.TabPage4.Size = New System.Drawing.Size(682, 621)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Empacadora 4"
-        '
-        'BProcesa
-        '
-        Me.BProcesa.Location = New System.Drawing.Point(250, 243)
-        Me.BProcesa.Name = "BProcesa"
-        Me.BProcesa.Size = New System.Drawing.Size(75, 23)
-        Me.BProcesa.TabIndex = 84
-        Me.BProcesa.Text = "BProcesa"
-        Me.BProcesa.UseVisualStyleBackColor = True
-        Me.BProcesa.Visible = False
         '
         'Empaque
         '
