@@ -19,7 +19,7 @@
         End Try
     End Sub
 
-    Private Sub FRefrescaDGProd_Click(sender As System.Object, e As System.EventArgs) Handles FRefrescaDGProd.Click
+    Private Sub FRefrescaDGProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Try
             DProd.Open("Select * from ARTICULOS where TIPO='PT' order BY Nombre")
             DGProd.AutoGenerateColumns = False
@@ -32,7 +32,7 @@
         End Try
     End Sub
 
-    Private Sub DGProd_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGProd.CellClick
+    Private Sub DGProd_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         Try
             If DGProd.RowCount = 0 Then Return
             If DGProd.CurrentCell Is Nothing Then Return
@@ -46,9 +46,9 @@
             If DVarios.RecordCount = 0 Then Return
 
             TNombre.Text = DVarios.RecordSet("NOMBRE")
-            TRangoCap.Text = DVarios.RecordSet("RANGOCAPT")
-            TTolerancia.Text = DVarios.RecordSet("TOLERANCIA")
-            TPesoNom.Text = DVarios.RecordSet("PESONOM")
+            'TRangoCap.Text = DVarios.RecordSet("RANGOCAPT")
+            TPresEmpKg.Text = DVarios.RecordSet("TOLERANCIA")
+            TPresKg.Text = DVarios.RecordSet("PESONOM")
             'TLimInf.Text = DVarios.RecordSet("LIMINF")
             'TLimSup.Text = DVarios.RecordSet("LIMSUP")
             'TErrorT1.Text = DVarios.RecordSet("ERRORT1")
@@ -59,7 +59,7 @@
         End Try
     End Sub
 
-    Private Sub BCancelar_Click(sender As System.Object, e As System.EventArgs) Handles BCancelar.Click
+    Private Sub BCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BCancelar.Click
         Try
             Limpiar_Habilitar_TextBox(Me.Controls, AccionTextBox.Limpiar)
             Limpiar_Habilitar_TextBox(SCProductos.Panel1.Controls, AccionTextBox.Deshabilitar)
@@ -70,7 +70,7 @@
         End Try
     End Sub
 
-    Private Sub BEditar_Click(sender As System.Object, e As System.EventArgs) Handles BEditar.Click
+    Private Sub BEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BEditar.Click
         Try
             If DRUsuario("ModProd") Then
             Else
@@ -83,7 +83,7 @@
         End Try
     End Sub
 
-    Private Sub BNuevo_Click(sender As System.Object, e As System.EventArgs) Handles BNuevo.Click
+    Private Sub BNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BNuevo.Click
         Try
             If DRUsuario("ModProd") Then
             Else
@@ -99,34 +99,33 @@
         End Try
     End Sub
 
-    Private Sub BAceptar_Click(sender As System.Object, e As System.EventArgs) Handles BAceptar.Click
+    Private Sub BAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAceptar.Click
         Try
 
             If TCodInt.Text = "" Then
-                MsgBox("El código del producto no puede ser una cadena vacia", vbInformation)
+                MsgBox("El código del producto no puede ser una cadena vacía.", vbInformation)
                 Return
             End If
 
-            If Eval(TPesoNom.Text) = 0 Then
-                MsgBox("El peso del producto no puede ser cero", vbInformation)
+            If Eval(TPresKg.Text) = 0 Then
+                MsgBox("El peso del producto no puede ser cero.", vbInformation)
                 Return
             End If
 
-            If Eval(TTolerancia.Text) = 0 Then
-                MsgBox("La tolerancia del producto no puede ser cero", vbInformation)
+            If Eval(TPresEmpKg.Text) = 0 Then
+                MsgBox("La presentación del empaque del producto no puede ser cero.", vbInformation)
                 Return
             End If
 
-            If Eval(TRangoCap.Text) = 0 Then
-                MsgBox("El rango de captura del producto no puede ser cero", vbInformation)
+            If TNombre.Text.Trim = "" Then
+                MsgBox("El nombre del producto no puede ser una cadena vacía.", vbInformation)
                 Return
             End If
 
-            If TNombre.Text = "" Then
-                MsgBox("El nombre del producto no puede ser una cadena vacia", vbInformation)
+            If Eval(TTolInfEmp.Text) = 0 Or Eval(TTolSupEmp.Text) = 0 Or Eval(TTolInfRep.Text) = 0 Or Eval(TTolSupRep.Text) = 0 Then
+                MsgBox("las tolerancias de empaque y/o repeso del producto no puede ser un valor nuelo o cero.", vbInformation)
                 Return
             End If
-
 
             DProd.Open("Select * from ARTICULOS where TIPO='PT' and CODINT='" + TCodInt.Text + "'")
 
@@ -139,13 +138,13 @@
 
             DProd.RecordSet("CODINT") = TCodInt.Text
             DProd.RecordSet("NOMBRE") = CLeft(TNombre.Text, 20)
-            DProd.RecordSet("PESONOM") = Eval(TPesoNom.Text)
-            DProd.RecordSet("RANGOCAPT") = Eval(TRangoCap.Text)
-            DProd.RecordSet("TOLERANCIA") = Eval(TTolerancia.Text)
-            'DProd.RecordSet("LIMINF") = Eval(TLimInf.Text)
-            'DProd.RecordSet("LIMSUP") = Eval(TLimSup.Text)
-            'DProd.RecordSet("ERRORT1") = Eval(TErrorT1.Text)
-            'DVarios.RecordSet("ERRORT2") = Eval(TErrorT2.Text)
+            DProd.RecordSet("PESONOM") = Eval(TPresKg.Text)
+
+            DProd.RecordSet("TPRESEMPKG") = Eval(TPresEmpKg.Text)
+            DProd.RecordSet("TOLSUPEMP") = Eval(TTolSupEmp.Text)
+            DProd.RecordSet("TOLINFEMP") = Eval(TTolInfEmp.Text)
+            DProd.RecordSet("TOLINFREP") = Eval(TTolInfRep.Text)
+            DProd.RecordSet("TOLSUPREP") = Eval(TTolSupRep.Text)
 
 
             DProd.Update()
@@ -153,7 +152,7 @@
             FRefrescaDGProd_Click(Nothing, Nothing)
 
             Evento("Crea o modifica producto código: " + TCodInt.Text + ", Nombre: " + TNombre.Text + " Peso Nom: " + _
-                    TPesoNom.Text + " Tolerancia:" + TTolerancia.Text)
+                    TPresKg.Text + " Pres. Empaque [Kg]:" + TPresEmpKg.Text)
 
 
         Catch ex As Exception
