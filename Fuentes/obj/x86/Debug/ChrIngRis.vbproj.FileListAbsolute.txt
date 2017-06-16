@@ -1,0 +1,30 @@
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Acceso.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.AcercaD.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.BasedeDatos.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.ConfigIP.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Configuraciones.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.DatosEnLinea.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Ensaque.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Fondo1.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.GraficasProceso1.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Maquinas.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Productos.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Resources.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Reportes.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Servidor.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Start.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Usuarios.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChrIngRis.vbproj.GenerateResource.Cache
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\RdlCompile.cache
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\RdlCompile.compiled
+D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.exe.config
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
+D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.exe
+D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.pdb
+D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.xml
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\ChronoSoftNet.exe.config
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb

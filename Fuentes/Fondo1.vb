@@ -89,6 +89,8 @@ Public Class Fondo1
         DTurnos = New AdoSQL("DVARIOS")
         DAlarmas = New AdoNet("ALARMAS", CONN, DbProvedor)
 
+        TimSeg.Enabled = True
+
         'DTurnos.Open("Select * from TURNOS where PLANTA='" + Planta + "'")
 
         ''Hacemos un recorrido por 3 turnos, deben haber 3 en la base de datos
@@ -338,6 +340,14 @@ Public Class Fondo1
                 Next
             End If
 
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BConfiguraciones_Click(sender As System.Object, e As System.EventArgs) Handles BConfiguraciones.Click
+        Try
+            Configuraciones.ShowDialog()
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try

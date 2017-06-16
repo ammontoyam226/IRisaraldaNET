@@ -11,35 +11,33 @@ Public Class Configuraciones
     Private Sub Configuraciones_Shown(sender As System.Object, e As System.EventArgs) Handles MyBase.Shown
         Try
 
-            TMinRep = New ArrayControles(Of TextBox)("TMinRep", Me)
-            TSacGrafEnsc = New ArrayControles(Of TextBox)("TMinRep", Me)
-            TNoMuestrasEnsc = New ArrayControles(Of TextBox)("TMinRep", Me)
+            TMinRep = New ArrayControles(Of TextBox)("TMinRep", TLPConfig.Controls)
+            TSacGrafEnsc = New ArrayControles(Of TextBox)("TSacGrafEnsc", TLPConfig.Controls)
+            TNoMuestrasEnsc = New ArrayControles(Of TextBox)("TNoMuestrasEnsc", TLPConfig.Controls)
 
             DVariosConfig = New AdoSQL("VARIOSCONFIG")
 
             DVariosConfig.Open(" select * from VARIOSCONFIG")
 
             For i = 1 To 4
-                DVariosConfig.Find("MuestrasEnsac" + i.ToString)
+                DVariosConfig.Find("DESCRIPCION='MuestrasEnsac" + i.ToString + "'")
                 If Not DVariosConfig.EOF Then
                     TNoMuestrasEnsc(i).Text = DVariosConfig.RecordSet("Cantidad")
                 End If
 
-                DVariosConfig.Find("SacGraf" + i.ToString)
+                DVariosConfig.Find("DESCRIPCION='SacGraf" + i.ToString + "'")
                 If Not DVariosConfig.EOF Then
                     TSacGrafEnsc(i).Text = DVariosConfig.RecordSet("Cantidad")
                 End If
 
-                DVariosConfig.Find("MinRep" + i.ToString)
+                DVariosConfig.Find("DESCRIPCION='MinRep" + i.ToString + "'")
                 If Not DVariosConfig.EOF Then
-                    TSacGrafEnsc(i).Text = DVariosConfig.RecordSet("Cantidad")
+                    TMinRep(i).Text = DVariosConfig.RecordSet("Cantidad")
                 End If
             Next
 
 
             DVariosConfig.Close()
-
-
 
 
         Catch ex As Exception
@@ -71,26 +69,24 @@ Public Class Configuraciones
             DVariosConfig.Open(" select * from VARIOSCONFIG")
 
             For i = 1 To 4
-                DVariosConfig.Find("MuestrasEnsac" + i.ToString)
+                DVariosConfig.Find("DESCRIPCION='MuestrasEnsac" + i.ToString + "'")
                 If Not DVariosConfig.EOF Then
                     DVariosConfig.RecordSet("Cantidad") = Eval(TNoMuestrasEnsc(i).Text)
                     DVariosConfig.Update()
                 End If
 
-                DVariosConfig.Find("SacGraf" + i.ToString)
+                DVariosConfig.Find("DESCRIPCION='SacGraf" + i.ToString + "'")
                 If Not DVariosConfig.EOF Then
                     DVariosConfig.RecordSet("Cantidad") = Eval(TSacGrafEnsc(i).Text)
                     DVariosConfig.Update()
                 End If
 
-                DVariosConfig.Find("MinRep" + i.ToString)
+                DVariosConfig.Find("DESCRIPCION='MinRep" + i.ToString + "'")
                 If Not DVariosConfig.EOF Then
                     DVariosConfig.RecordSet("Cantidad") = Eval(TSacGrafEnsc(i).Text)
                     DVariosConfig.Update()
                 End If
-
             Next
-
 
             DVariosConfig.Close()
 
@@ -102,4 +98,16 @@ Public Class Configuraciones
     End Sub
 
     
+    Private Sub BSalir_Click(sender As System.Object, e As System.EventArgs) Handles BSalir.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    Private Sub BCancelar_Click(sender As System.Object, e As System.EventArgs) Handles BCancelar.Click
+        Try
+            Limpiar_Habilitar_TextBox(TLPConfig.Controls, AccionTextBox.Limpiar)
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
 End Class

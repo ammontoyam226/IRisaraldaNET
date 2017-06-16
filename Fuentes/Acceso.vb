@@ -90,8 +90,8 @@ Public Class Acceso
 
             'Se creo este usuario para que se pueda abrir automaticamente en el servidor 
             If ServCHR Or ServComM Then
-                TUsuario.Text = "SERVIDOR"
-                TClave.Text = "SERVIDOR"
+                TUsuario.Text = "A"
+                TClave.Text = "A"
                 BOk_Click(Nothing, Nothing)
             End If
 
@@ -181,7 +181,7 @@ Public Class Acceso
                 VerAlarmas = True
                 Fondo1.SCEscritorio.Panel1Collapsed = False
                 Fondo1.SCEscritorio.SplitterDistance = 604
-                Fondo1.BServidor_Click(Nothing, Nothing)
+                'Fondo1.BServidor_Click(Nothing, Nothing)
             Else
                 Fondo1.SCEscritorio.Panel1Collapsed = True
             End If
