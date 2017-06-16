@@ -33,7 +33,7 @@ Partial Class Empaque
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TPEmp1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BProcesa = New System.Windows.Forms.Button()
+        Me.BProcesa1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TSacxMin1 = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -165,7 +165,7 @@ Partial Class Empaque
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.BProcesa)
+        Me.GroupBox1.Controls.Add(Me.BProcesa1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TSacxMin1)
         Me.GroupBox1.Controls.Add(Me.Label21)
@@ -217,15 +217,15 @@ Partial Class Empaque
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Empacadora 1"
         '
-        'BProcesa
+        'BProcesa1
         '
-        Me.BProcesa.Location = New System.Drawing.Point(250, 243)
-        Me.BProcesa.Name = "BProcesa"
-        Me.BProcesa.Size = New System.Drawing.Size(75, 23)
-        Me.BProcesa.TabIndex = 84
-        Me.BProcesa.Text = "BProcesa"
-        Me.BProcesa.UseVisualStyleBackColor = True
-        Me.BProcesa.Visible = False
+        Me.BProcesa1.Location = New System.Drawing.Point(250, 243)
+        Me.BProcesa1.Name = "BProcesa1"
+        Me.BProcesa1.Size = New System.Drawing.Size(75, 23)
+        Me.BProcesa1.TabIndex = 84
+        Me.BProcesa1.Text = "BProcesa"
+        Me.BProcesa1.UseVisualStyleBackColor = True
+        Me.BProcesa1.Visible = False
         '
         'Label1
         '
@@ -1007,5 +1007,5 @@ Partial Class Empaque
     Friend WithEvents TBandChk1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TSacxMin1 As System.Windows.Forms.TextBox
-    Friend WithEvents BProcesa As System.Windows.Forms.Button
+    Friend WithEvents BProcesa1 As System.Windows.Forms.Button
 End Class
