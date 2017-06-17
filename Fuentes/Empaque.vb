@@ -26,6 +26,9 @@ Public Class Empaque
     Private TMaxU20E As ArrayControles(Of TextBox)
     Private TMaxU100E As ArrayControles(Of TextBox)
     Private TMaxU500E As ArrayControles(Of TextBox)
+    Private TMinU20E As ArrayControles(Of TextBox)
+    Private TMinU100E As ArrayControles(Of TextBox)
+    Private TMinU500E As ArrayControles(Of TextBox)
     Private TContBasc As ArrayControles(Of TextBox)
     Private TBandChk As ArrayControles(Of TextBox)
     Private TSacosB As ArrayControles(Of TextBox)
@@ -122,6 +125,9 @@ Public Class Empaque
             TDesvSU20E = New ArrayControles(Of TextBox)("TDesvSU20E", Me)
             TDesvSU100E = New ArrayControles(Of TextBox)("TDesvSU100E", Me)
             TDesvSU500E = New ArrayControles(Of TextBox)("TDesvSU500E", Me)
+            TMinU20E = New ArrayControles(Of TextBox)("TMinU20E", Me)
+            TMinU100E = New ArrayControles(Of TextBox)("TMinU100E", Me)
+            TMinU500E = New ArrayControles(Of TextBox)("TMinU500E", Me)
             TMaxU20E = New ArrayControles(Of TextBox)("TMaxU20E", Me)
             TMaxU100E = New ArrayControles(Of TextBox)("TMaxU100E", Me)
             TMaxU500E = New ArrayControles(Of TextBox)("TMaxU500E", Me)
@@ -137,7 +143,7 @@ Public Class Empaque
             BShp = New ArrayControles(Of Button)("BShp", Me)
             FNuevoEmp = New ArrayControles(Of Button)("FNuevoEmp", Me)
             BHistog = New ArrayControles(Of Button)("BHistog", Me)
-            BProcesa = New ArrayControles(Of Button)("BHistog", Me)
+            BProcesa = New ArrayControles(Of Button)("BProcesa", Me)
 
 
             'Constructores Objetos conexion base de datos
@@ -758,64 +764,52 @@ Public Class Empaque
             DEmpaque(Index).Open("select TOP 1 * from EMPAQUE" + Trim(Index) + " where CONTBASC=" + Trim(TContBasc(Index).Text) + " and MAQUINA=" + Trim(Index) + " order by CONT")
             FechaIni = DEmpaque(Index).RecordSet("Fecha")
 
+            DEmpaque(Index).Open("select TOP 1 * from EMPAQUE" + Trim(Index) + " where CONTBASC=" + Trim(TContBasc(Index).Text) + " and MAQUINA=" + Trim(Index) + " order by CONT desc")
+
             If Index = 2 Then
-                BProcesa_Click(BProcesa(2), Nothing) = True ' Proceso los datos de las dos Básculas de la Ensacadora Duplex Gse 665
+                BProcesa_Click(BProcesa(Index), Nothing)  ' Proceso los datos de las dos Básculas de la Ensacadora Duplex Gse 665
+            End If
+
+            AcumuladoB(Index) = DEmpaque(Index).RecordSet("Acumulado2")
+            SacOkB(Index) = DEmpaque(Index).RecordSet("SacOkA")
+            SacOverB(Index) = DEmpaque(Index).RecordSet("SacOverA")
+            SacUnderB(Index) = DEmpaque(Index).RecordSet("SacUnderA")
+            SacChkB(Index) = DEmpaque(Index).RecordSet("SacChkA")
+
+
+            If Eval(TSacos(Index).Text) <= DEmpaque(Index).RecordSet("Acumulado2") Then Exit Sub
+
+
+            DiaRegAct(Index) = Eval(Format(DEmpaque(Index).RecordSet("Fecha2"), "dd"))
+            HoraRegAct(Index) = Eval(Format(DEmpaque(Index).RecordSet("Fecha2"), "hh"))
+            MinRegAct(Index) = Eval(Format(DEmpaque(Index).RecordSet("Fecha2"), "nn"))
+
+            TFechaUlt(Index).Text = FechaC()
+
+            If DiaRegAct(Index) <> Eval(Format(TFechaUlt(Index).Text, "dd")) Then ' Corte de Fecha
+                FNuevoEmp1_Click(FNuevoEmp(Index).Text, Nothing)
+            ElseIf HoraRegAct(Index) <> Eval(Format(TFechaUlt(Index).Text, "hh")) Then ' Corte de Hora
+                FNuevoEmp1_Click(FNuevoEmp(Index).Text, Nothing)
+            ElseIf MinRegAct(Index) <= 30 And Eval(Format(TFechaUlt(Index).Text, "nn")) > 30 Then 'Corte de Media Hora
+                FNuevoEmp1_Click(FNuevoEmp(Index).Text, Nothing)
             End If
 
 
+            DVariosConfig(Index).Open("select * from VARIOSCONFIG where DESCRIPCION='AcumMinRep" + Trim(Index) + "'")
 
-            DEmpaque.MoveFirst()
-            AcumuladoB = DEmpaque!Acumulado2
-            SacOkB = DEmpaque!SacOkA
-            SacOverB = DEmpaque!SacOverA
-            SacUnderB = DEmpaque!SacUnderA
-            SacChkB = DEmpaque!SacChkA
+            DVarios(Index).Open("select * from VARIOSCONFIG where DESCRIPCION='MinRep" + Trim(Index) + "'")
 
 
-            If Eval(TSacos) <= DEmpaque!Acumulado2 Then Exit Sub
 
+            If DateDiff("n", FechaIni, TFechaUlt) - DVariosConfig(Index).RecordSet("Cantidad") >= DVarios(Index).RecordSet("Cantidad") Then
 
-            DiaRegAct = Eval(Format(DEmpaque!Fecha2, "dd"))
-            HoraRegAct = Eval(Format(DEmpaque!Fecha2, "hh"))
-            MinRegAct = Eval(Format(DEmpaque!Fecha2, "nn"))
+                DVariosConfig(Index).RecordSet("Cantidad") = Int(Eval(DateDiff(DateInterval.Minute, FechaIni, CDate(TFechaUlt(Index).Text)) / DVarios(Index).RecordSet("Cantidad")) * DVarios(Index).RecordSet("Cantidad"))
+                DVariosConfig(Index).Update()
 
-            TFechaUlt = FechaC()
-
-
-            If DiaRegAct <> Eval(Format(TFechaUlt, "dd")) Then ' Corte de Fecha
-                FNuevoEmp.Value = True
-                DEmpaque.Requery()
-            ElseIf HoraRegAct <> Eval(Format(TFechaUlt, "hh")) Then ' Corte de Hora
-                FNuevoEmp.Value = True
-                DEmpaque.Requery()
-            ElseIf MinRegAct <= 30 And Eval(Format(TFechaUlt, "nn")) > 30 Then 'Corte de Media Hora
-                FNuevoEmp.Value = True
-                DEmpaque.Requery()
-            End If
-
-            DEmpaque.Requery()
-            DEmpaque.MoveFirst()
-
-
-            If DVariosConfig.State > 0 Then DVariosConfig.Close()
-            DVariosConfig.Open("select * from VARIOSCONFIG where DESCRIPCION='AcumMinRep" + Trim(EquipoNo) + "'")
-            DVariosConfig.Requery()
-
-            If DVarios.State > 0 Then DVarios.Close()
-
-            DVarios.Open("select * from VARIOSCONFIG where DESCRIPCION='MinRep" + Trim(EquipoNo) + "'")
-            DVarios.Requery()
-
-
-            If DateDiff("n", FechaIni, TFechaUlt) - DVariosConfig!Cantidad >= DVarios!Cantidad Then
-
-                DVariosConfig!Cantidad = Int(Eval(DateDiff("n", FechaIni, TFechaUlt) / DVarios!Cantidad)) * DVarios!Cantidad
-                DVariosConfig.Update()
-
-                Alarma("Repeso " + Trim(EquipoNo) + " Hora de Comprobar Sacos " + vbCrLf + _
+                Alarma("Repeso " + Trim(Index) + " Hora de Comprobar Sacos " + vbCrLf + _
                 "Ponga Muestra")
-                ServidorRep2.ComenzarRep = True
-                ServEnsac2.BActivaAlarma.Value = True
+                'ServidorRep2.ComenzarRep = True
+                'ServEnsac2.BActivaAlarma.Value = True
 
                 'Else
                 '
@@ -834,79 +828,75 @@ Public Class Empaque
             End If
 
 
-            TSacOK = Eval(TSacChk) - Eval(TSacUnder) - Eval(TSacOver)
+            TSacOK(Index).Text = Eval(TSacChk(Index).Text) - Eval(TSacUnder(Index).Text) - Eval(TSacOver(Index).Text)
 
-            Me.Caption = Trim(TPesoTot) + " Ensaque"
+            'Me = Trim(TPesoTot) + " Ensaque"
 
 
             'If Eval(TProm) > 0 Then
             '        DEmpaque!Prom = Eval(TProm)
             '        DEmpaque!DESVS = Eval(TDesvS)
             'End If
-            If Eval(TPromU20) > 0 Then
-                DEmpaque!Prom = Eval(TPromU20)
-                DEmpaque!DESVS = Eval(TDesvSU20)
+            If Eval(TPromU20E(Index).Text) > 0 Then
+                DEmpaque(Index).RecordSet("Prom ") = Eval(TPromU20E(Index).Text)
+                DEmpaque(Index).RecordSet("DESVS ") = Eval(TDesvSU20E(Index).Text)
             End If
 
-            DEmpaque!Acumulado2 = Eval(TSacos)
-            DEmpaque!Sacos = DEmpaque!Acumulado2 - DEmpaque!Acumulado
-            DEmpaque!PresKg = Eval(TPreset)
-            DEmpaque!Peso = DEmpaque!Sacos * Eval(TPreset)
+            DEmpaque(Index).RecordSet("Acumulado2 ") = Eval(TSacos(Index).Text)
+            DEmpaque(Index).RecordSet("Sacos ") = DEmpaque(Index).RecordSet("Acumulado2") - DEmpaque(Index).RecordSet("Acumulado")
+            DEmpaque(Index).RecordSet("PresKg ") = Eval(TPresKg(Index).Text)
+            DEmpaque(Index).RecordSet("Peso ") = DEmpaque(Index).RecordSet("Sacos") * Eval(TPresKg(Index).Text)
 
-            DEmpaque!SacOkA = Eval(TSacOK)
-            DEmpaque!SacUnderA = Eval(TSacUnder)
-            DEmpaque!SacOverA = Eval(TSacOver)
-            DEmpaque!SacChkA = Eval(TSacChk)
-            DEmpaque!SACOK = DEmpaque!SacOkA - DEmpaque!SacOkB
-            DEmpaque!SacUnder = DEmpaque!SacUnderA - DEmpaque!SacUnderB
-            DEmpaque!SacOver = DEmpaque!SacOverA - DEmpaque!SacOverB
-            DEmpaque!SACCHK = DEmpaque!SacChkA - DEmpaque!SacChkB
+            DEmpaque(Index).RecordSet("SacOkA ") = Eval(TSacOK(Index).Text)
+            DEmpaque(Index).RecordSet("SacUnderA ") = Eval(TSacUnder(Index).Text)
+            DEmpaque(Index).RecordSet("SacOverA ") = Eval(TSacOver(Index).Text)
+            DEmpaque(Index).RecordSet("SacChkA ") = Eval(TSacChk(Index).Text)
+            DEmpaque(Index).RecordSet("SACOK ") = DEmpaque(Index).RecordSet("SacOkA") - DEmpaque(Index).RecordSet("SacOkB")
+            DEmpaque(Index).RecordSet("SacUnder ") = DEmpaque(Index).RecordSet("SacUnderA") - DEmpaque(Index).RecordSet("SacUnderB")
+            DEmpaque(Index).RecordSet("SacOver ") = DEmpaque(Index).RecordSet("SacOverA") - DEmpaque(Index).RecordSet("SacOverB")
+            DEmpaque(Index).RecordSet("SACCHK ") = DEmpaque(Index).RecordSet("SacChkA") - DEmpaque(Index).RecordSet("SacChkB")
 
-            DEmpaque!Fecha2 = FechaC()
-            DEmpaque!FECHAF2 = Now
+            DEmpaque(Index).RecordSet("Fecha2 ") = Now
+            DEmpaque(Index).RecordSet("FECHAF2 ") = Now
 
-            DEmpaque.Update()
+            DEmpaque(Index).Update()
 
-            TSacxMin = (DEmpaque!FECHAF2 - DEmpaque!FECHAF) * 1410
-            If Eval(TSacxMin) > 0 Then TSacxMin = Format(Eval(TSacos) / TSacxMin, "#0.0")
+            TSacxMin(Index).Text = (DEmpaque(Index).RecordSet("FECHAF2") - DEmpaque(Index).RecordSet("FECHAF")) * 1410
+            If Eval(TSacxMin(Index).Text) > 0 Then TSacxMin(Index).Text = Format(Eval(TSacos(Index).Text) / TSacxMin(Index).Text, "#0.0")
 
-            Torta.Column = 1
-            Torta.Data = Eval(TSacUnder)
-            Torta.Column = 2
-            Torta.Data = Eval(TSacOK)
-            Torta.Column = 3
-            Torta.Data = Eval(TSacOver)
+            'Torta.Column(")= 1")
+            'Torta.Data(")= Eval(TSacUnder)")
+            'Torta.Column(")= 2")
+            'Torta.Data(")= Eval(TSacOK)")
+            'Torta.Column(")= 3")
+            'Torta.Data(")= Eval(TSacOver)")
 
-            If DVarios.State > 0 Then DVarios.Close()
-            DVarios.Open("select * from ESTADU20 where MAQUINA=" + Trim(EquipoNo) + " and CODPROD='" + Trim(TCodProd) + "'")
-            If DVarios.RecordCount > 0 Then
-                TPromU20 = Format(DVarios!Prom, "#0.00")
-                TDesvSU20 = Format(DVarios!DESVS, "#0.000")
-                TMaxU20 = Format(DVarios!MaxP, "#0.00")
-                TMinU20 = Format(DVarios!MinP, "#0.00")
-            End If
 
-            If DVarios.State > 0 Then DVarios.Close()
-            DVarios.Open("select * from ESTADU100 where MAQUINA=" + Trim(EquipoNo) + " and CODPROD='" + Trim(TCodProd) + "'")
-            If DVarios.RecordCount > 0 Then
-                TPromU100 = Format(DVarios!Prom, "#0.00")
-                TDesvSU100 = Format(DVarios!DESVS, "#0.000")
-                TMaxU100 = Format(DVarios!MaxP, "#0.00")
-                TMinU100 = Format(DVarios!MinP, "#0.00")
-            End If
-
-            If DVarios.State > 0 Then DVarios.Close()
-            DVarios.Open("select * from ESTAD where MAQUINA=" + Trim(EquipoNo) + " and CODPROD='" + Trim(TCodProd) + "'")
-            If DVarios.RecordCount > 0 Then
-                TProm = Format(DVarios!Prom, "#0.00")
-                TDesvS = Format(DVarios!DESVS, "#0.000")
-                TMax = Format(DVarios!MaxP, "#0.00")
-                TMin = Format(DVarios!MinP, "#0.00")
+            DVarios(Index).Open("select * from ESTADU20 where MAQUINA=" + Trim(Index) + " and CODPROD='" + Trim(TCodProd(Index).Text) + "'")
+            If DVarios(Index).RecordCount > 0 Then
+                TPromU20E(Index).Text = Format(DVarios(Index).RecordSet("Prom"), "#0.00")
+                TDesvSU20E(Index).Text = Format(DVarios(Index).RecordSet("DESVS"), "#0.000")
+                TMaxU20E(Index).Text = Format(DVarios(Index).RecordSet("MaxP"), "#0.00")
+                TMinU20E(Index).Text = Format(DVarios(Index).RecordSet("MinP"), "#0.00")
             End If
 
 
+            DVarios(Index).Open("select * from ESTADU100 where MAQUINA=" + Trim(Index) + " and CODPROD='" + Trim(TCodProd(Index).Text) + "'")
+            If DVarios(Index).RecordCount > 0 Then
+                TPromU100E(Index).Text = Format(DVarios(Index).RecordSet("Prom"), "#0.00")
+                TDesvSU100E(Index).Text = Format(DVarios(Index).RecordSet("DESVS"), "#0.000")
+                TMaxU100E(Index).Text = Format(DVarios(Index).RecordSet("MaxP"), "#0.00")
+                TMinU100E(Index).Text = Format(DVarios(Index).RecordSet("MinP"), "#0.00")
+            End If
 
 
+            DVarios(Index).Open("select * from ESTAD where MAQUINA=" + Trim(Index) + " and CODPROD='" + Trim(TCodProd(Index).Text) + "'")
+            If DVarios(Index).RecordCount > 0 Then
+                TPromU500E(Index).Text = Format(DVarios(Index).RecordSet("Prom"), "#0.00")
+                TDesvSU500E(Index).Text = Format(DVarios(Index).RecordSet("DESVS"), "#0.000")
+                TMaxU500E(Index).Text = Format(DVarios(Index).RecordSet("MaxP"), "#0.00")
+                TMinU500E(Index).Text = Format(DVarios(Index).RecordSet("MinP"), "#0.00")
+            End If
 
         Catch ex As Exception
             MsgError(ex.ToString)
