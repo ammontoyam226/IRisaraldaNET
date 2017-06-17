@@ -665,6 +665,8 @@ Public Class Servidor
  
     Private Sub BRepSac_Click(sender As System.Object, e As System.EventArgs) Handles BRepSac1.Click
         Dim ValAnt(30) As Single
+        Dim Cons As String
+
         Dim Index As Short = BRepSac.Index(CType(sender, Button))
 
         'RenglonesSac(Index) = RepSac(Index).Split(Chr(13))
