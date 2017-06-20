@@ -735,6 +735,7 @@ Public Class Servidor
                     DDatosenLinea.RecordSet("CONT") = Cons(Index)
                     DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
                     'DDatosenLinea.RecordSet("MAQUINA") = Index
+                    'DDatosenLinea.RecordSet("MAQUINA") = Index
                     DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
                     DDatosenLinea.RecordSet("PESO") = Tot(Index)
                     DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
