@@ -24,19 +24,12 @@ Partial Class Configuraciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Configuraciones))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.BSalir = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BEditar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BBorrar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BActualizar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.CBBuscar = New System.Windows.Forms.ToolStripComboBox()
         Me.TBuscar = New System.Windows.Forms.ToolStripTextBox()
-        Me.BImprimir = New System.Windows.Forms.ToolStripButton()
         Me.TLPConfig = New System.Windows.Forms.TableLayoutPanel()
         Me.TMinRep4 = New System.Windows.Forms.TextBox()
         Me.TMinRep3 = New System.Windows.Forms.TextBox()
@@ -64,6 +57,13 @@ Partial Class Configuraciones
         Me.TNoMuestrasEnsc1 = New System.Windows.Forms.TextBox()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BAceptar = New System.Windows.Forms.Button()
+        Me.BSalir = New System.Windows.Forms.ToolStripButton()
+        Me.BEditar = New System.Windows.Forms.ToolStripButton()
+        Me.BNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.BBorrar = New System.Windows.Forms.ToolStripButton()
+        Me.BActualizar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.BImprimir = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         Me.TLPConfig.SuspendLayout()
         Me.SuspendLayout()
@@ -77,78 +77,25 @@ Partial Class Configuraciones
         Me.ToolStrip1.TabIndex = 31
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'BSalir
-        '
-        Me.BSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BSalir.Image = CType(resources.GetObject("BSalir.Image"), System.Drawing.Image)
-        Me.BSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BSalir.Name = "BSalir"
-        Me.BSalir.Size = New System.Drawing.Size(23, 22)
-        Me.BSalir.Text = "Salir"
-        '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 25)
-        '
-        'BEditar
-        '
-        Me.BEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
-        Me.BEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BEditar.Name = "BEditar"
-        Me.BEditar.Size = New System.Drawing.Size(23, 22)
-        Me.BEditar.Text = "Editar"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
         Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 25)
         '
-        'BNuevo
-        '
-        Me.BNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
-        Me.BNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BNuevo.Name = "BNuevo"
-        Me.BNuevo.Size = New System.Drawing.Size(23, 22)
-        Me.BNuevo.Text = "Nuevo"
-        '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 25)
         '
-        'BBorrar
-        '
-        Me.BBorrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BBorrar.Image = CType(resources.GetObject("BBorrar.Image"), System.Drawing.Image)
-        Me.BBorrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BBorrar.Name = "BBorrar"
-        Me.BBorrar.Size = New System.Drawing.Size(23, 22)
-        Me.BBorrar.Text = "Borrar"
-        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 25)
-        '
-        'BActualizar
-        '
-        Me.BActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BActualizar.Image = CType(resources.GetObject("BActualizar.Image"), System.Drawing.Image)
-        Me.BActualizar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BActualizar.Name = "BActualizar"
-        Me.BActualizar.Size = New System.Drawing.Size(23, 22)
-        Me.BActualizar.Text = "Actualizar"
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Image = CType(resources.GetObject("ToolStripLabel2.Image"), System.Drawing.Image)
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(58, 22)
-        Me.ToolStripLabel2.Text = "Buscar"
-        Me.ToolStripLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'CBBuscar
         '
@@ -164,15 +111,6 @@ Partial Class Configuraciones
         Me.TBuscar.Size = New System.Drawing.Size(80, 25)
         Me.TBuscar.ToolTipText = "Digite el valor a consultar"
         '
-        'BImprimir
-        '
-        Me.BImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BImprimir.Image = CType(resources.GetObject("BImprimir.Image"), System.Drawing.Image)
-        Me.BImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BImprimir.Name = "BImprimir"
-        Me.BImprimir.Size = New System.Drawing.Size(23, 22)
-        Me.BImprimir.Text = "Imprimir Materias Primas"
-        '
         'TLPConfig
         '
         Me.TLPConfig.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
@@ -180,7 +118,7 @@ Partial Class Configuraciones
         Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.00001!))
-        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
+        Me.TLPConfig.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
         Me.TLPConfig.Controls.Add(Me.TMinRep4, 3, 5)
         Me.TLPConfig.Controls.Add(Me.TMinRep3, 3, 4)
         Me.TLPConfig.Controls.Add(Me.TMinRep2, 3, 3)
@@ -220,27 +158,27 @@ Partial Class Configuraciones
         'TMinRep4
         '
         Me.TMinRep4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep4.Location = New System.Drawing.Point(650, 171)
+        Me.TMinRep4.Location = New System.Drawing.Point(646, 171)
         Me.TMinRep4.Name = "TMinRep4"
-        Me.TMinRep4.Size = New System.Drawing.Size(54, 20)
+        Me.TMinRep4.Size = New System.Drawing.Size(58, 20)
         Me.TMinRep4.TabIndex = 23
         Me.TMinRep4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TMinRep3
         '
         Me.TMinRep3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep3.Location = New System.Drawing.Point(650, 137)
+        Me.TMinRep3.Location = New System.Drawing.Point(646, 137)
         Me.TMinRep3.Name = "TMinRep3"
-        Me.TMinRep3.Size = New System.Drawing.Size(54, 20)
+        Me.TMinRep3.Size = New System.Drawing.Size(58, 20)
         Me.TMinRep3.TabIndex = 22
         Me.TMinRep3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TMinRep2
         '
         Me.TMinRep2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep2.Location = New System.Drawing.Point(650, 105)
+        Me.TMinRep2.Location = New System.Drawing.Point(646, 105)
         Me.TMinRep2.Name = "TMinRep2"
-        Me.TMinRep2.Size = New System.Drawing.Size(54, 20)
+        Me.TMinRep2.Size = New System.Drawing.Size(58, 20)
         Me.TMinRep2.TabIndex = 21
         Me.TMinRep2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -249,9 +187,9 @@ Partial Class Configuraciones
         Me.Label12.AutoSize = True
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(357, 146)
+        Me.Label12.Location = New System.Drawing.Point(355, 146)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(286, 14)
+        Me.Label12.Size = New System.Drawing.Size(284, 14)
         Me.Label12.TabIndex = 20
         Me.Label12.Text = "Tiempo de Muestreo de Sacos Comprobadora 3"
         '
@@ -260,9 +198,9 @@ Partial Class Configuraciones
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(357, 180)
+        Me.Label11.Location = New System.Drawing.Point(355, 180)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(286, 14)
+        Me.Label11.Size = New System.Drawing.Size(284, 14)
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "Tiempo de Muestreo de Sacos Comprobadora 4"
         '
@@ -271,9 +209,9 @@ Partial Class Configuraciones
         Me.Label10.AutoSize = True
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label10.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(357, 114)
+        Me.Label10.Location = New System.Drawing.Point(355, 114)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(286, 14)
+        Me.Label10.Size = New System.Drawing.Size(284, 14)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "Tiempo de Muestreo de Sacos Comprobadora 2"
         '
@@ -282,16 +220,16 @@ Partial Class Configuraciones
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(357, 82)
+        Me.Label9.Location = New System.Drawing.Point(355, 82)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(286, 14)
+        Me.Label9.Size = New System.Drawing.Size(284, 14)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Tiempo de Muestreo de Sacos Comprobadora 1"
         '
         'TSacGrafEnsc2
         '
         Me.TSacGrafEnsc2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc2.Location = New System.Drawing.Point(297, 171)
+        Me.TSacGrafEnsc2.Location = New System.Drawing.Point(295, 171)
         Me.TSacGrafEnsc2.Name = "TSacGrafEnsc2"
         Me.TSacGrafEnsc2.Size = New System.Drawing.Size(53, 20)
         Me.TSacGrafEnsc2.TabIndex = 16
@@ -300,7 +238,7 @@ Partial Class Configuraciones
         'TSacGrafEnsc1
         '
         Me.TSacGrafEnsc1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc1.Location = New System.Drawing.Point(297, 137)
+        Me.TSacGrafEnsc1.Location = New System.Drawing.Point(295, 137)
         Me.TSacGrafEnsc1.Name = "TSacGrafEnsc1"
         Me.TSacGrafEnsc1.Size = New System.Drawing.Size(53, 20)
         Me.TSacGrafEnsc1.TabIndex = 15
@@ -309,7 +247,7 @@ Partial Class Configuraciones
         'TNoMuestrasEnsc4
         '
         Me.TNoMuestrasEnsc4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc4.Location = New System.Drawing.Point(297, 105)
+        Me.TNoMuestrasEnsc4.Location = New System.Drawing.Point(295, 105)
         Me.TNoMuestrasEnsc4.Name = "TNoMuestrasEnsc4"
         Me.TNoMuestrasEnsc4.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc4.TabIndex = 14
@@ -318,16 +256,16 @@ Partial Class Configuraciones
         'TMinRep1
         '
         Me.TMinRep1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TMinRep1.Location = New System.Drawing.Point(650, 73)
+        Me.TMinRep1.Location = New System.Drawing.Point(646, 73)
         Me.TMinRep1.Name = "TMinRep1"
-        Me.TMinRep1.Size = New System.Drawing.Size(54, 20)
+        Me.TMinRep1.Size = New System.Drawing.Size(58, 20)
         Me.TMinRep1.TabIndex = 13
         Me.TMinRep1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TNoMuestrasEnsc3
         '
         Me.TNoMuestrasEnsc3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc3.Location = New System.Drawing.Point(297, 73)
+        Me.TNoMuestrasEnsc3.Location = New System.Drawing.Point(295, 73)
         Me.TNoMuestrasEnsc3.Name = "TNoMuestrasEnsc3"
         Me.TNoMuestrasEnsc3.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc3.TabIndex = 12
@@ -336,16 +274,16 @@ Partial Class Configuraciones
         'TSacGrafEnsc4
         '
         Me.TSacGrafEnsc4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc4.Location = New System.Drawing.Point(650, 41)
+        Me.TSacGrafEnsc4.Location = New System.Drawing.Point(646, 41)
         Me.TSacGrafEnsc4.Name = "TSacGrafEnsc4"
-        Me.TSacGrafEnsc4.Size = New System.Drawing.Size(54, 20)
+        Me.TSacGrafEnsc4.Size = New System.Drawing.Size(58, 20)
         Me.TSacGrafEnsc4.TabIndex = 11
         Me.TSacGrafEnsc4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TNoMuestrasEnsc2
         '
         Me.TNoMuestrasEnsc2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc2.Location = New System.Drawing.Point(297, 41)
+        Me.TNoMuestrasEnsc2.Location = New System.Drawing.Point(295, 41)
         Me.TNoMuestrasEnsc2.Name = "TNoMuestrasEnsc2"
         Me.TNoMuestrasEnsc2.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc2.TabIndex = 10
@@ -354,9 +292,9 @@ Partial Class Configuraciones
         'TSacGrafEnsc3
         '
         Me.TSacGrafEnsc3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TSacGrafEnsc3.Location = New System.Drawing.Point(650, 9)
+        Me.TSacGrafEnsc3.Location = New System.Drawing.Point(646, 9)
         Me.TSacGrafEnsc3.Name = "TSacGrafEnsc3"
-        Me.TSacGrafEnsc3.Size = New System.Drawing.Size(54, 20)
+        Me.TSacGrafEnsc3.Size = New System.Drawing.Size(58, 20)
         Me.TSacGrafEnsc3.TabIndex = 9
         Me.TSacGrafEnsc3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -365,9 +303,9 @@ Partial Class Configuraciones
         Me.Label8.AutoSize = True
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(357, 50)
+        Me.Label8.Location = New System.Drawing.Point(355, 50)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(286, 14)
+        Me.Label8.Size = New System.Drawing.Size(284, 14)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Sacos a Graficar Ensc. 4"
         '
@@ -376,9 +314,9 @@ Partial Class Configuraciones
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(357, 18)
+        Me.Label7.Location = New System.Drawing.Point(355, 18)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(286, 14)
+        Me.Label7.Size = New System.Drawing.Size(284, 14)
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "Sacos a Graficar Ensc. 3"
         '
@@ -389,7 +327,7 @@ Partial Class Configuraciones
         Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(4, 180)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(286, 14)
+        Me.Label6.Size = New System.Drawing.Size(284, 14)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Sacos a Graficar Ensc. 2"
         '
@@ -400,7 +338,7 @@ Partial Class Configuraciones
         Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(4, 146)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(286, 14)
+        Me.Label5.Size = New System.Drawing.Size(284, 14)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Sacos a Graficar Ensc. 1"
         '
@@ -411,7 +349,7 @@ Partial Class Configuraciones
         Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(4, 114)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(286, 14)
+        Me.Label4.Size = New System.Drawing.Size(284, 14)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Muestras a Comprobar en Ensc. 4"
         '
@@ -422,7 +360,7 @@ Partial Class Configuraciones
         Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(4, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(286, 14)
+        Me.Label3.Size = New System.Drawing.Size(284, 14)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Muestras a Comprobar en Ensc. 3"
         '
@@ -433,7 +371,7 @@ Partial Class Configuraciones
         Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(4, 50)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(286, 14)
+        Me.Label2.Size = New System.Drawing.Size(284, 14)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Muestras a Comprobar en Ensc. 2"
         '
@@ -444,14 +382,14 @@ Partial Class Configuraciones
         Me.Label1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(4, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(286, 14)
+        Me.Label1.Size = New System.Drawing.Size(284, 14)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Muestras a Comprobar en Ensc. 1"
         '
         'TNoMuestrasEnsc1
         '
         Me.TNoMuestrasEnsc1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TNoMuestrasEnsc1.Location = New System.Drawing.Point(297, 9)
+        Me.TNoMuestrasEnsc1.Location = New System.Drawing.Point(295, 9)
         Me.TNoMuestrasEnsc1.Name = "TNoMuestrasEnsc1"
         Me.TNoMuestrasEnsc1.Size = New System.Drawing.Size(53, 20)
         Me.TNoMuestrasEnsc1.TabIndex = 1
@@ -474,6 +412,68 @@ Partial Class Configuraciones
         Me.BAceptar.Size = New System.Drawing.Size(35, 31)
         Me.BAceptar.TabIndex = 33
         Me.BAceptar.UseVisualStyleBackColor = True
+        '
+        'BSalir
+        '
+        Me.BSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BSalir.Image = CType(resources.GetObject("BSalir.Image"), System.Drawing.Image)
+        Me.BSalir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BSalir.Name = "BSalir"
+        Me.BSalir.Size = New System.Drawing.Size(23, 22)
+        Me.BSalir.Text = "Salir"
+        '
+        'BEditar
+        '
+        Me.BEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
+        Me.BEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Size = New System.Drawing.Size(23, 22)
+        Me.BEditar.Text = "Editar"
+        '
+        'BNuevo
+        '
+        Me.BNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
+        Me.BNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BNuevo.Name = "BNuevo"
+        Me.BNuevo.Size = New System.Drawing.Size(23, 22)
+        Me.BNuevo.Text = "Nuevo"
+        '
+        'BBorrar
+        '
+        Me.BBorrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BBorrar.Image = CType(resources.GetObject("BBorrar.Image"), System.Drawing.Image)
+        Me.BBorrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BBorrar.Name = "BBorrar"
+        Me.BBorrar.Size = New System.Drawing.Size(23, 22)
+        Me.BBorrar.Text = "Borrar"
+        '
+        'BActualizar
+        '
+        Me.BActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BActualizar.Image = CType(resources.GetObject("BActualizar.Image"), System.Drawing.Image)
+        Me.BActualizar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BActualizar.Name = "BActualizar"
+        Me.BActualizar.Size = New System.Drawing.Size(23, 22)
+        Me.BActualizar.Text = "Actualizar"
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Image = CType(resources.GetObject("ToolStripLabel2.Image"), System.Drawing.Image)
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(58, 22)
+        Me.ToolStripLabel2.Text = "Buscar"
+        Me.ToolStripLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'BImprimir
+        '
+        Me.BImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BImprimir.Image = CType(resources.GetObject("BImprimir.Image"), System.Drawing.Image)
+        Me.BImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BImprimir.Name = "BImprimir"
+        Me.BImprimir.Size = New System.Drawing.Size(23, 22)
+        Me.BImprimir.Text = "Imprimir Materias Primas"
         '
         'Configuraciones
         '

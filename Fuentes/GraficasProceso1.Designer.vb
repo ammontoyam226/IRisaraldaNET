@@ -106,8 +106,6 @@ Partial Class GraficasProceso1
         Me.BNext4 = New System.Windows.Forms.Button()
         Me.BPrevious4 = New System.Windows.Forms.Button()
         Me.TFechaIni4 = New System.Windows.Forms.TextBox()
-        Me.TFechaFin4 = New System.Windows.Forms.TextBox()
-        Me.TMuestrasDia4 = New System.Windows.Forms.TextBox()
         Me.TMuestrasGraf4 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BNext1 = New System.Windows.Forms.Button()
@@ -873,8 +871,6 @@ Partial Class GraficasProceso1
         Me.Panel5.Controls.Add(Me.BNext4)
         Me.Panel5.Controls.Add(Me.BPrevious4)
         Me.Panel5.Controls.Add(Me.TFechaIni4)
-        Me.Panel5.Controls.Add(Me.TFechaFin4)
-        Me.Panel5.Controls.Add(Me.TMuestrasDia4)
         Me.Panel5.Controls.Add(Me.TMuestrasGraf4)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(507, 208)
@@ -906,21 +902,6 @@ Partial Class GraficasProceso1
         Me.TFechaIni4.Name = "TFechaIni4"
         Me.TFechaIni4.Size = New System.Drawing.Size(100, 20)
         Me.TFechaIni4.TabIndex = 3
-        '
-        'TFechaFin4
-        '
-        Me.TFechaFin4.Location = New System.Drawing.Point(360, -1)
-        Me.TFechaFin4.Name = "TFechaFin4"
-        Me.TFechaFin4.Size = New System.Drawing.Size(100, 20)
-        Me.TFechaFin4.TabIndex = 2
-        '
-        'TMuestrasDia4
-        '
-        Me.TMuestrasDia4.Location = New System.Drawing.Point(255, -1)
-        Me.TMuestrasDia4.Name = "TMuestrasDia4"
-        Me.TMuestrasDia4.Size = New System.Drawing.Size(100, 20)
-        Me.TMuestrasDia4.TabIndex = 1
-        Me.TMuestrasDia4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TMuestrasGraf4
         '
@@ -1304,8 +1285,6 @@ Partial Class GraficasProceso1
     Friend WithEvents BNext4 As System.Windows.Forms.Button
     Friend WithEvents BPrevious4 As System.Windows.Forms.Button
     Friend WithEvents TFechaIni4 As System.Windows.Forms.TextBox
-    Friend WithEvents TFechaFin4 As System.Windows.Forms.TextBox
-    Friend WithEvents TMuestrasDia4 As System.Windows.Forms.TextBox
     Friend WithEvents TMuestrasGraf4 As System.Windows.Forms.TextBox
     Friend WithEvents ChDatos1 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox

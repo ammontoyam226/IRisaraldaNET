@@ -248,7 +248,7 @@ Public Class Fondo1
     End Sub
 
     Private Sub BDatosEnLinea_Click(sender As System.Object, e As System.EventArgs) Handles BDatosEnLinea.Click
-        DatosEnLinea.ShowDialog()
+        GraficosEmp.ShowDialog()
     End Sub
 
     Public Sub FRefrescaDG_Click(sender As System.Object, e As System.EventArgs) Handles FRefrescaDG.Click

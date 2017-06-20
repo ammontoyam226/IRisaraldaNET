@@ -26,3 +26,4 @@ D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.pdb
 D:\GD\Ingenio Risaralda\IRisaraldaNET\ChronoSoftNet.xml
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChrIngRis.vbprojResolveAssemblyReference.cache
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Empaque.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.GraficosEmp.resources
