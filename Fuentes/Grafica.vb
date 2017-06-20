@@ -5,19 +5,21 @@ Public Class Grafica
 
     Private _CodProd As String
     Private _Maquina As Int16
+    Private _Basc As Int16
     Private _FechaIni As Date
     Private DDatos As AdoSQL
     Private DProd As AdoSQL
     Private DVarios As AdoSQL
     Private DTurnos As AdoSQL
+    Private DEmp As AdoSQL
     Private _Tabla As String
     Private ValorEjeX As Double
     Private ValorEjeY As Double
     Private _Incremento As Int16
     Private _Intervalo As Int16
     Private XLimSup As Int16
-    Private FechaIni As String
-    Private FechaFin As String
+    Private FechaIni As Date
+    Private FechaFin As Date
     Private _MuestrasGraf As Int16
     Private _MuestrasDia As Int16
     Private _MaquinaDB As Int16
@@ -29,6 +31,7 @@ Public Class Grafica
     Private ErrorT2 As Double
     Private HoraInt As Short
     Private Turno As Short
+    Private Mensaje, AuxMensaje As String
 
     'Constructor de la clase
     Public Sub New()
@@ -38,6 +41,7 @@ Public Class Grafica
         DProd = New AdoSQL("ARTICULOS")
         DVarios = New AdoSQL("VARIOS")
         DTurnos = New AdoSQL("TURNOS")
+        DEmp = New AdoSQL("EMPAQUE")
 
     End Sub
 
@@ -61,11 +65,21 @@ Public Class Grafica
         End Set
     End Property
 
+    Public Property Basc() As Int16
+        Get
+            Return _Basc
+        End Get
+        Set(value As Int16)
+            _Basc = value
+        End Set
+    End Property
+
     Public WriteOnly Property Fecha As Date
         Set(value As Date)
             _FechaIni = value
         End Set
     End Property
+
 
     Public WriteOnly Property Tabla As String
         Set(value As String)
@@ -120,78 +134,12 @@ Public Class Grafica
             If Val(_Maquina) = 0 Then Return
             If IsDBNull(_FechaIni) Then Return
 
-
-            
             Grafica.Titles(0).Text = ""
             Grafica.Series.Clear()
-            _MaquinaDB = 0
 
+            FechaFin = DateAdd(DateInterval.Hour, -_Intervalo, _FechaIni)
+            FechaIni = _FechaIni
 
-            'Se mapea el número de grafica con la maquina de la base de datos
-
-            If Proceso = "ELECSTER 1 Y 2" Then
-                _MaquinaDB = _Maquina
-            End If
-
-            If Proceso = "BUANLIR 1 Y 2" Then
-                If _Maquina = 1 Then _MaquinaDB = 13
-                If _Maquina = 2 Then _MaquinaDB = 14
-                If _Maquina = 4 Then _MaquinaDB = 18
-                If _Maquina = 5 Then _MaquinaDB = 19
-            End If
-
-            If Proceso = "ELECSTER 3" Then
-                If _Maquina = 1 Then _MaquinaDB = 15
-                If _Maquina = 2 Then _MaquinaDB = 16
-                If _Maquina = 3 Then _MaquinaDB = 17
-            End If
-
-            If Proceso = "BUANLIR 3" Then
-                If _Maquina = 1 Then _MaquinaDB = 10
-                If _Maquina = 2 Then _MaquinaDB = 11
-                If _Maquina = 3 Then _MaquinaDB = 12
-            End If
-
-            If Proceso = "TETRA" Then
-                If _Maquina = 1 Then _MaquinaDB = 70
-                If _Maquina = 2 Then _MaquinaDB = 80
-                If _Maquina = 3 Then _MaquinaDB = 81
-                If _Maquina = 4 Then _MaquinaDB = 90
-                If _Maquina = 5 Then _MaquinaDB = 91
-            End If
-
-            If Proceso = "IS6" Then
-                If _Maquina = 1 Then _MaquinaDB = 20
-                If _Maquina = 2 Then _MaquinaDB = 21
-                If _Maquina = 3 Then _MaquinaDB = 22
-            End If
-            
-            FechaFin = _FechaIni.ToString("yyyy/MM/dd HH:mm")
-            FechaIni = DateAdd(DateInterval.Hour, -_Intervalo, _FechaIni).ToString("yyyy/MM/dd HH:mm")
-
-            'Revisamos el turno de operación para dejar la horaini del turno
-            DTurnos.Open("Select * from TURNOS")
-
-            HoraInt = Val(CDate(_FechaIni).Hour.ToString)
-
-            If (HoraInt >= 22 AndAlso HoraInt <= 24) Or HoraInt < 6 Then
-                Turno = 1
-            ElseIf HoraInt >= 6 AndAlso HoraInt < 14 Then
-                Turno = 2
-            ElseIf HoraInt >= 14 AndAlso HoraInt < 22 Then
-                Turno = 3
-            End If
-
-            If Val(CDate(FechaIni).Hour.ToString) < 22 And Turno = 1 Then
-                DTurnos.Find("TURNO=1")
-                FechaIni = CDate(FechaIni).ToString("yyyy/MM/dd") + " " + DTurnos.RecordSet("HORAINI")
-            ElseIf Val(CDate(FechaIni).Hour.ToString) < 6 And Turno = 2 Then
-                DTurnos.Find("TURNO=2")
-                FechaIni = CDate(FechaIni).ToString("yyyy/MM/dd") + " " + DTurnos.RecordSet("HORAINI")
-            ElseIf Val(CDate(FechaIni).Hour.ToString) < 14 And Turno = 3 Then
-                DTurnos.Find("TURNO=3")
-                FechaIni = CDate(FechaIni).ToString("yyyy/MM/dd") + " " + DTurnos.RecordSet("HORAINI")
-            End If
 
 
             If _Intervalo = 1 Then
@@ -202,32 +150,95 @@ Public Class Grafica
                 Incremento = 1
             End If
 
-            DVarios.Open("select top 1 * from DATOS where FECHA BETWEEN '" + FechaIni + "' AND '" + FechaFin + "'" + _
-                      " and MAQ=" + _MaquinaDB.ToString + " ORDER BY FECHA DESC")
+            DEmp.Open("select distinct CODPROD from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "'")
 
-            If DVarios.RecordCount > 0 Then
-                CodProd = DVarios.RecordSet("CodProd")
-            Else
+
+            If DEmp.RecordCount = 0 Then
                 GraficaOK = False
                 Return
             End If
 
-            Grafica.Series.Add("Peso")
-            Grafica.Series("Peso").ChartType = SeriesChartType.FastLine
-            Grafica.Series("Peso").XValueType = ChartValueType.Time
+            Dim CodProds() As Long
 
+            Mensaje = ""
+            AuxMensaje = ""
+
+            ReDim CodProds(DEmp.RecordCount)
+
+
+            If DEmp.RecordCount > 1 Then
+                ' Se evalua si es algunas de las empacadoras para mostrar el producto que estan empacando sino piden que ingresen el producto a graficar
+                If ServComM = True Then
+
+                    DEmp.Open("select * from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by CONT desc")
+
+
+                    DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=1 and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+
+                Else
+                    Mensaje = " En el Intervalo de Tiempo Seleccionado se empacaron Varios Productos " + vbCrLf + _
+                    " Los Productos son: " + vbCrLf
+                    Dim i = 0
+                    For Each Fila As DataRow In DEmp.Rows
+                        DProd.Open("select * from PRODUCTOS where CODPROD='" + DEmp.RecordSet("CodProd") + "'")
+                        If DProd.RecordCount Then
+                            AuxMensaje = AuxMensaje + DProd.RecordSet("CodProd") + " " + DProd.RecordSet("NomProd") + vbCrLf
+                            CodProds(i) = Eval(DProd.RecordSet("CodProd"))
+                        Else
+                            AuxMensaje = AuxMensaje + "------ Producto " + Trim(DEmp.RecordSet("CodProd")) + " no Existe " + vbCrLf
+                            CodProds(i) = 0
+                        End If
+                        i = i + 1
+                    Next
+                    Mensaje = Mensaje + AuxMensaje + " Ingrese el Código del Producto del Cual desea Observar la Grafica"
+                    RespInput = ""
+                    InputBox.InputBox("ChronoSoft", Mensaje, RespInput)
+                    If Eval(RespInput) > 0 Then
+                        Dim CodOk As Boolean
+                        CodOk = False
+                        For i = 0 To DEmp.RecordCount - 1
+                            If CodProds(i) = RespInput Then CodOk = True
+                        Next i
+                        If CodOk = False Then
+                            MsgBox("Ingrese un Código valido para el Producto", vbExclamation)
+                            Exit Sub
+                        End If
+
+                        'selecciono los datos de los sacos chequeados en un intervalo de una Hora
+                        DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + Trim(RespInput) + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+                    End If
+                End If
+            Else
+
+                'selecciono los datos de los sacos chequeados en un intervalo de una Hora
+                DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+
+            End If
+
+
+            If DVarios.RecordCount = 0 Then
+                'MsgBox "No se realizo Chequeo de Sacos Verifique la cantidad de sacos empacados en el intervalo de tiempo seleccionado", vbInformation
+                Aviso.Label1.Text = "No se realizó Cheq. de Sacos Verif. la cantidad de sacos empacad. en el interv. de tiempo seleccionado Empac. " + _Maquina.ToString
+                Aviso.Show()
+                Exit Sub
+            End If
+
+            
+            Grafica.Series.Add("Peso")
+            Grafica.Series("Peso").ChartType = SeriesChartType.Line
+            Grafica.Series("Peso").XValueType = ChartValueType.Time
             Grafica.Series("Peso").YValueType = ChartValueType.Double
-            Grafica.Series("Peso").Color = Color.Blue
+            Grafica.Series("Peso").Color = Color.Red
             Grafica.Series("Peso").BorderWidth = 1.5
 
-            Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Hours
+
 
 
             Grafica.Series.Add("LimInf")
-            Grafica.Series("LimInf").ChartType = SeriesChartType.FastLine
+            Grafica.Series("LimInf").ChartType = SeriesChartType.Line
             Grafica.Series("LimInf").XValueType = ChartValueType.Time
             Grafica.Series("LimInf").YValueType = ChartValueType.Double
-            Grafica.Series("LimInf").Color = Color.Red
+            Grafica.Series("LimInf").Color = Color.Blue
             Grafica.Series("LimInf").BorderWidth = 0.5
             Grafica.Series("LimInf").BorderDashStyle = ChartDashStyle.Dash
 
@@ -236,7 +247,7 @@ Public Class Grafica
             Grafica.Series("LimSup").XValueType = ChartValueType.Time
             Grafica.Series("LimSup").YValueType = ChartValueType.Double
             Grafica.Series("LimSup").BorderDashStyle = ChartDashStyle.Dash
-            Grafica.Series("LimSup").Color = Color.Red
+            Grafica.Series("LimSup").Color = Color.Blue
             Grafica.Series("LimSup").BorderWidth = 0.5
 
             Grafica.Series.Add("PesoNom")
@@ -247,55 +258,28 @@ Public Class Grafica
             Grafica.Series("PesoNom").Color = Color.Green
             Grafica.Series("PesoNom").BorderWidth = 1
 
-            DProd.Open("Select * from ARTICULOS where TIPO='PT' and CODINT='" + _CodProd + "'")
-            If DProd.RecordCount = 0 Then
-                GraficaOK = False
-                Return
-            End If
 
-
-            PesoNom = DProd.RecordSet("PESONOM")
-            LimSup = PesoNom + DProd.RecordSet("TOLERANCIA")
-            LimInf = PesoNom - DProd.RecordSet("TOLERANCIA")
-            ErrorT1 = DProd.RecordSet("ERRORT1")
-            ErrorT2 = DProd.RecordSet("ERRORT2")
-
-            Grafica.Titles(0).Text = "Máquina # " + _MaquinaDB.ToString + ": " + DProd.RecordSet("NOMBRE")
+            PesoNom = DVarios.RecordSet("PRESKG")
+            LimSup = PesoNom + DVarios.RecordSet("TOLSUPEMP")
+            LimInf = PesoNom - DVarios.RecordSet("TOLINFEMP")
+            
+            Grafica.Titles(0).Text = DVarios.RecordSet("CODPROD") + " " + DProd.RecordSet("NOMPROD")
 
             Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 5
             Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 5
-            Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Hours
-
-
+            Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
             Grafica.ChartAreas(0).AxisX.Interval = _Incremento
-            'Grafica.ChartAreas(0).AxisX.Interval = 0.5
+
             Grafica.ChartAreas(0).AxisX.IsLabelAutoFit = False
-            'grafica(Maquina).ChartAreas(0).AxisX2.IntervalType = DateTimeIntervalType.Minutes
-            'grafica(Maquina).ChartAreas(0).AxisX2.Interval = 0.5
 
             Grafica.ChartAreas(0).CursorX.IsUserSelectionEnabled = True
             Grafica.ChartAreas(0).CursorX.IsUserEnabled = True
 
-
-
-            DVarios.Open("select codprod from DATOS where FECHA >='" + CDate(FechaIni).ToString("yyyy/MM/dd") + "' AND CODPROD='" + CodProd + _
-                            "' and MAQ=" + _MaquinaDB.ToString + " ORDER BY FECHA DESC")
-
-            If DVarios.RecordCount > 0 Then _MuestrasDia = DVarios.RecordCount
-
-
             'Graficamos los límites y el peso nominal
-
-
-            'Abrimos la consulta para cargar los datos a mostrar
-            DDatos.Open(" Select PESO,FECHA from DATOS where PESO<>0 AND MAQ=" + _MaquinaDB.ToString + " AND CODPROD='" + CodProd _
-              + "' AND FECHA BETWEEN '" + FechaIni + "' AND '" + FechaFin + "' order by fecha")
-
-            _MuestrasGraf = DDatos.RecordCount
 
             For Each Fila As DataRow In DDatos.Rows
                 ValorEjeY = Fila("PESO")
-                Dim X As Date = CDate(Fila("FECHA"))
+                Dim X As Date = Fila("FECHA")
                 'ValorEjeX = Math.Round(DateDiff(DateInterval.Second, CDate(FechaIni), CDate(Fila("Fecha"))) / 60, 2)
                 If ValorEjeY < 0 Then ValorEjeY = 0
                 'Grafica.Series("Peso").Points.AddXY(ValorEjeX, ValorEjeY)

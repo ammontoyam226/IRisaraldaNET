@@ -153,6 +153,12 @@
     <Compile Include="AdoNet.vb" />
     <Compile Include="AdoSQL.vb" />
     <Compile Include="ArrayControles.vb" />
+    <Compile Include="Aviso.Designer.vb">
+      <DependentUpon>Aviso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aviso.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BasedeDatos.designer.vb">
       <DependentUpon>BasedeDatos.vb</DependentUpon>
     </Compile>
@@ -173,12 +179,6 @@
     </Compile>
     <Compile Include="Connection.vb" />
     <Compile Include="CrystalRep.vb" />
-    <Compile Include="DatosEnLinea.Designer.vb">
-      <DependentUpon>DatosEnLinea.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DatosEnLinea.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="DatosGraf.Designer.vb">
       <DependentUpon>DatosGraf.vb</DependentUpon>
     </Compile>
@@ -198,12 +198,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grafica.vb" />
-    <Compile Include="GraficasProceso1.Designer.vb">
-      <DependentUpon>GraficasProceso1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GraficasProceso1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GraficosEmp.Designer.vb">
       <DependentUpon>GraficosEmp.vb</DependentUpon>
     </Compile>
@@ -272,6 +266,9 @@
     <EmbeddedResource Include="AcercaD.resx">
       <DependentUpon>AcercaD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Aviso.resx">
+      <DependentUpon>Aviso.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BasedeDatos.resx">
       <DependentUpon>BasedeDatos.vb</DependentUpon>
     </EmbeddedResource>
@@ -281,9 +278,6 @@
     <EmbeddedResource Include="Configuraciones.resx">
       <DependentUpon>Configuraciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatosEnLinea.resx">
-      <DependentUpon>DatosEnLinea.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DatosGraf.resx">
       <DependentUpon>DatosGraf.vb</DependentUpon>
     </EmbeddedResource>
@@ -292,10 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fondo1.resx">
       <DependentUpon>Fondo1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GraficasProceso1.resx">
-      <DependentUpon>GraficasProceso1.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GraficosEmp.resx">
       <DependentUpon>GraficosEmp.vb</DependentUpon>
