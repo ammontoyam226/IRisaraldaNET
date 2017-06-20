@@ -1,8 +1,11 @@
 ﻿Public Class GraficosEmp
 
+    Private DEmpaque As AdoSQL
     Private FormLoad As Boolean
+    Private Graficas As Grafica
+    Private GrafOk As Boolean
     
-    Private Sub BSalir_Click(sender As System.Object, e As System.EventArgs) Handles BSalir.Click
+    Private Sub BSalir_Click(sender As System.Object, e As System.EventArgs)
         Me.Hide()
     End Sub
 
@@ -11,7 +14,7 @@
 
             If FormLoad Then Return
 
-
+            DEmpaque = New AdoSQL("EMPAQUE")
             
             'For i = 0 To TLPEmpaque.RowCount - 1
             '    TLPEmpaque.RowStyles.Item(i).SizeType = SizeType.Percent
@@ -21,6 +24,8 @@
             'TLPEmpaque.Visible = True
 
             FormLoad = True
+
+            Graficas = New Grafica
 
         Catch ex As Exception
             MsgError(ex.ToString)
@@ -57,5 +62,35 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub TimActualiza_Tick(sender As System.Object, e As System.EventArgs) Handles TimActualiza.Tick
+        Try
+            If mnActAuto.Checked = False Then
+                Return
+            End If
+
+            Dim Maq As Int16 = 1
+            DEmpaque.Open("select top 10 * from EMPAQUE" + Maq.ToString + " where MAQUINA=" + Maq.ToString + " order by FECHA desc")
+            If DEmpaque.RecordCount = 0 Then Return
+
+            TFechaIni.Text = Format(DEmpaque.RecordSet("Fecha"), "yyyy/MM/dd HH:00:00")
+            TFechaFin.Text = Format(DateAdd(DateInterval.Hour, 1, DEmpaque.RecordSet("Fecha")), "yyyy/MM/dd HH:00:00")
+
+            Graficas.Fecha = CDate(TFechaIni.Text)
+            Graficas.Intervalo = 1
+            Graficas.Basc = 1
+            Graficas.Maq = Maq
+            Graficas.FGraficar(ChEmp, GrafOk, "Emp")
+            
+            
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub mnSalir_Click(sender As System.Object, e As System.EventArgs) Handles mnSalir.Click
+        Me.Close()
+        Me.Dispose()
     End Sub
 End Class
