@@ -392,7 +392,7 @@ Public Class Servidor
 
                     DEmp.Update()
                     Evento("Crea registro de empaque Maquina " + Index.ToString + " ContBasc " + Trim(ConsBasc) + " REF " + Trim(CodProd))
-
+                    '
                 End If
             Next
 
@@ -641,7 +641,9 @@ Public Class Servidor
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'En caso de pegar texto en TRx
         MostrarResultadoMethod(Nothing, Nothing)
+
     End Sub
 
     Private Sub BHoraGSE_Click(sender As System.Object, e As System.EventArgs) Handles BHoraGSE1.Click, BHoraGSE2.Click, BHoraGSE3.Click,
