@@ -82,6 +82,7 @@
             Graficas.Basc = 1
             Graficas.Maq = Maq
             Graficas.FGraficar(ChEmp, GrafOk, "Emp")
+            ChEmp.Titles(1).Text = "CARTA CONTROL"
             
             
         Catch ex As Exception
