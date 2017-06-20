@@ -23,10 +23,11 @@ Partial Class GraficosEmp
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GraficosEmp))
         Me.TLPEmpaque = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -82,38 +83,40 @@ Partial Class GraficosEmp
         '
         Me.ChEmp.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ChEmp.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight
-        ChartArea3.AxisX.IsLabelAutoFit = False
-        ChartArea3.AxisX.MajorGrid.Enabled = False
-        ChartArea3.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash
-        ChartArea3.AxisX2.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash
-        ChartArea3.AxisX2.MajorTickMark.Enabled = False
-        ChartArea3.AxisY.MajorGrid.Enabled = False
-        ChartArea3.Name = "ChartArea1"
-        Me.ChEmp.ChartAreas.Add(ChartArea3)
+        ChartArea1.AxisX.IsLabelAutoFit = False
+        ChartArea1.AxisX.MajorGrid.Enabled = False
+        ChartArea1.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash
+        ChartArea1.AxisX2.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash
+        ChartArea1.AxisX2.MajorTickMark.Enabled = False
+        ChartArea1.AxisY.MajorGrid.Enabled = False
+        ChartArea1.Name = "ChartArea1"
+        Me.ChEmp.ChartAreas.Add(ChartArea1)
         Me.ChEmp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ChEmp.Location = New System.Drawing.Point(3, 3)
         Me.ChEmp.Name = "ChEmp"
         Me.ChEmp.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright
-        Series5.BorderWidth = 3
-        Series5.ChartArea = "ChartArea1"
-        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series5.IsValueShownAsLabel = True
-        Series5.IsVisibleInLegend = False
-        Series5.Name = "Series1"
-        Series6.ChartArea = "ChartArea1"
-        Series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        Series6.MarkerSize = 10
-        Series6.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
-        Series6.Name = "Series2"
-        Series6.YValuesPerPoint = 2
-        Me.ChEmp.Series.Add(Series5)
-        Me.ChEmp.Series.Add(Series6)
+        Series1.BorderWidth = 3
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series1.IsValueShownAsLabel = True
+        Series1.IsVisibleInLegend = False
+        Series1.Name = "Series1"
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
+        Series2.MarkerSize = 10
+        Series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
+        Series2.Name = "Series2"
+        Series2.YValuesPerPoint = 2
+        Me.ChEmp.Series.Add(Series1)
+        Me.ChEmp.Series.Add(Series2)
         Me.ChEmp.Size = New System.Drawing.Size(1344, 201)
         Me.ChEmp.TabIndex = 10
         Me.ChEmp.Text = "BOQUILLA 1"
-        Title3.DockedToChartArea = "ChartArea1"
-        Title3.Name = "Title1"
-        Me.ChEmp.Titles.Add(Title3)
+        Title1.DockedToChartArea = "ChartArea1"
+        Title1.Name = "Title1"
+        Title2.Name = "TituloEmp"
+        Me.ChEmp.Titles.Add(Title1)
+        Me.ChEmp.Titles.Add(Title2)
         '
         'TFechaIni
         '
