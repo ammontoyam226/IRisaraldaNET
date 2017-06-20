@@ -25,7 +25,7 @@ Public Class Servidor
     Private DatosEnvio(30) As String
     Private HoraGSE(30) As ULong
     Private EqAct(30) As Short
-    Private Pos1(30), Pos2(30) As Integer  
+    Private Pos1(30), Pos2(30) As Integer
 
     Private Reportes(30), Reportes2(30), RepChk(30), RepChk2(30), RepSac(30) As String
     Private RenglonesRep(30)(), CamposRep(30)() As String
@@ -36,7 +36,7 @@ Public Class Servidor
     'Private Renglon As String
     Private FechaRep(30) As String
     Private HoraRep(30) As String
- 
+
     'Private ContEnvioProd(30) As Integer
     'Private HabEnvioProd(30) As Boolean
     'Private ContEnvioMaq(30) As Integer
@@ -92,7 +92,7 @@ Public Class Servidor
     Private TUsuario As ArrayControles(Of TextBox)
 
     Private BLimpiar As ArrayControles(Of Button)
-    Private BPruebaCom As ArrayControles(Of Button)     
+    Private BPruebaCom As ArrayControles(Of Button)
     Private BPideRep As ArrayControles(Of Button)
     Private BRecRep As ArrayControles(Of Button)
     Private BBorraRep As ArrayControles(Of Button)
@@ -257,7 +257,7 @@ Public Class Servidor
             If Pos1(Index) > 0 Then
                 Pos2(Index) = InStr(1, TRx(Index).Text, "FINDATA,")
                 If Pos2(Index) > Pos1(Index) Then
-                    RepSac(Index) = Mid(TRx(Index).Text, Pos1(Index) + 10, Pos2(Index) - Pos1(Index) - 12)                    
+                    RepSac(Index) = Mid(TRx(Index).Text, Pos1(Index) + 10, Pos2(Index) - Pos1(Index) - 12)
                     BRepSac_Click(BRepSac(Index), Nothing)
                     TRx(Index).Text = Mid(TRx(Index).Text, Pos2(Index) + 8)
                     'Else
@@ -302,7 +302,7 @@ Public Class Servidor
                 TRx(Index).Text = Mid(TRx(Index).Text, Pos1(Index) + 37)
                 MsgBox("COMUNICACIONES OK EMPACADORA " + Index.ToString + "!!!!", MsgBoxStyle.Information)
             End If
-           
+
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try
@@ -428,7 +428,7 @@ Public Class Servidor
     Private Sub BPideRep_Click(sender As System.Object, e As System.EventArgs) Handles BPideRep1.Click, BPideRep2.Click, BPideRep3.Click, BPideRep4.Click
         Try
             Dim Index As Short = BPideRep.Index(CType(sender, Button))
-            If ConGSE(Index).State = Connection.StateConnection.Connected Then                             
+            If ConGSE(Index).State = Connection.StateConnection.Connected Then
                 ConGSE(Index).SendData("#ReporteS0#")
                 TTx(Index).Text += "#ReporteS0#"
             Else
@@ -492,7 +492,7 @@ Public Class Servidor
             If Eval(TSegSinCon(ServAct).Text) Mod 300 = 0 Then
                 Alarma("No hay comunicación con balanza: " + TabServidor.TabPages(ServAct - 1).Text)
             End If
-            
+
             If Not ConGSE(ServAct) Is Nothing Then
                 If Eval(TSegSinCon(ServAct).Text) Mod 10 = 0 Then
                     ConGSE(ServAct).Conect()
@@ -506,33 +506,6 @@ Public Class Servidor
             If Eval(TSeg(ServAct).Text) Mod 3600 = 0 Then
                 BHoraGSE_Click(BHoraGSE(ServAct), Nothing)
             End If
-
-            'If Val(TSeg(ServAct).Text) Mod 10 = 0 Then
-            '    TTx(ServAct).Clear()
-            'End If
-
-            ''---VERIFICACIÓN DE ENVIO DATOS A GSE ----------------------------
-
-            'If HabEnvioProd(ServAct) Then ContEnvioProd(ServAct) += 1
-            'If HabEnvioMaq(ServAct) Then ContEnvioMaq(ServAct) += 1
-            'If HabEnvioUsu(ServAct) Then ContEnvioUsu(ServAct) += 1
-
-            'If ContEnvioProd(ServAct) > 10 Then
-            '    TMsg(ServAct).Text = "GSE OCUPADO, FAVOR VERIFICAR"
-            '    ContEnvioProd(ServAct) = 0
-            '    HabEnvioProd(ServAct) = False
-            'End If
-            'If ContEnvioMaq(ServAct) > 10 Then
-            '    TMsg(ServAct).Text = "GSE OCUPADO, FAVOR VERIFICAR"
-            '    ContEnvioMaq(ServAct) = 0
-            '    HabEnvioMaq(ServAct) = False
-            'End If
-
-            'If ContEnvioUsu(ServAct) > 10 Then
-            '    TMsg(ServAct).Text = "GSE OCUPADO, FAVOR VERIFICAR"
-            '    ContEnvioUsu(ServAct) = 0
-            '    HabEnvioUsu(ServAct) = False
-            'End If
         Next
 
     End Sub
@@ -645,7 +618,7 @@ Public Class Servidor
     Private Sub BBorraChk_Click(sender As System.Object, e As System.EventArgs) Handles BBorraChk1.Click
         Try
             Dim Index As Short = BBorraChk.Index(CType(sender, Button))
-          
+
             If ConGSE(Index).State = Connection.StateConnection.Connected Then
                 ConGSE(Index).SendData(vbCr + "#BorraReporteS1#" + vbCr)
                 TTx(Index).Text += "#BorraReporteS1#"
@@ -666,7 +639,7 @@ Public Class Servidor
     End Sub
 
 
-   
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MostrarResultadoMethod(Nothing, Nothing)
     End Sub
@@ -692,8 +665,8 @@ Public Class Servidor
 
     End Sub
 
-  
- 
+
+
     Private Sub BRepSac_Click(sender As System.Object, e As System.EventArgs) Handles BRepSac1.Click, BRepSac2.Click, BRepSac3.Click, BRepSac4.Click
 
 
@@ -719,26 +692,22 @@ Public Class Servidor
             CSOv(Index) = CamposSac(Index)(21)
 
             If Index = 1 Or Index = 4 Then
-                DDatosenLinea.Open("select * from DATOSENLINEA where MAQUINA='" + Index.ToString + "'and BASCULA=1")
-                If DDatosenLinea.RecordCount = 0 Then
-                    DDatosenLinea.AddNew()
-                   
-                    DDatosenLinea.RecordSet("BASCULA") = 1
-                    DDatosenLinea.RecordSet("SACOK") = ContChk(Index) - CSOv(Index) - CSUn(Index)
-                    DDatosenLinea.RecordSet("SACCHK") = ContChk(Index)
-                    DDatosenLinea.RecordSet("SACOVER") = CSOv(Index)
-                    DDatosenLinea.RecordSet("SACUNDER") = CSUn(Index)
-                    DDatosenLinea.RecordSet("ULTSAC") = UltS(Index)
-                   
-                Else
-                    DDatosenLinea.RecordSet("CONT") = Cons(Index)
-                    DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
-                    DDatosenLinea.RecordSet("MAQUINA") = Index
-                    DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
-                    DDatosenLinea.RecordSet("PESO") = Tot(Index)
-                    DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
-                    DDatosenLinea.RecordSet("PROCESO") = Proc(Index)
-                End If
+                DDatosenLinea.Open("select * from DATOSENLINEA where MAQUINA=" + Index.ToString + " and BASCULA=1")
+                DDatosenLinea.RecordSet("BASCULA") = 1
+                DDatosenLinea.RecordSet("SACOK") = ContChk(Index) - CSOv(Index) - CSUn(Index)
+                DDatosenLinea.RecordSet("SACCHK") = ContChk(Index)
+                DDatosenLinea.RecordSet("SACOVER") = CSOv(Index)
+                DDatosenLinea.RecordSet("SACUNDER") = CSUn(Index)
+                DDatosenLinea.RecordSet("ULTSAC") = UltS(Index)
+
+                DDatosenLinea.RecordSet("CONT") = Cons(Index)
+                DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
+                'DDatosenLinea.RecordSet("MAQUINA") = Index
+                DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
+                DDatosenLinea.RecordSet("PESO") = Tot(Index)
+                DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
+                DDatosenLinea.RecordSet("PROCESO") = Proc(Index)
+                DDatosenLinea.Update()
 
             Else
                 ContSB1(Index) = CamposSac(Index)(23)
@@ -755,63 +724,45 @@ Public Class Servidor
                 ' Saco Chequeado en B1 de la ensacadora Duplex GSE 665
                 If Eval(SChkB1(Index)) > 0 And ValAntB1 <> Eval(SChkB1(Index)) Then
                     ValAntB1 = Eval(SChkB1(Index))
-                    DDatosenLinea.Open("select * from DATOSENLINEA where MAQUINA='" + Index.ToString + "'and BASCULA=1")
-                    If DDatosenLinea.RecordCount = 0 Then
-                        DDatosenLinea.AddNew()
-                        DDatosenLinea.RecordSet("CONT") = Cons(Index)
-                        DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
-                        DDatosenLinea.RecordSet("BASCULA") = 1
-                        DDatosenLinea.RecordSet("MAQUINA") = Index
-                        DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
-                        DDatosenLinea.RecordSet("PESO") = Tot(Index)
-                        DDatosenLinea.RecordSet("SACOK") = SChkB1(Index) - CSOvB1(Index) - CSUnB1(Index)
-                        DDatosenLinea.RecordSet("SACCHK") = SChkB1(Index)
-                        DDatosenLinea.RecordSet("SACOVER") = CSOvB1(Index)
-                        DDatosenLinea.RecordSet("SACUNDER") = CSUnB1(Index)
-                        DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
-                        DDatosenLinea.RecordSet("PROCESO") = Proc(Index)
-                        DDatosenLinea.RecordSet("ULTSAC") = UltSB1(Index)
-                    Else
-                        DDatosenLinea.RecordSet("CONT") = Cons(Index)
-                        DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
-                        DDatosenLinea.RecordSet("BASCULA") = 1
-                        DDatosenLinea.RecordSet("MAQUINA") = Index
-                        DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
-                        DDatosenLinea.RecordSet("PESO") = Tot(Index)
-                        DDatosenLinea.RecordSet("SACOK") = SChkB1(Index) - CSOvB1(Index) - CSUnB1(Index)
-                        DDatosenLinea.RecordSet("SACCHK") = SChkB1(Index)
-                        DDatosenLinea.RecordSet("SACOVER") = CSOvB1(Index)
-                        DDatosenLinea.RecordSet("SACUNDER") = CSUnB1(Index)
-                        DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
-                        DDatosenLinea.RecordSet("PROCESO") = Proc(Index)
-                        DDatosenLinea.RecordSet("ULTSAC") = UltSB1(Index)
-                    End If
+                    DDatosenLinea.Open("select * from DATOSENLINEA where MAQUINA=" + Index.ToString + "and BASCULA=1")
+                    DDatosenLinea.RecordSet("BASCULA") = 1                                       
+                    DDatosenLinea.RecordSet("SACOK") = SChkB1(Index) - CSOvB1(Index) - CSUnB1(Index)
+                    DDatosenLinea.RecordSet("SACCHK") = SChkB1(Index)
+                    DDatosenLinea.RecordSet("SACOVER") = CSOvB1(Index)
+                    DDatosenLinea.RecordSet("SACUNDER") = CSUnB1(Index)                   
+                    DDatosenLinea.RecordSet("ULTSAC") = UltSB1(Index)
+
+                    DDatosenLinea.RecordSet("CONT") = Cons(Index)
+                    DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
+                    'DDatosenLinea.RecordSet("MAQUINA") = Index
+                    DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
+                    DDatosenLinea.RecordSet("PESO") = Tot(Index)
+                    DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
+                    DDatosenLinea.RecordSet("PROCESO") = Proc(Index)
                     DDatosenLinea.Update()
                 End If
 
+                ' Saco Chequeado en B2 de la ensacadora Duplex GSE 665
+                If Eval(SChkB2(Index)) > 0 And ValAntB2 <> Eval(SChkB2(Index)) Then
+                    ValAntB2 = Eval(SChkB2(Index))
+                    DDatosenLinea.Open("select * from DATOSENLINEA where MAQUINA=" + Index.ToString + "and BASCULA=2")
+                    DDatosenLinea.RecordSet("BASCULA") = 2
+                    DDatosenLinea.RecordSet("SACOK") = SChkB2(Index) - CSOvB2(Index) - CSUnB2(Index)
+                    DDatosenLinea.RecordSet("SACCHK") = SChkB2(Index)
+                    DDatosenLinea.RecordSet("SACOVER") = CSOvB2(Index)
+                    DDatosenLinea.RecordSet("SACUNDER") = CSUnB2(Index)                  
+                    DDatosenLinea.RecordSet("ULTSAC") = UltSB2(Index)
+
+                    DDatosenLinea.RecordSet("CONT") = Cons(Index)
+                    DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
+                    'DDatosenLinea.RecordSet("MAQUINA") = Index
+                    DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
+                    DDatosenLinea.RecordSet("PESO") = Tot(Index)
+                    DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
+                    DDatosenLinea.RecordSet("PROCESO") = Proc(Index)
+                    DDatosenLinea.Update()
+                End If
             End If
-
-
-                'Ensaque.TConsec(Index).Text = CamposSac(Index)(1)
-                'Ensaque.TCodProd(Index).Text = CamposSac(Index)(3)
-                'Ensaque.TPesSac(Index).Text = CamposSac(Index)(5)
-                'Ensaque.TPesoTot(Index).Text = CamposSac(Index)(7)
-                'Ensaque.TPreset(Index).Text = CamposSac(Index)(9)
-                'Ensaque.TStat(Index).Text = CamposSac(Index)(11)
-                'Ensaque.TBandChk(Index).Text = CamposSac(Index)(13)
-                'Ensaque.TSacChk(Index).Text = CamposSac(Index)(15)
-                'Ensaque.TPesoUlt(Index).Text = CamposSac(Index)(17)
-                'Ensaque.TSacUnder(Index).Text = CamposSac(Index)(19)
-                'Ensaque.TSacOver(Index).Text = CamposSac(Index)(21)
-
-
-                'If Ensaque.TStat(Index).Text = 1 Then
-                '    WriteFile(Ruta + "APlanos\Sac" + Index.ToString + "_" + Now.ToString("yyMMdd") + ".txt", Now.ToString("HH:mm:ss") + " " + RepSac(Index))
-                'End If
-
-                'If ValAnt(Index) <> Eval(Ensaque.TPesSac(Index).Text) Then
-                '    ValAnt(Index) = Ensaque.TPesSac(Index).Text
-                'End If
 
         Catch ex As Exception
             MsgError(ex.ToString)
