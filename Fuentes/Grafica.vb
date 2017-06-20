@@ -137,7 +137,7 @@ Public Class Grafica
             Grafica.Titles(0).Text = ""
             Grafica.Series.Clear()
 
-            FechaFin = DateAdd(DateInterval.Hour, -_Intervalo, _FechaIni)
+            FechaFin = DateAdd(DateInterval.Hour, _Intervalo, _FechaIni)
             FechaIni = _FechaIni
 
 
@@ -168,12 +168,12 @@ Public Class Grafica
 
             If DEmp.RecordCount > 1 Then
                 ' Se evalua si es algunas de las empacadoras para mostrar el producto que estan empacando sino piden que ingresen el producto a graficar
-                If ServComM = True Then
+                If ServComM = True Or GraficosEmp.mnActAuto.Checked Then
 
                     DEmp.Open("select * from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by CONT desc")
 
 
-                    DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=1 and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+                    DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
 
                 Else
                     Mensaje = " En el Intervalo de Tiempo Seleccionado se empacaron Varios Productos " + vbCrLf + _
@@ -235,7 +235,7 @@ Public Class Grafica
 
 
             Grafica.Series.Add("LimInf")
-            Grafica.Series("LimInf").ChartType = SeriesChartType.Line
+            Grafica.Series("LimInf").ChartType = SeriesChartType.FastLine
             Grafica.Series("LimInf").XValueType = ChartValueType.Time
             Grafica.Series("LimInf").YValueType = ChartValueType.Double
             Grafica.Series("LimInf").Color = Color.Blue
@@ -258,15 +258,26 @@ Public Class Grafica
             Grafica.Series("PesoNom").Color = Color.Green
             Grafica.Series("PesoNom").BorderWidth = 1
 
+            Grafica.Series.Add("PesoPunto")
+            Grafica.Series("PesoPunto").ChartType = SeriesChartType.Point
+            Grafica.Series("PesoPunto").XValueType = ChartValueType.Time
+            Grafica.Series("PesoPunto").YValueType = ChartValueType.Double
+            Grafica.Series("PesoPunto").BorderDashStyle = ChartDashStyle.Solid
+            Grafica.Series("PesoPunto").Color = Color.Black
+            Grafica.Series("PesoPunto").MarkerSize = 8
+            Grafica.Series("PesoPunto").MarkerStyle = MarkerStyle.Circle
+
+
+
 
             PesoNom = DVarios.RecordSet("PRESKG")
-            LimSup = PesoNom + DVarios.RecordSet("TOLSUPEMP")
-            LimInf = PesoNom - DVarios.RecordSet("TOLINFEMP")
+            LimSup = Math.Round(PesoNom + DVarios.RecordSet("TOLSUPEMP"), 1)
+            LimInf = Math.Round(PesoNom - DVarios.RecordSet("TOLINFEMP"), 1)
             
-            Grafica.Titles(0).Text = DVarios.RecordSet("CODPROD") + " " + DProd.RecordSet("NOMPROD")
+            Grafica.Titles(0).Text = DVarios.RecordSet("CODPROD") + " " + DVarios.RecordSet("NOMPROD")
 
-            Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 5
-            Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 5
+            Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 0.1
+            Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 0.1
             Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
             Grafica.ChartAreas(0).AxisX.Interval = _Incremento
 
@@ -277,15 +288,17 @@ Public Class Grafica
 
             'Graficamos los límites y el peso nominal
 
-            For Each Fila As DataRow In DDatos.Rows
-                ValorEjeY = Fila("PESO")
+            For Each Fila As DataRow In DVarios.Rows
+                ValorEjeY = Math.Round(Fila("PESO"), 1)
                 Dim X As Date = Fila("FECHA")
                 'ValorEjeX = Math.Round(DateDiff(DateInterval.Second, CDate(FechaIni), CDate(Fila("Fecha"))) / 60, 2)
                 If ValorEjeY < 0 Then ValorEjeY = 0
                 'Grafica.Series("Peso").Points.AddXY(ValorEjeX, ValorEjeY)
                 Grafica.Series("Peso").Points.AddXY(X, ValorEjeY)
+                Grafica.Series("PesoPunto").Points.AddXY(X, ValorEjeY)
                 Grafica.Series("PesoNom").Points.AddXY(X, PesoNom)
                 Grafica.Series("LimInf").Points.AddXY(X, LimInf)
+                'Grafica.Series("LimInf").Points.AddXY(X, 49.8)
                 Grafica.Series("LimSup").Points.AddXY(X, LimSup)
             Next
 
