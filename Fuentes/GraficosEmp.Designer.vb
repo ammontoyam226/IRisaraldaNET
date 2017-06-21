@@ -114,6 +114,7 @@ Partial Class GraficosEmp
         Me.ChEmp.Text = "BOQUILLA 1"
         Title1.DockedToChartArea = "ChartArea1"
         Title1.Name = "Title1"
+        Title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
         Title2.Name = "TituloEmp"
         Me.ChEmp.Titles.Add(Title1)
         Me.ChEmp.Titles.Add(Title2)

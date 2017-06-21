@@ -53,6 +53,8 @@ Module VariablesGlobales
     Public Sesion As String
     Public VerAlarmas As Boolean
 
+    Public Empacadora As Integer
+
 
     Public NMaq As Integer
 

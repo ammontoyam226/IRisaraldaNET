@@ -15,6 +15,7 @@ Public Class Acceso
     Private ACuPass As String = ""
 
     Private DUsuarios As AdoNet
+    Private DConfig As AdoSQL
 
     Private Sub BCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BCancel.Click
         Me.Close()
@@ -79,6 +80,8 @@ Public Class Acceso
             If ReadConfigVar("SERVCOMM").ToUpper = NombrePC Then ServComM = True
             If ReadConfigVar("SERVCHR").ToUpper = NombrePC Then ServCHR = True
 
+            DConfig = New AdoSQL("CONFIG")
+
             If Fuentes Then
                 TUsuario.Text = "A"
                 TClave.Text = "A"
@@ -88,6 +91,10 @@ Public Class Acceso
 
             Planta = ReadConfigVar("PLANTA")
 
+            Fondo1.TPlanta.Text = Planta
+
+
+
             'Se creo este usuario para que se pueda abrir automaticamente en el servidor 
             If ServCHR Or ServComM Then
                 TUsuario.Text = "A"
@@ -95,7 +102,7 @@ Public Class Acceso
                 BOk_Click(Nothing, Nothing)
             End If
 
-            Fondo1.TPlanta.Text = Planta
+
 
         Catch ex As Exception
             MsgError(ex.ToString)
@@ -171,11 +178,17 @@ Public Class Acceso
 
             Fondo1.Text = Ruta + "ChronoSoft Net, ServSQL: " + ServidorSQL + " Sesión: " + Sesion + " UsuarioChr: " + Usuario
 
-
-            Me.Close()
-            Me.Dispose()
-
             Evento("Entra a ChronoSoft")
+
+            DConfig.Open("Select * from CONFIG")
+
+            For i = 1 To 4
+                If NombrePC = DConfig.RecordSet("ENSACADORA" + i.ToString) Then
+                    Empacadora = i
+                    'Abrir el formulario empaque y la grafica correspondiente
+                    Exit For
+                End If
+            Next
 
             If ServComM = True Then
                 VerAlarmas = True
@@ -185,6 +198,9 @@ Public Class Acceso
             Else
                 Fondo1.SCEscritorio.Panel1Collapsed = True
             End If
+
+            Me.Close()
+            Me.Dispose()
 
 
         Catch ex As Exception

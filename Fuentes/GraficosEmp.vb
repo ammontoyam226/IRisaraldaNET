@@ -70,21 +70,22 @@
                 Return
             End If
 
-            Dim Maq As Int16 = 1
-            DEmpaque.Open("select top 10 * from EMPAQUE" + Maq.ToString + " where MAQUINA=" + Maq.ToString + " order by FECHA desc")
+
+            DEmpaque.Open("select top 10 * from EMPAQUE" + Empacadora.ToString + " where MAQUINA=" + Empacadora.ToString + " order by FECHA desc")
             If DEmpaque.RecordCount = 0 Then Return
 
-            TFechaIni.Text = Format(DEmpaque.RecordSet("Fecha"), "yyyy/MM/dd HH:00:00")
-            TFechaFin.Text = Format(DateAdd(DateInterval.Hour, 1, DEmpaque.RecordSet("Fecha")), "yyyy/MM/dd HH:00:00")
+            TFechaIni.Text = Format(DEmpaque.RecordSet("Fecha"), "yyyy-MM-dd HH:00:00")
+            TFechaFin.Text = Format(DateAdd(DateInterval.Hour, 1, DEmpaque.RecordSet("Fecha")), "yyyy-MM-dd HH:00:00")
 
             Graficas.Fecha = CDate(TFechaIni.Text)
             Graficas.Intervalo = 1
             Graficas.Basc = 1
-            Graficas.Maq = Maq
+            Graficas.Maq = Empacadora
             Graficas.FGraficar(ChEmp, GrafOk, "Emp")
-            ChEmp.Titles(1).Text = "CARTA CONTROL"
-            
-            
+            ChEmp.Titles(0).Text = "CARTA DE CONTROL PESO NETO ENSACADORA 1"
+            ChEmp.Titles(0).ForeColor = Color.Red
+
+
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try

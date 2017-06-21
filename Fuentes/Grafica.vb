@@ -32,6 +32,8 @@ Public Class Grafica
     Private HoraInt As Short
     Private Turno As Short
     Private Mensaje, AuxMensaje As String
+    Private FechaIniString As String
+    Private FechaFinString As String
 
     'Constructor de la clase
     Public Sub New()
@@ -140,7 +142,8 @@ Public Class Grafica
             FechaFin = DateAdd(DateInterval.Hour, _Intervalo, _FechaIni)
             FechaIni = _FechaIni
 
-
+            FechaIniString = FechaIni.ToString("yyyy-MM-dd HH:00:00")
+            FechaFinString = FechaFin.ToString("yyyy-MM-dd HH:00:00")
 
             If _Intervalo = 1 Then
                 Incremento = 0.1
@@ -150,7 +153,7 @@ Public Class Grafica
                 Incremento = 1
             End If
 
-            DEmp.Open("select distinct CODPROD from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "'")
+            DEmp.Open("select distinct CODPROD from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "'")
 
 
             If DEmp.RecordCount = 0 Then
@@ -170,10 +173,10 @@ Public Class Grafica
                 ' Se evalua si es algunas de las empacadoras para mostrar el producto que estan empacando sino piden que ingresen el producto a graficar
                 If ServComM = True Or GraficosEmp.mnActAuto.Checked Then
 
-                    DEmp.Open("select * from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by CONT desc")
+                    DEmp.Open("select * from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by CONT desc")
 
 
-                    DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+                    DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
 
                 Else
                     Mensaje = " En el Intervalo de Tiempo Seleccionado se empacaron Varios Productos " + vbCrLf + _
@@ -205,13 +208,13 @@ Public Class Grafica
                         End If
 
                         'selecciono los datos de los sacos chequeados en un intervalo de una Hora
-                        DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + Trim(RespInput) + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+                        DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + Trim(RespInput) + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
                     End If
                 End If
             Else
 
                 'selecciono los datos de los sacos chequeados en un intervalo de una Hora
-                DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIni.ToString + "' and '" + FechaFin.ToString + "' order by Fecha")
+                DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
 
             End If
 
@@ -274,7 +277,7 @@ Public Class Grafica
             LimSup = Math.Round(PesoNom + DVarios.RecordSet("TOLSUPEMP"), 1)
             LimInf = Math.Round(PesoNom - DVarios.RecordSet("TOLINFEMP"), 1)
             
-            Grafica.Titles(0).Text = DVarios.RecordSet("CODPROD") + " " + DVarios.RecordSet("NOMPROD")
+            Grafica.Titles(1).Text = DVarios.RecordSet("CODPROD") + " " + DVarios.RecordSet("NOMPROD")
 
             Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 0.1
             Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 0.1
