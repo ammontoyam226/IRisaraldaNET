@@ -360,4 +360,8 @@ Public Class Fondo1
             MsgError(ex.ToString)
         End Try
     End Sub
+
+    Private Sub BTabEnsaque_Click(sender As System.Object, e As System.EventArgs) Handles BTabEnsaque.Click
+        TablaEnsaque.ShowDialog()
+    End Sub
 End Class

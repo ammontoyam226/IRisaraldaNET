@@ -22,19 +22,26 @@ Partial Class Productos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SCProductos = New System.Windows.Forms.SplitContainer()
-        Me.BCancelar = New System.Windows.Forms.Button()
-        Me.BAceptar = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TTolInfEmp = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TTolSupEmp = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TTolInfRep = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TTolSupRep = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TPresEmpKg = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,6 +50,12 @@ Partial Class Productos
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TCodInt = New System.Windows.Forms.TextBox()
+        Me.FRefrescaDGProd = New System.Windows.Forms.Button()
+        Me.DGProd = New System.Windows.Forms.DataGridView()
+        Me.CodFor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NomFor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clasificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
@@ -50,6 +63,10 @@ Partial Class Productos
         Me.CBBuscar = New System.Windows.Forms.ToolStripComboBox()
         Me.TBuscar = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BCancelar = New System.Windows.Forms.Button()
+        Me.BAceptar = New System.Windows.Forms.Button()
         Me.BSalir = New System.Windows.Forms.ToolStripButton()
         Me.BEditar = New System.Windows.Forms.ToolStripButton()
         Me.BNuevo = New System.Windows.Forms.ToolStripButton()
@@ -57,33 +74,14 @@ Partial Class Productos
         Me.BActualizar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.BImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TTolInfRep = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TTolSupRep = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TTolInfEmp = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TTolSupEmp = New System.Windows.Forms.TextBox()
-        Me.DGProd = New System.Windows.Forms.DataGridView()
-        Me.CodFor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NomFor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clasificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FRefrescaDGProd = New System.Windows.Forms.Button()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.SCProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SCProductos.Panel1.SuspendLayout()
         Me.SCProductos.Panel2.SuspendLayout()
         Me.SCProductos.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.DGProd, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SCProductos
@@ -116,24 +114,111 @@ Partial Class Productos
         Me.SCProductos.SplitterDistance = 180
         Me.SCProductos.TabIndex = 31
         '
-        'BCancelar
+        'GroupBox2
         '
-        Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
-        Me.BCancelar.Location = New System.Drawing.Point(502, 101)
-        Me.BCancelar.Name = "BCancelar"
-        Me.BCancelar.Size = New System.Drawing.Size(40, 36)
-        Me.BCancelar.TabIndex = 23
-        Me.BCancelar.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.TTolInfEmp)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.TTolSupEmp)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.MediumBlue
+        Me.GroupBox2.Location = New System.Drawing.Point(237, 79)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(174, 89)
+        Me.GroupBox2.TabIndex = 33
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Tolerancia Empaque:"
         '
-        'BAceptar
+        'Label7
         '
-        Me.BAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.BAceptar.Image = CType(resources.GetObject("BAceptar.Image"), System.Drawing.Image)
-        Me.BAceptar.Location = New System.Drawing.Point(456, 101)
-        Me.BAceptar.Name = "BAceptar"
-        Me.BAceptar.Size = New System.Drawing.Size(40, 36)
-        Me.BAceptar.TabIndex = 22
-        Me.BAceptar.UseVisualStyleBackColor = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(16, 63)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(73, 14)
+        Me.Label7.TabIndex = 35
+        Me.Label7.Text = "Tol. Inferior:"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TTolInfEmp
+        '
+        Me.TTolInfEmp.Location = New System.Drawing.Point(95, 60)
+        Me.TTolInfEmp.Name = "TTolInfEmp"
+        Me.TTolInfEmp.Size = New System.Drawing.Size(60, 22)
+        Me.TTolInfEmp.TabIndex = 34
+        Me.TTolInfEmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(9, 32)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 14)
+        Me.Label8.TabIndex = 33
+        Me.Label8.Text = "Tol. Superior:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TTolSupEmp
+        '
+        Me.TTolSupEmp.Location = New System.Drawing.Point(95, 29)
+        Me.TTolSupEmp.Name = "TTolSupEmp"
+        Me.TTolSupEmp.Size = New System.Drawing.Size(60, 22)
+        Me.TTolSupEmp.TabIndex = 32
+        Me.TTolSupEmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TTolInfRep)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.TTolSupRep)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.MediumBlue
+        Me.GroupBox1.Location = New System.Drawing.Point(34, 79)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(174, 89)
+        Me.GroupBox1.TabIndex = 32
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Tolerancia Repeso:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(15, 63)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 14)
+        Me.Label6.TabIndex = 31
+        Me.Label6.Text = "Tol. Inferior:"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TTolInfRep
+        '
+        Me.TTolInfRep.Location = New System.Drawing.Point(94, 60)
+        Me.TTolInfRep.Name = "TTolInfRep"
+        Me.TTolInfRep.Size = New System.Drawing.Size(60, 22)
+        Me.TTolInfRep.TabIndex = 30
+        Me.TTolInfRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(8, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(80, 14)
+        Me.Label5.TabIndex = 29
+        Me.Label5.Text = "Tol. Superior:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TTolSupRep
+        '
+        Me.TTolSupRep.Location = New System.Drawing.Point(94, 29)
+        Me.TTolSupRep.Name = "TTolSupRep"
+        Me.TTolSupRep.Size = New System.Drawing.Size(60, 22)
+        Me.TTolSupRep.TabIndex = 28
+        Me.TTolSupRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label4
         '
@@ -208,6 +293,103 @@ Partial Class Productos
         Me.TCodInt.Size = New System.Drawing.Size(96, 20)
         Me.TCodInt.TabIndex = 0
         '
+        'FRefrescaDGProd
+        '
+        Me.FRefrescaDGProd.Location = New System.Drawing.Point(263, 170)
+        Me.FRefrescaDGProd.Name = "FRefrescaDGProd"
+        Me.FRefrescaDGProd.Size = New System.Drawing.Size(75, 23)
+        Me.FRefrescaDGProd.TabIndex = 49
+        Me.FRefrescaDGProd.Text = "FRefrescaDGProd"
+        Me.FRefrescaDGProd.UseVisualStyleBackColor = True
+        Me.FRefrescaDGProd.Visible = False
+        '
+        'DGProd
+        '
+        Me.DGProd.AllowUserToAddRows = False
+        Me.DGProd.AllowUserToDeleteRows = False
+        Me.DGProd.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        Me.DGProd.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGProd.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGProd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodFor, Me.NomFor, Me.clasificacion, Me.Column1})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.Format = "N2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGProd.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DGProd.EnableHeadersVisualStyles = False
+        Me.DGProd.Location = New System.Drawing.Point(3, 3)
+        Me.DGProd.Name = "DGProd"
+        Me.DGProd.ReadOnly = True
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGProd.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.DGProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGProd.Size = New System.Drawing.Size(597, 346)
+        Me.DGProd.TabIndex = 48
+        '
+        'CodFor
+        '
+        Me.CodFor.DataPropertyName = "CodProd"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N0"
+        Me.CodFor.DefaultCellStyle = DataGridViewCellStyle3
+        Me.CodFor.HeaderText = "Código"
+        Me.CodFor.Name = "CodFor"
+        Me.CodFor.ReadOnly = True
+        '
+        'NomFor
+        '
+        Me.NomFor.DataPropertyName = "NomProd"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.NomFor.DefaultCellStyle = DataGridViewCellStyle4
+        Me.NomFor.HeaderText = "Nombre"
+        Me.NomFor.Name = "NomFor"
+        Me.NomFor.ReadOnly = True
+        Me.NomFor.Width = 240
+        '
+        'clasificacion
+        '
+        Me.clasificacion.DataPropertyName = "PresKg"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        Me.clasificacion.DefaultCellStyle = DataGridViewCellStyle5
+        Me.clasificacion.HeaderText = "PresKg"
+        Me.clasificacion.Name = "clasificacion"
+        Me.clasificacion.ReadOnly = True
+        Me.clasificacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.clasificacion.Width = 90
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "PresEmpKg"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Column1.HeaderText = "Presen. Emp."
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
@@ -250,6 +432,35 @@ Partial Class Productos
         Me.ToolStrip1.Size = New System.Drawing.Size(611, 25)
         Me.ToolStrip1.TabIndex = 30
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'BCancelar
+        '
+        Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
+        Me.BCancelar.Location = New System.Drawing.Point(502, 101)
+        Me.BCancelar.Name = "BCancelar"
+        Me.BCancelar.Size = New System.Drawing.Size(40, 36)
+        Me.BCancelar.TabIndex = 23
+        Me.BCancelar.UseVisualStyleBackColor = True
+        '
+        'BAceptar
+        '
+        Me.BAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.BAceptar.Image = CType(resources.GetObject("BAceptar.Image"), System.Drawing.Image)
+        Me.BAceptar.Location = New System.Drawing.Point(456, 101)
+        Me.BAceptar.Name = "BAceptar"
+        Me.BAceptar.Size = New System.Drawing.Size(40, 36)
+        Me.BAceptar.TabIndex = 22
+        Me.BAceptar.UseVisualStyleBackColor = True
         '
         'BSalir
         '
@@ -313,230 +524,6 @@ Partial Class Productos
         Me.BImprimir.Size = New System.Drawing.Size(23, 22)
         Me.BImprimir.Text = "Imprimir Materias Primas"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TTolInfRep)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TTolSupRep)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.MediumBlue
-        Me.GroupBox1.Location = New System.Drawing.Point(34, 79)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(174, 89)
-        Me.GroupBox1.TabIndex = 32
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Tolerancia Repeso:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(15, 63)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 14)
-        Me.Label6.TabIndex = 31
-        Me.Label6.Text = "Tol. Inferior:"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'TTolInfRep
-        '
-        Me.TTolInfRep.Location = New System.Drawing.Point(94, 60)
-        Me.TTolInfRep.Name = "TTolInfRep"
-        Me.TTolInfRep.Size = New System.Drawing.Size(60, 22)
-        Me.TTolInfRep.TabIndex = 30
-        Me.TTolInfRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(8, 32)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(80, 14)
-        Me.Label5.TabIndex = 29
-        Me.Label5.Text = "Tol. Superior:"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'TTolSupRep
-        '
-        Me.TTolSupRep.Location = New System.Drawing.Point(94, 29)
-        Me.TTolSupRep.Name = "TTolSupRep"
-        Me.TTolSupRep.Size = New System.Drawing.Size(60, 22)
-        Me.TTolSupRep.TabIndex = 28
-        Me.TTolSupRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.TTolInfEmp)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.TTolSupEmp)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.MediumBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(237, 79)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(174, 89)
-        Me.GroupBox2.TabIndex = 33
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Tolerancia Empaque:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(16, 63)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 14)
-        Me.Label7.TabIndex = 35
-        Me.Label7.Text = "Tol. Inferior:"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'TTolInfEmp
-        '
-        Me.TTolInfEmp.Location = New System.Drawing.Point(95, 60)
-        Me.TTolInfEmp.Name = "TTolInfEmp"
-        Me.TTolInfEmp.Size = New System.Drawing.Size(60, 22)
-        Me.TTolInfEmp.TabIndex = 34
-        Me.TTolInfEmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(9, 32)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(80, 14)
-        Me.Label8.TabIndex = 33
-        Me.Label8.Text = "Tol. Superior:"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'TTolSupEmp
-        '
-        Me.TTolSupEmp.Location = New System.Drawing.Point(95, 29)
-        Me.TTolSupEmp.Name = "TTolSupEmp"
-        Me.TTolSupEmp.Size = New System.Drawing.Size(60, 22)
-        Me.TTolSupEmp.TabIndex = 32
-        Me.TTolSupEmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'DGProd
-        '
-        Me.DGProd.AllowUserToAddRows = False
-        Me.DGProd.AllowUserToDeleteRows = False
-        Me.DGProd.AllowUserToResizeRows = False
-        DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        Me.DGProd.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle28
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGProd.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
-        Me.DGProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGProd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodFor, Me.NomFor, Me.clasificacion, Me.Column1, Me.Column2})
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle35.Format = "N2"
-        DataGridViewCellStyle35.NullValue = Nothing
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGProd.DefaultCellStyle = DataGridViewCellStyle35
-        Me.DGProd.EnableHeadersVisualStyles = False
-        Me.DGProd.Location = New System.Drawing.Point(3, 3)
-        Me.DGProd.Name = "DGProd"
-        Me.DGProd.ReadOnly = True
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGProd.RowHeadersDefaultCellStyle = DataGridViewCellStyle36
-        Me.DGProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGProd.Size = New System.Drawing.Size(597, 346)
-        Me.DGProd.TabIndex = 48
-        '
-        'CodFor
-        '
-        Me.CodFor.DataPropertyName = "CodInt"
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle30.Format = "N0"
-        Me.CodFor.DefaultCellStyle = DataGridViewCellStyle30
-        Me.CodFor.HeaderText = "CodInt"
-        Me.CodFor.Name = "CodFor"
-        Me.CodFor.ReadOnly = True
-        '
-        'NomFor
-        '
-        Me.NomFor.DataPropertyName = "Nombre"
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.NomFor.DefaultCellStyle = DataGridViewCellStyle31
-        Me.NomFor.HeaderText = "Nombre"
-        Me.NomFor.Name = "NomFor"
-        Me.NomFor.ReadOnly = True
-        Me.NomFor.Width = 200
-        '
-        'clasificacion
-        '
-        Me.clasificacion.DataPropertyName = "PesoNom"
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle32.Format = "N2"
-        Me.clasificacion.DefaultCellStyle = DataGridViewCellStyle32
-        Me.clasificacion.HeaderText = "PesoNom"
-        Me.clasificacion.Name = "clasificacion"
-        Me.clasificacion.ReadOnly = True
-        Me.clasificacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.clasificacion.Width = 70
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "Tolerancia"
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle33.Format = "N2"
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle33
-        Me.Column1.HeaderText = "Tolerancia"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 70
-        '
-        'Column2
-        '
-        Me.Column2.DataPropertyName = "RangoCapt"
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle34.Format = "N2"
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle34
-        Me.Column2.HeaderText = "Rango Captura"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'FRefrescaDGProd
-        '
-        Me.FRefrescaDGProd.Location = New System.Drawing.Point(263, 170)
-        Me.FRefrescaDGProd.Name = "FRefrescaDGProd"
-        Me.FRefrescaDGProd.Size = New System.Drawing.Size(75, 23)
-        Me.FRefrescaDGProd.TabIndex = 49
-        Me.FRefrescaDGProd.Text = "FRefrescaDGProd"
-        Me.FRefrescaDGProd.UseVisualStyleBackColor = True
-        Me.FRefrescaDGProd.Visible = False
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -555,13 +542,13 @@ Partial Class Productos
         Me.SCProductos.Panel2.ResumeLayout(False)
         CType(Me.SCProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SCProductos.ResumeLayout(False)
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.DGProd, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -603,11 +590,10 @@ Partial Class Productos
     Friend WithEvents TTolSupRep As System.Windows.Forms.TextBox
     Friend WithEvents FRefrescaDGProd As System.Windows.Forms.Button
     Friend WithEvents DGProd As System.Windows.Forms.DataGridView
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents CodFor As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NomFor As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clasificacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
 End Class

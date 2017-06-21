@@ -1,16 +1,21 @@
-﻿Public Class Productos
+﻿Imports System.Windows.Forms
+Imports System.Data.Common
+Imports System.Data
+Imports System.IO
+
+Public Class Productos
     Private DProd As AdoSQL
     Private DVarios As AdoSQL
     Private Campos() As String
-    Private Sub Productos_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
 
-            DProd = New AdoSQL("Articulos")
+            DProd = New AdoSQL("PRODUCTOS")
             DVarios = New AdoSQL("Varios")
             BCancelar_Click(Nothing, Nothing)
             FRefrescaDGProd_Click(Nothing, Nothing)
 
-            Campos = {"CodInt@Código", "Nombre@Nombre"}
+            Campos = {"CodProd@Código", "NomProd@Nombre"}
             Campos = AsignaItemsCB(Campos, CBBuscar.ComboBox, DProd.DataTable)
 
 
@@ -19,9 +24,9 @@
         End Try
     End Sub
 
-    Private Sub FRefrescaDGProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub FRefrescaDGProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FRefrescaDGProd.Click
         Try
-            DProd.Open("Select * from ARTICULOS where TIPO='PT' order BY Nombre")
+            DProd.Open("Select * from PRODUCTOS order BY NomProd")
             DGProd.AutoGenerateColumns = False
             DGProd.DataSource = DProd.DataTable
 
@@ -32,27 +37,28 @@
         End Try
     End Sub
 
-    Private Sub DGProd_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+    Private Sub DGProd_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGProd.CellClick
         Try
             If DGProd.RowCount = 0 Then Return
             If DGProd.CurrentCell Is Nothing Then Return
 
-            TCodInt.Text = DGProd.Rows(DGProd.CurrentRow.Index).DataBoundItem("CODINT")
+            TCodInt.Text = DGProd.Rows(DGProd.CurrentRow.Index).DataBoundItem("CODPROD")
 
             If TCodInt.Text = "" Then Return
 
-            DVarios.Open("Select * from ARTICULOS where TIPO='PT' and CODINT='" + TCodInt.Text + "'")
+            DVarios.Open("Select * from PRODUCTOS where CODPROD='" + TCodInt.Text + "'")
 
             If DVarios.RecordCount = 0 Then Return
 
-            TNombre.Text = DVarios.RecordSet("NOMBRE")
-            'TRangoCap.Text = DVarios.RecordSet("RANGOCAPT")
-            TPresEmpKg.Text = DVarios.RecordSet("TOLERANCIA")
-            TPresKg.Text = DVarios.RecordSet("PESONOM")
-            'TLimInf.Text = DVarios.RecordSet("LIMINF")
-            'TLimSup.Text = DVarios.RecordSet("LIMSUP")
-            'TErrorT1.Text = DVarios.RecordSet("ERRORT1")
-            'TErrorT2.Text = DVarios.RecordSet("ERRORT2")
+            TNombre.Text = DVarios.RecordSet("NOMPROD")
+            TPresEmpKg.Text = DVarios.RecordSet("PRESEMPKG")
+            TPresKg.Text = DVarios.RecordSet("PRESKG")
+            TTolInfRep.Text = DVarios.RecordSet("TOLINFREP")
+            TTolSupRep.Text = DVarios.RecordSet("TOLSUPREP")
+            TTolInfEmp.Text = DVarios.RecordSet("TOLINFEMP")
+            TTolSupEmp.Text = DVarios.RecordSet("TOLSUPEMP")
+
+            DVarios.Close()
 
         Catch ex As Exception
             MsgError(ex.ToString)
@@ -72,7 +78,7 @@
 
     Private Sub BEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BEditar.Click
         Try
-            If DRUsuario("ModProd") Then
+            If DRUsuario("ProdMod") Then
             Else
                 MsgBox("No tiene permiso para ejecutar la acción solicitada", MsgBoxStyle.Information)
                 Return
@@ -85,7 +91,7 @@
 
     Private Sub BNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BNuevo.Click
         Try
-            If DRUsuario("ModProd") Then
+            If DRUsuario("ProdMod") Then
             Else
                 MsgBox("No tiene permiso para ejecutar la acción solicitada", MsgBoxStyle.Information)
                 Return
@@ -127,7 +133,7 @@
                 Return
             End If
 
-            DProd.Open("Select * from ARTICULOS where TIPO='PT' and CODINT='" + TCodInt.Text + "'")
+            DProd.Open("Select * from PRODUCTOS where CODPROD='" + TCodInt.Text + "'")
 
             If DProd.RecordCount > 0 Then
                 Resp = MsgBox("El código del producto ya existe, ¿desea sobrescribirlo?", vbYesNo)
@@ -136,11 +142,11 @@
                 DProd.AddNew()
             End If
 
-            DProd.RecordSet("CODINT") = TCodInt.Text
-            DProd.RecordSet("NOMBRE") = CLeft(TNombre.Text, 20)
-            DProd.RecordSet("PESONOM") = Eval(TPresKg.Text)
+            DProd.RecordSet("CODPROD") = TCodInt.Text
+            DProd.RecordSet("NOMPROD") = CLeft(TNombre.Text, 20)
+            DProd.RecordSet("PRESKG") = Eval(TPresKg.Text)
 
-            DProd.RecordSet("TPRESEMPKG") = Eval(TPresEmpKg.Text)
+            DProd.RecordSet("PRESEMPKG") = Eval(TPresEmpKg.Text)
             DProd.RecordSet("TOLSUPEMP") = Eval(TTolSupEmp.Text)
             DProd.RecordSet("TOLINFEMP") = Eval(TTolInfEmp.Text)
             DProd.RecordSet("TOLINFREP") = Eval(TTolInfRep.Text)
@@ -149,7 +155,10 @@
 
             DProd.Update()
 
+            DProd.Close()
+
             FRefrescaDGProd_Click(Nothing, Nothing)
+            BCancelar_Click(Nothing, Nothing)
 
             Evento("Crea o modifica producto código: " + TCodInt.Text + ", Nombre: " + TNombre.Text + " Peso Nom: " + _
                     TPresKg.Text + " Pres. Empaque [Kg]:" + TPresEmpKg.Text)
@@ -161,7 +170,7 @@
     End Sub
 
 
-    Private Sub BBorrar_Click(sender As System.Object, e As System.EventArgs) Handles BBorrar.Click
+    Private Sub BBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BBorrar.Click
         Dim CodInt As String
         If DRUsuario("ModProd") Then
         Else
@@ -172,14 +181,16 @@
         If DGProd.RowCount = 0 Then Return
         If DGProd.CurrentCell Is Nothing Then Return
 
-        CodInt = DGProd.Rows(DGProd.CurrentRow.Index).DataBoundItem("CODINT")
+        CodInt = DGProd.Rows(DGProd.CurrentRow.Index).DataBoundItem("CODPROD")
 
-        DVarios.Open("Select * from ARTICULOS where CODINT='" + CodInt + "'")
+        DVarios.Open("Select * from PRODUCTOS where CODPROD='" + CodInt + "'")
 
-        Resp = MsgBox("¿Seguro desea eliminar el producto " + DVarios.RecordSet("NOMBRE") + "?", vbInformation, vbYesNo)
+        Resp = MsgBox("¿Seguro desea eliminar el producto " + DVarios.RecordSet("NOMPROD") + "?", vbInformation, vbYesNo)
         If Resp = vbNo Then Return
 
-        DVarios.Open("Delete from ARTICULOS where CODINT='" + CodInt + "'")
+        DVarios.Open("Delete from PRODUCTOS where CODPROD='" + CodInt + "'")
+
+        DVarios.Close()
 
         FRefrescaDGProd_Click(Nothing, Nothing)
 
@@ -187,12 +198,12 @@
 
     End Sub
 
-    Private Sub BSalir_Click(sender As System.Object, e As System.EventArgs) Handles BSalir.Click
+    Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
         Me.Close()
         Me.Dispose()
     End Sub
 
-    Private Sub TBuscar_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles TBuscar.KeyUp
+    Private Sub TBuscar_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TBuscar.KeyUp
         Try
 
             If TBuscar.Text = "" Then
@@ -208,4 +219,9 @@
         End Try
 
     End Sub
+
+    Private Sub BActualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BActualizar.Click
+        FRefrescaDGProd_Click(Nothing, Nothing)
+    End Sub
+
 End Class

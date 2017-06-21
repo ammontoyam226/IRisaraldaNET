@@ -191,6 +191,12 @@
     <Compile Include="Empaque.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EnsaqueMan.Designer.vb">
+      <DependentUpon>EnsaqueMan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EnsaqueMan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fondo1.designer.vb">
       <DependentUpon>Fondo1.vb</DependentUpon>
     </Compile>
@@ -250,6 +256,12 @@
     <Compile Include="Start.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TablaEnsaque.Designer.vb">
+      <DependentUpon>TablaEnsaque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TablaEnsaque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
@@ -284,6 +296,9 @@
     <EmbeddedResource Include="Empaque.resx">
       <DependentUpon>Empaque.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EnsaqueMan.resx">
+      <DependentUpon>EnsaqueMan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fondo1.resx">
       <DependentUpon>Fondo1.vb</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablaEnsaque.resx">
+      <DependentUpon>TablaEnsaque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
