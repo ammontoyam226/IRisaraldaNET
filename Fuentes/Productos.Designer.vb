@@ -24,21 +24,13 @@ Partial Class Productos
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-<<<<<<< HEAD
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-=======
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-<<<<<<< HEAD
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-=======
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Me.SCProductos = New System.Windows.Forms.SplitContainer()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -65,10 +57,7 @@ Partial Class Productos
         Me.NomFor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clasificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-<<<<<<< HEAD
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-=======
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
@@ -334,7 +323,6 @@ Partial Class Productos
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGProd.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-<<<<<<< HEAD
         Me.DGProd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodFor, Me.NomFor, Me.clasificacion, Me.Column1, Me.Column2})
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
@@ -346,24 +334,10 @@ Partial Class Productos
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGProd.DefaultCellStyle = DataGridViewCellStyle8
-=======
-        Me.DGProd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodFor, Me.NomFor, Me.clasificacion, Me.Column1})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.Format = "N2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGProd.DefaultCellStyle = DataGridViewCellStyle7
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         Me.DGProd.EnableHeadersVisualStyles = False
         Me.DGProd.Location = New System.Drawing.Point(3, 3)
         Me.DGProd.Name = "DGProd"
         Me.DGProd.ReadOnly = True
-<<<<<<< HEAD
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -372,51 +346,28 @@ Partial Class Productos
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGProd.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
-=======
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGProd.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         Me.DGProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGProd.Size = New System.Drawing.Size(597, 346)
         Me.DGProd.TabIndex = 48
         '
         'CodFor
         '
-<<<<<<< HEAD
         Me.CodFor.DataPropertyName = "CodInt"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle3.Format = "N0"
         Me.CodFor.DefaultCellStyle = DataGridViewCellStyle3
         Me.CodFor.HeaderText = "CodInt"
-=======
-        Me.CodFor.DataPropertyName = "CodProd"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N0"
-        Me.CodFor.DefaultCellStyle = DataGridViewCellStyle3
-        Me.CodFor.HeaderText = "Código"
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         Me.CodFor.Name = "CodFor"
         Me.CodFor.ReadOnly = True
         '
         'NomFor
         '
-<<<<<<< HEAD
         Me.NomFor.DataPropertyName = "Nombre"
-=======
-        Me.NomFor.DataPropertyName = "NomProd"
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         Me.NomFor.DefaultCellStyle = DataGridViewCellStyle4
         Me.NomFor.HeaderText = "Nombre"
         Me.NomFor.Name = "NomFor"
         Me.NomFor.ReadOnly = True
-<<<<<<< HEAD
         Me.NomFor.Width = 200
         '
         'clasificacion
@@ -451,31 +402,6 @@ Partial Class Productos
         Me.Column2.HeaderText = "Rango Captura"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-=======
-        Me.NomFor.Width = 240
-        '
-        'clasificacion
-        '
-        Me.clasificacion.DataPropertyName = "PresKg"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        Me.clasificacion.DefaultCellStyle = DataGridViewCellStyle5
-        Me.clasificacion.HeaderText = "PresKg"
-        Me.clasificacion.Name = "clasificacion"
-        Me.clasificacion.ReadOnly = True
-        Me.clasificacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.clasificacion.Width = 90
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "PresEmpKg"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column1.HeaderText = "Presen. Emp."
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
         '
         'ToolStripSeparator9
         '
@@ -677,10 +603,11 @@ Partial Class Productos
     Friend WithEvents TTolSupRep As System.Windows.Forms.TextBox
     Friend WithEvents FRefrescaDGProd As System.Windows.Forms.Button
     Friend WithEvents DGProd As System.Windows.Forms.DataGridView
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents CodFor As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NomFor As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clasificacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
 End Class

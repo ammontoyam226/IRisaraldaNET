@@ -16,8 +16,7 @@ Public Class Servidor
     Private DEquipos As AdoSQL
     Private DConfigVar As AdoSQL
     Private DRepeso As AdoSQL
-    Private DVarios As AdoSQL
-    Private DVariosConfig As AdoSQL
+    Private DUsuarios As AdoSQL
     Private DDatosenLinea As AdoSQL
 
     Private ConGSE(30) As Connection
@@ -45,8 +44,8 @@ Public Class Servidor
     'Private ContEnvioUsu(30) As Integer
     'Private HabEnvioUsu(30) As Boolean
 
+    ' Variables
     Private ServAct As Short = 0
-    ' Variables para el Custom
     Private Cons(4) As Integer
     Private Ref(4) As Integer
     Private Real(4) As Integer
@@ -74,38 +73,6 @@ Public Class Servidor
     Dim ValAntSacB1 As Long
     Dim ValAntSacB2 As Long
 
-    ' variables para reportes
-    Private ConsBasc(4) As Integer
-    Private CodPro(4) As Integer
-    Private Sacos(4) As Integer
-    Private Pestotal(4) As Integer
-    Private Present(4) As Integer
-    Private SacChk(4) As Integer
-    Private SacUnder(4) As Integer
-    Private SacOver(4) As Integer
-    Private FechaIni(4) As String
-    Private HoraIni(4) As String
-    Private FechaFin(4) As String
-    Private HoraFin(4) As String
-    Private NomProd(4) As String    
-
-    'variables para repeso
-    Private CProd(4) As Integer
-    Private ConsChk(4) As Integer
-    Private Peso(4) As Integer
-    Private Preskg(4) As Integer
-    Private SUnder(4) As Integer
-    Private SOver(4) As Integer
-    Private FIni(4) As String
-    Private HIni(4) As String
-    Private NProd(4) As String
-    Private ContRep(4) As Integer
-    Private TSup(4) As Integer
-    Private TInf(4) As Integer
-    Private PresEmpKg(4) As Integer
-
-
-    ' array textbox
     Private TIP As ArrayControles(Of TextBox)
     Private TSegSinCon As ArrayControles(Of TextBox)
     Private TSeg As ArrayControles(Of TextBox)
@@ -124,7 +91,6 @@ Public Class Servidor
     Private TLote As ArrayControles(Of TextBox)
     Private TUsuario As ArrayControles(Of TextBox)
 
-    ' array button
     Private BLimpiar As ArrayControles(Of Button)
     Private BPruebaCom As ArrayControles(Of Button)
     Private BPideRep As ArrayControles(Of Button)
@@ -181,8 +147,7 @@ Public Class Servidor
             DEquipos = New AdoSQL("Equipos")
             DEmp = New AdoSQL("Empaque")
             DRepeso = New AdoSQL("Repeso")
-            DVarios = New AdoSQL("Varios")
-            DVariosConfig = New AdoSQL("VariosConfig")
+            DUsuarios = New AdoSQL("Usuarios")
             DDatosenLinea = New AdoSQL("DDatosenLinea")
 
             DEquipos.Open("select * from EQUIPOS where ACTIVO=1 order by EQUIPO")
@@ -352,12 +317,17 @@ Public Class Servidor
     End Sub
 
     'Private Sub BRecRep1_Click(sender As System.Object, e As System.EventArgs, Optional ByVal Reportes As String = "") Handles BRecRep1.Click    
-    Private Sub BRecRep_Click(sender As System.Object, e As System.EventArgs) Handles BRecRep1.Click, BRecRep2.Click, BRecRep3.Click,
-        BRecRep4.Click
+    Private Sub BRecRep_Click(sender As System.Object, e As System.EventArgs) Handles BRecRep1.Click
 
         Dim Index As Short = BRecRep.Index(CType(sender, Button))
+        Dim CodProd, ConsBasc, Sacos, SacChk, Presentacion, SacUnder, SacOver, FechaIni, HoraIni, FechaFin, HoraFin, Pestotal, NomProd As String
+        Dim CodEmp As String = ""
+        Dim CodEtiq As String = ""
+        Dim CodFor = "0000"
+        Dim LP = "0000"
 
         Try
+
             RenglonesRep(Index) = Reportes(Index).Split(Chr(13))
 
             For i = 0 To RenglonesRep(Index).Length - 1
@@ -365,92 +335,67 @@ Public Class Servidor
                 If RenglonesRep(Index)(i).Length < 6 Then Continue For
                 CamposRep(Index) = RenglonesRep(Index)(i).Split(",")
 
-                ConsBasc(Index) = CamposRep(Index)(0)
-                CodPro(Index) = CamposRep(Index)(1)
-                Sacos(Index) = CamposRep(Index)(2)
-                Pestotal(Index) = CamposRep(Index)(3)
-                Present(Index) = CamposRep(Index)(4)
-                SacChk(Index) = CamposRep(Index)(5)
-                SacUnder(Index) = CamposRep(Index)(6)
-                SacOver(Index) = CamposRep(Index)(7)
-                FechaIni(Index) = "20" + CamposRep(Index)(8)
-                HoraIni(Index) = CamposRep(Index)(9)
-                FechaFin(Index) = "20" + CamposRep(Index)(10)
-                HoraFin(Index) = CamposRep(Index)(11)
+                ConsBasc = CamposRep(Index)(0)
+                CodProd = CamposRep(Index)(1)
+                Sacos = CamposRep(Index)(2)
+                Pestotal = CamposRep(Index)(3)
+                Presentacion = CamposRep(Index)(4)
+                SacChk = CamposRep(Index)(5)
+                SacUnder = CamposRep(Index)(6)
+                SacOver = CamposRep(Index)(7)
+                FechaIni = "20" + CamposRep(Index)(8)
+                HoraIni = CamposRep(Index)(9)
+                FechaFin = "20" + CamposRep(Index)(10)
+                HoraFin = CamposRep(Index)(11)
 
-                If Eval(CodPro(Index)) = 0 OrElse Eval(ConsBasc(Index)) = 0 OrElse Eval(Sacos(Index)) = 0 Then Continue For
+                If Eval(CodProd) = 0 OrElse Eval(ConsBasc) = 0 OrElse Eval(Sacos) = 0 Then Continue For
 
-                FechaIni(Index) = CLeft(FechaIni(Index), 10) + " " + CLeft(HoraIni(Index), 8)
-                FechaFin(Index) = CLeft(FechaFin(Index), 10) + " " + CLeft(HoraFin(Index), 8)
+                FechaIni = CLeft(FechaIni, 10) + " " + CLeft(HoraIni, 8)
+                FechaFin = CLeft(FechaFin, 10) + " " + CLeft(HoraFin, 8)
 
-                If FechaIni(Index).Length <> 19 Then FechaIni(Index) = Now.ToString("yyyy/MM/dd HH:mm:ss")
-                If FechaFin(Index).Length <> 19 Then FechaFin(Index) = Now.ToString("yyyy/MM/dd HH:mm:ss")
+                If FechaIni.Length <> 19 Then FechaIni = Now.ToString("yyyy/MM/dd HH:mm:ss")
+                If FechaFin.Length <> 19 Then FechaFin = Now.ToString("yyyy/MM/dd HH:mm:ss")
 
-                If IsDate(FechaIni(Index)) = False Then FechaIni(Index) = Now.ToString("yyyy/MM/dd HH:mm:ss")
-                If IsDate(FechaFin(Index)) = False Then FechaFin(Index) = Now.ToString("yyyy/MM/dd HH:mm:ss")
+                If IsDate(FechaIni) = False Then FechaIni = Now.ToString("yyyy/MM/dd HH:mm:ss")
+                If IsDate(FechaFin) = False Then FechaFin = Now.ToString("yyyy/MM/dd HH:mm:ss")
 
 
-                DProd.Open("select * from PRODUCTOS where CODPROD='" + CodPro(Index) + "'")
+                DProd.Open("select * from PRODUCTOS where CODPROD='" + CodProd + "'")
 
-                NomProd(Index) = "No Existe"
+                NomProd = "No Existe"
                 If DProd.RecordCount > 0 Then
-                    NomProd(Index) = DProd.RecordSet("NOMPROD").ToString
+                    CodProd = DProd.RecordSet("CODPROD").ToString
+                    NomProd = DProd.RecordSet("NOMPROD").ToString
+                    CodEmp = DProd.RecordSet("CODEMP").ToString
+                    Pestotal = DProd.RecordSet("PRESKG").ToString
                 End If
 
-                DEmp.Open("select * from EMPAQUE" + Index + " where CODPROD='" + Trim(CodPro(Index)) + "' and CONTBASC=" + Trim(ConsBasc(Index)) + " and MAQUINA=" + Index.ToString)
+                'DEmp.Open("select * from EMPAQUE where FECHAINI>'" + Format(DateAdd(DateInterval.Day, -15, Now), "yyyy/MM/dd HH:mm:ss") + "' and CONTBASC=" + ConsBasc + " and MAQUINA=" + EquipoNo.ToString)
+                DEmp.Open("select * from EMPAQUE where CODPROD='" + Trim(CodProd) + "' and CONTBASC=" + Trim(ConsBasc) + " and MAQUINA=" + Index.ToString)
                 If DEmp.RecordCount = 0 Then
                     DEmp.AddNew()
-                    DEmp.RecordSet("CODPROD") = CodPro(Index)
-                    DEmp.RecordSet("NOMPROD") = NomProd(Index)
-                    DEmp.RecordSet("CONTBASC") = ConsBasc(Index)
-                    DEmp.RecordSet("PRESKG") = Present(Index)
-                    DEmp.RecordSet("PESO") = Eval(Present(Index)) * Eval(Sacos(Index))
-                    DEmp.RecordSet("ACUMULADO") = 0
-                    DEmp.RecordSet("ACUMULADO2") = Sacos(Index)
-                    DEmp.RecordSet("MAQUINA") = Index
+                    DEmp.RecordSet("CONTBASC") = ConsBasc
+                    DEmp.RecordSet("CODPROD") = CodProd
+                    DEmp.RecordSet("NOMPROD") = NomProd
+                    DEmp.RecordSet("SACOS") = Sacos
                     DEmp.RecordSet("MESDIA") = Date.Now
-                    DEmp.RecordSet("SACOS") = Sacos(Index)
-                    DEmp.RecordSet("FECHA") = FechaIni(Index)
-                    DEmp.RecordSet("FECHA2") = FechaFin(Index)
-                    DEmp.RecordSet("SACOK") = Eval(SacChk(Index)) - Eval(SacUnder(Index)) - Eval(SacOver(Index))
-                    DEmp.RecordSet("SACUNDER") = SacUnder(Index)
-                    DEmp.RecordSet("SACOVER") = SacOver(Index)
-                    DEmp.RecordSet("SACCHK") = SacChk(Index)
+                    DEmp.RecordSet("PESO") = Eval(Pestotal) * Eval(Sacos)
+                    DEmp.RecordSet("MAQUINA") = Index
+                    DEmp.RecordSet("FECHA") = FechaIni
+                    DEmp.RecordSet("FECHA2") = FechaFin
+                    DEmp.RecordSet("PRESKG") = Pestotal
+                    DEmp.RecordSet("SACUNDER") = SacUnder
+                    DEmp.RecordSet("SACOVER") = SacOver
+                    DEmp.RecordSet("SACOK") = SacChk
+                    DEmp.RecordSet("SACCHK") = Eval(SacChk) - Eval(SacUnder) - Eval(SacOver)
+                    DEmp.RecordSet("PRESEMP") = Presentacion
 
                     DEmp.Update()
-                    Evento("Crea registro de empaque Maquina " + Index.ToString + " ContBasc " + Trim(ConsBasc(Index)) + " REF " + Trim(CodPro(Index)))
-                End If 'Empaue nuevo
+                    Evento("Crea registro de empaque Maquina " + Index.ToString + " ContBasc " + Trim(ConsBasc) + " REF " + Trim(CodProd))
 
-
-                DVarios.Open("select sum(SACOS) AS CONTSAC from EMPAQUE" + Trim(Index) + " where CODPROD='" + Trim(CodPro(Index)) + "' and CONTBASC=" + Trim(ConsBasc(Index)) + " and MAQUINA=" + Trim(Index))
-                If Not IsDBNull(DVarios.RecordSet("CONTSAC")) Then
-                    If DVarios.RecordSet("CONTSAC") < Sacos(Index) Then
-                        DVarios.Open("delete from EMPAQUE" + Trim(Index) + " where CODPROD='" + Trim(CodPro(Index)) + "' and CONTBASC=" + Trim(ConsBasc(Index)) + " and MAQUINA=" + Trim(Index))
-
-                        DEmp.Open("select * from EMPAQUE" + Trim(Index) + " where CODPROD='0'") 'Abro vacio
-
-                        DEmp.AddNew()
-                        DEmp.RecordSet("CODPROD") = CodPro(Index)
-                        DEmp.RecordSet("NOMPROD") = NomProd(Index)
-                        DEmp.RecordSet("CONTBASC") = ConsBasc(Index)
-                        DEmp.RecordSet("PRESKG") = Present(Index)
-                        DEmp.RecordSet("PESO") = Eval(Present(Index)) * Eval(Sacos(Index))
-                        DEmp.RecordSet("ACUMULADO") = 0
-                        DEmp.RecordSet("ACUMULADO2") = Sacos(Index)
-                        DEmp.RecordSet("MAQUINA") = Index
-                        DEmp.RecordSet("MESDIA") = Date.Now
-                        DEmp.RecordSet("SACOS") = Sacos(Index)
-                        DEmp.RecordSet("FECHA") = FechaIni(Index)
-                        DEmp.RecordSet("FECHA2") = FechaFin(Index)
-                        DEmp.RecordSet("SACOK") = Eval(SacChk(Index)) - Eval(SacUnder(Index)) - Eval(SacOver(Index))
-                        DEmp.RecordSet("SACUNDER") = SacUnder(Index)
-                        DEmp.RecordSet("SACOVER") = SacOver(Index)
-                        DEmp.RecordSet("SACCHK") = SacChk(Index)
-
-                        DEmp.Update()
-                    End If
                 End If
             Next
+
 
             BBorraRep_Click(BBorraRep(Index), Nothing)
 
@@ -460,8 +405,7 @@ Public Class Servidor
 
     End Sub
 
-    Private Sub BPedirChk_Click(sender As System.Object, e As System.EventArgs) Handles BPedirChk1.Click, BPedirChk2.Click, BPedirChk3.Click,
-        BPedirChk4.Click
+    Private Sub BPedirChk_Click(sender As System.Object, e As System.EventArgs) Handles BPedirChk1.Click, BPedirChk2.Click, BPedirChk3.Click, BPedirChk4.Click
 
         Try
             Dim Index As Short = BPedirChk.Index(CType(sender, Button))
@@ -496,8 +440,7 @@ Public Class Servidor
         End Try
     End Sub
 
-    Private Sub BBorraRep_Click(sender As System.Object, e As System.EventArgs) Handles BBorraRep1.Click, BBorraRep2.Click, BBorraRep3.Click,
-        BBorraRep4.Click
+    Private Sub BBorraRep_Click(sender As System.Object, e As System.EventArgs) Handles BBorraRep1.Click, BBorraRep2.Click, BBorraRep3.Click, BBorraRep4.Click
         Try
             Dim Index As Short = BBorraRep.Index(CType(sender, Button))
             If ConGSE(Index).State = Connection.StateConnection.Connected Then
@@ -567,8 +510,7 @@ Public Class Servidor
 
     End Sub
 
-    Private Sub BLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles BLimpiar1.Click, BLimpiar2.Click, BLimpiar3.Click,
-        BLimpiar4.Click
+    Private Sub BLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles BLimpiar1.Click, BLimpiar2.Click, BLimpiar3.Click, BLimpiar4.Click
 
         Try
             Dim Index As Short = BLimpiar.Index(CType(sender, Button))
@@ -581,8 +523,7 @@ Public Class Servidor
         End Try
     End Sub
 
-    Private Sub BPruebaCom_Click(sender As System.Object, e As System.EventArgs) Handles BPruebaCom1.Click, BPruebaCom2.Click, BPruebaCom3.Click,
-        BPruebaCom4.Click
+    Private Sub BPruebaCom_Click(sender As System.Object, e As System.EventArgs) Handles BPruebaCom1.Click, BPruebaCom2.Click, BPruebaCom3.Click, BPruebaCom4.Click
 
         Try
             Dim Index As Short = BPruebaCom.Index(CType(sender, Button))
@@ -600,9 +541,12 @@ Public Class Servidor
     End Sub
 
 
-    Private Sub BRecChk_Click(sender As System.Object, e As System.EventArgs) Handles BRecChk1.Click, BRecChk2.Click, BRecChk3.Click,
-        BRecChk4.Click
-
+    Private Sub BRecChk_Click(sender As System.Object, e As System.EventArgs) Handles BRecChk1.Click, BRecChk2.Click, BRecChk3.Click, BRecChk4.Click
+        Dim CodProd, ConsChk, Peso, Presentacion, SacUnder, SacOver, FechaIni, HoraIni, NomProd As String
+        Dim CodEmp As String = ""
+        Dim CodEtiq As String = ""
+        Dim CodFor = "0000"
+        Dim LP = "0000"
         Dim Index As Short = BRecChk.Index(CType(sender, Button))
         Try
 
@@ -614,54 +558,50 @@ Public Class Servidor
                 If RenglonesChk(Index)(i).Length < 6 Then Continue For
                 CamposChk(Index) = RenglonesChk(Index)(i).Split(",")
 
-                CProd(Index) = CamposChk(Index)(0)
-                ConsChk(Index) = CamposChk(Index)(1)
-                Peso(Index) = CamposChk(Index)(2)
-                Preskg(Index) = CamposChk(Index)(3)
-                SUnder(Index) = CamposChk(Index)(4)
-                SOver(Index) = CamposChk(Index)(5)
-                FIni(Index) = "20" + CamposChk(Index)(6)
-                HIni(Index) = CamposChk(Index)(7)
+                ConsChk = CamposChk(Index)(0)
+                CodProd = CamposChk(Index)(1)
+                Peso = CamposChk(Index)(2)
+                Presentacion = CamposChk(Index)(3)
+                SacUnder = CamposChk(Index)(4)
+                SacOver = CamposChk(Index)(5)
+                FechaIni = "20" + CamposChk(Index)(6)
+                HoraIni = CamposChk(Index)(7)
 
 
-                If Eval(CProd(Index)) = 0 OrElse Eval(ConsChk(Index)) = 0 Then Continue For
+                If Eval(CodProd) = 0 OrElse Eval(ConsChk) = 0 Then Continue For
 
-                FIni(Index) = CLeft(FIni(Index), 10) + " " + CLeft(HIni(Index), 8)
+                FechaIni = CLeft(FechaIni, 10) + " " + CLeft(HoraIni, 8)
 
-                If FIni(Index).Length <> 19 Then FIni(Index) = Now.ToString("yyyy/MM/dd HH:mm:ss")
+                If FechaIni.Length <> 19 Then FechaIni = Now.ToString("yyyy/MM/dd HH:mm:ss")
 
-                If IsDate(FIni(Index)) = False Then FIni(Index) = Now.ToString("yyyy/MM/dd HH:mm:ss")
+                If IsDate(FechaIni) = False Then FechaIni = Now.ToString("yyyy/MM/dd HH:mm:ss")
 
-                DProd.Open("select * from PRODUCTOS where CODPROD='" + CProd(Index) + "'")
+                DProd.Open("select * from PRODUCTOS where CODPROD='" + CodProd + "'")
 
-                NProd(Index) = "No Existe"
+                NomProd = "No Existe"
                 If DProd.RecordCount > 0 Then
-                    NProd(Index) = DProd.RecordSet("NOMPROD").ToString
-                    TSup(Index) = DProd.RecordSet("TOLINFREP").ToString
-                    TInf(Index) = DProd.RecordSet("TOLSUPREP").ToString
-                    PresEmpKg(Index) = DProd.RecordSet("PRESEMPKG").ToString
-                    DProd.Close()
+                    CodProd = DProd.RecordSet("CODPROD").ToString
+                    NomProd = DProd.RecordSet("NOMPROD").ToString
+                    CodEmp = DProd.RecordSet("CODEMP").ToString
+                    Presentacion = DProd.RecordSet("PRESKG").ToString
                 End If
 
-                DVariosConfig.Open("select * from VARIOSCONFIG where DESCRIPCION='ConsRepeso'")
-                ContRep(Index) = DVariosConfig.RecordSet("CONSREPESO")
-
-                'DRepeso.Open("select * from REPESO" + Index.ToString + " where CODPROD='" + Trim(CProd(Index)) + "' and CONT=" + Trim(ConsChk(Index)) + " and MAQUINA=" + Index.ToString)
-                DRepeso.Open("select * from REPESO where MAQUINA=0")
+                'DEmp.Open("select * from EMPAQUE where FECHAINI>'" + Format(DateAdd(DateInterval.Day, -15, Now), "yyyy/MM/dd HH:mm:ss") + "' and CONTBASC=" + ConsBasc + " and MAQUINA=" + EquipoNo.ToString)
+                DRepeso.Open("select * from REPESO" + Index.ToString + " where CODPROD='" + Trim(CodProd) + "' and CONT=" + Trim(ConsChk) + " and MAQUINA=" + Index.ToString)
                 If DRepeso.RecordCount = 0 Then
                     DRepeso.AddNew()
-                    DRepeso.RecordSet("CONT") = ContRep(Index) + 1
-                    DRepeso.RecordSet("CODPROD") = CProd(Index)
-                    DRepeso.RecordSet("NOMPROD") = NProd(Index)
-                    DRepeso.RecordSet("PESO") = Peso(Index)
-                    DRepeso.RecordSet("FECHA") = FIni(Index)
-                    DRepeso.RecordSet("TOLSUP") = TSup(Index)
-                    DRepeso.RecordSet("TOLINF") = TInf(Index)
-                    DRepeso.RecordSet("PRESEMP") = PresEmpKg(Index)
+                    DRepeso.RecordSet("CONT") = ConsChk
+                    DRepeso.RecordSet("CODPROD") = CodProd
+                    DRepeso.RecordSet("NOMPROD") = NomProd
+                    DRepeso.RecordSet("PESO") = Peso
+                    DRepeso.RecordSet("FECHA") = FechaIni.ToString
+                    DRepeso.RecordSet("TOLSUP") = SacUnder
+                    DRepeso.RecordSet("TOLINF") = SacOver
+                    DRepeso.RecordSet("PRESEMP") = Presentacion
                     DRepeso.RecordSet("MAQUINA") = Index
-                    DRepeso.RecordSet("MAQUINA") = Peso(Index)
+
                     DRepeso.Update()
-                    Evento("Crea registro de empaque Maquina " + Index.ToString + " ContBasc " + Trim(ConsChk(Index)) + " REF " + Trim(CProd(Index)))
+                    Evento("Crea registro de empaque Maquina " + Index.ToString + " ContBasc " + Trim(ConsChk) + " REF " + Trim(CodProd))
 
                 End If
             Next
@@ -675,8 +615,7 @@ Public Class Servidor
     End Sub
 
 
-    Private Sub BBorraChk_Click(sender As System.Object, e As System.EventArgs) Handles BBorraChk1.Click, BBorraChk2.Click, BBorraChk3.Click,
-        BBorraChk4.Click
+    Private Sub BBorraChk_Click(sender As System.Object, e As System.EventArgs) Handles BBorraChk1.Click
         Try
             Dim Index As Short = BBorraChk.Index(CType(sender, Button))
 
@@ -700,10 +639,9 @@ Public Class Servidor
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'En caso de pegar texto en TRx
-        MostrarResultadoMethod(Nothing, Nothing)
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MostrarResultadoMethod(Nothing, Nothing)
     End Sub
 
     Private Sub BHoraGSE_Click(sender As System.Object, e As System.EventArgs) Handles BHoraGSE1.Click, BHoraGSE2.Click, BHoraGSE3.Click,
@@ -728,7 +666,10 @@ Public Class Servidor
     End Sub
 
 
+
     Private Sub BRepSac_Click(sender As System.Object, e As System.EventArgs) Handles BRepSac1.Click, BRepSac2.Click, BRepSac3.Click, BRepSac4.Click
+
+
 
         Dim Index As Short = BRepSac.Index(CType(sender, Button))
 
@@ -793,7 +734,8 @@ Public Class Servidor
 
                     DDatosenLinea.RecordSet("CONT") = Cons(Index)
                     DDatosenLinea.RecordSet("CODPROD") = Ref(Index)
-                    'DDatosenLinea.RecordSet("MAQUINA") = Index                    
+                    'DDatosenLinea.RecordSet("MAQUINA") = Index
+                    'DDatosenLinea.RecordSet("MAQUINA") = Index
                     DDatosenLinea.RecordSet("PRESKG") = Pres(Index)
                     DDatosenLinea.RecordSet("PESO") = Tot(Index)
                     DDatosenLinea.RecordSet("ESTADO") = Estado(Index)
