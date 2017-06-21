@@ -306,6 +306,12 @@ Public Class Grafica
                 Grafica.Series("LimSup").Points.AddXY(X, LimSup)
             Next
 
+            'Grafica.DataSource = DVarios.DataTable
+            'Grafica.Series("Peso").XValueMember = "Fecha"
+            'Grafica.Series("Peso").YValueMembers = "Peso"
+            'Grafica.Series("PesoPunto").XValueMember = "Fecha"
+            'Grafica.Series("PesoPunto").YValueMembers = "Peso"
+
             'GraficaOK = True
 
         Catch ex As Exception
