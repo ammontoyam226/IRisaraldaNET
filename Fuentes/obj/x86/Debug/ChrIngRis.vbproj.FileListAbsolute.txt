@@ -28,3 +28,7 @@ D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Grafic
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Aviso.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Form1.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.FiltroFecha.resources
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\ChronoSoftNet.exe.config
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
+C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
