@@ -304,6 +304,7 @@ Public Class Grafica
                 Grafica.Series("LimInf").Points.AddXY(X, LimInf)
                 'Grafica.Series("LimInf").Points.AddXY(X, 49.8)
                 Grafica.Series("LimSup").Points.AddXY(X, LimSup)
+
             Next
 
             'Grafica.DataSource = DVarios.DataTable
