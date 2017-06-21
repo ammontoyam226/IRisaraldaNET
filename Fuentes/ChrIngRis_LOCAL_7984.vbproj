@@ -191,17 +191,10 @@
     <Compile Include="Empaque.vb">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FiltroFecha.Designer.vb">
       <DependentUpon>FiltroFecha.vb</DependentUpon>
     </Compile>
     <Compile Include="FiltroFecha.vb">
-=======
-    <Compile Include="EnsaqueMan.Designer.vb">
-      <DependentUpon>EnsaqueMan.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EnsaqueMan.vb">
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fondo1.designer.vb">
@@ -270,12 +263,6 @@
     <Compile Include="Start.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TablaEnsaque.Designer.vb">
-      <DependentUpon>TablaEnsaque.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TablaEnsaque.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
@@ -310,13 +297,8 @@
     <EmbeddedResource Include="Empaque.resx">
       <DependentUpon>Empaque.vb</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="FiltroFecha.resx">
       <DependentUpon>FiltroFecha.vb</DependentUpon>
-=======
-    <EmbeddedResource Include="EnsaqueMan.resx">
-      <DependentUpon>EnsaqueMan.vb</DependentUpon>
->>>>>>> d08c7c6d6163cbe77874c80f15905ccf3edcab8e
     </EmbeddedResource>
     <EmbeddedResource Include="Fondo1.resx">
       <DependentUpon>Fondo1.vb</DependentUpon>
@@ -350,9 +332,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TablaEnsaque.resx">
-      <DependentUpon>TablaEnsaque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
