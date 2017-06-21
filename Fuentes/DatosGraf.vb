@@ -24,7 +24,7 @@
         End Try
     End Sub
 
-    Private Sub BGrafEnsac_Click(sender As System.Object, e As System.EventArgs) Handles BGrafEnsac.Click
+    Public Sub BGrafEnsac_Click(sender As System.Object, e As System.EventArgs) Handles BGrafEnsac.Click
         Try
             TMensaje.Text = "Peso de los sacos Programados para ser Graficados"
 
@@ -46,7 +46,7 @@
             If Not IsDBNull(DPesos.RecordSet("PROMPESO")) Then
                 Prom = Math.Round(DPesos.RecordSet("PROMPESO"), 2)
             End If
-            
+
             DPesosChk.Open(" select * from PESOSCHK where  MAQUINA=" + Trim(TMaquina.Text) + " and ID=" + Trim(TID.Text) + " and BASCULA=" + Trim(TBascula.Text) + " and Fecha='" + Trim(TFecha.Text) + "'")
 
 

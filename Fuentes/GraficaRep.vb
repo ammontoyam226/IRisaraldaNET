@@ -1,7 +1,7 @@
 ﻿
 Imports System.Windows.Forms.DataVisualization.Charting
 
-Public Class Grafica
+Public Class GraficaRep
 
     Private _CodProd As String
     Private _Maquina As Int16
@@ -136,7 +136,7 @@ Public Class Grafica
             If Val(_Maquina) = 0 Then Return
             If IsDBNull(_FechaIni) Then Return
 
-            Grafica.Titles(0).Text = "CARTA DE CONTROL PESO NETO ENSACADORA " + _Maquina.ToString + " BÁSCULA " + _Basc.ToString
+            Grafica.Titles(0).Text = "CARTA DE CONTROL COMPROBADORA " + _Maquina.ToString
             Grafica.Titles(0).ForeColor = Color.Red
             Grafica.Series.Clear()
 
@@ -177,7 +177,7 @@ Public Class Grafica
                     DEmp.Open("select * from EMPAQUE" + _Maquina.ToString + " where MAQUINA=" + _Maquina.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by CONT desc")
 
 
-                    DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
+                    DVarios.Open("select * from REPESO where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
 
                 Else
                     Mensaje = " En el Intervalo de Tiempo Seleccionado se empacaron Varios Productos " + vbCrLf + _
@@ -208,24 +208,25 @@ Public Class Grafica
                             Exit Sub
                         End If
 
-                        'selecciono los datos de los sacos chequeados en un intervalo de una Hora
-                        DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + Trim(RespInput) + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
+                        'selecciono los datos de los sacos REPESO en un intervalo de una Hora
+                        DVarios.Open("select * from REPESO where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + Trim(RespInput) + "' and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
                     End If
                 End If
             Else
 
                 'selecciono los datos de los sacos chequeados en un intervalo de una Hora
-                DVarios.Open("select * from PESOSCHK where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and BASCULA=" + _Basc.ToString + " and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
+                DVarios.Open("select * from REPESO where MAQUINA=" + _Maquina.ToString + " and CODPROD='" + DEmp.RecordSet("CodProd") + "' and FECHA between '" + FechaIniString + "' and '" + FechaFinString + "' order by Fecha")
 
             End If
 
 
             If DVarios.RecordCount = 0 Then
                 'MsgBox "No se realizo Chequeo de Sacos Verifique la cantidad de sacos empacados en el intervalo de tiempo seleccionado", vbInformation
-                Aviso.Label1.Text = "No se realizó Cheq. de Sacos Verif. la cantidad de sacos empacad. en el interv. de tiempo seleccionado Empac. " + _Maquina.ToString
+                Aviso.Label1.Text = "No se realizó comprobación de sacos en el interv. de tiempo seleccionado Empac. " + _Maquina.ToString
                 Aviso.Show()
                 Exit Sub
             End If
+
             _CodProd = ""
             _CodProd = DVarios.RecordSet("CODPROD")
 
@@ -235,6 +236,8 @@ Public Class Grafica
             Grafica.Series("Peso").YValueType = ChartValueType.Double
             Grafica.Series("Peso").Color = Color.Red
             Grafica.Series("Peso").BorderWidth = 1.5
+
+
 
 
             Grafica.Series.Add("LimInf")
@@ -273,14 +276,14 @@ Public Class Grafica
 
 
 
-            PesoNom = DVarios.RecordSet("PRESKG")
-            LimSup = Math.Round(PesoNom + DVarios.RecordSet("TOLSUPEMP"), 1)
-            LimInf = Math.Round(PesoNom - DVarios.RecordSet("TOLINFEMP"), 1)
+            PesoNom = DVarios.RecordSet("PRESEMPKG")
+            LimSup = Math.Round(PesoNom + DVarios.RecordSet("TOLSUPREP"), 3)
+            LimInf = Math.Round(PesoNom - DVarios.RecordSet("TOLINFREP"), 3)
 
             Grafica.Titles(1).Text = DVarios.RecordSet("CODPROD") + " " + DVarios.RecordSet("NOMPROD")
 
-            Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 0.1
-            Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 0.1
+            Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 0.01
+            Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 0.01
             Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
             Grafica.ChartAreas(0).AxisX.Interval = _Incremento
 
@@ -294,7 +297,6 @@ Public Class Grafica
             For Each Fila As DataRow In DVarios.Rows
                 ValorEjeY = Math.Round(Fila("PESO"), 1)
                 Dim X As Date = Fila("FECHA")
-                'Dim X As Single = Eval(Minute(Fila("FECHA")) + Second(Fila("FECHA")) / 100)
                 'ValorEjeX = Math.Round(DateDiff(DateInterval.Second, CDate(FechaIni), CDate(Fila("Fecha"))) / 60, 2)
                 If ValorEjeY < 0 Then ValorEjeY = 0
                 'Grafica.Series("Peso").Points.AddXY(ValorEjeX, ValorEjeY)

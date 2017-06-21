@@ -26,3 +26,5 @@ D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChrIngRis.vbprojReso
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Empaque.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.GraficosEmp.resources
 D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Aviso.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.Form1.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.FiltroFecha.resources

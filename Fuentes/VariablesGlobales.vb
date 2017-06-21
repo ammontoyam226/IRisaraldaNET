@@ -54,6 +54,7 @@ Module VariablesGlobales
     Public VerAlarmas As Boolean
 
     Public Empacadora As Integer
+    Public ProcesoFiltrar As String
 
 
     Public NMaq As Integer
