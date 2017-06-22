@@ -22,15 +22,16 @@ Partial Class Empaque
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empaque))
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BSalir = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabEmpaque = New System.Windows.Forms.TabControl()
         Me.TPEmp1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BProcesa1 = New System.Windows.Forms.Button()
@@ -86,7 +87,7 @@ Partial Class Empaque
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TPesoTot1 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TPreskg1 = New System.Windows.Forms.TextBox()
+        Me.TPresKg1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -102,8 +103,9 @@ Partial Class Empaque
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TimVisuliza = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStrip1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.TabEmpaque.SuspendLayout()
         Me.TPEmp1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ChTorta1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,17 +142,17 @@ Partial Class Empaque
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 25)
         '
-        'TabControl1
+        'TabEmpaque
         '
-        Me.TabControl1.Controls.Add(Me.TPEmp1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(28, 58)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(690, 647)
-        Me.TabControl1.TabIndex = 40
+        Me.TabEmpaque.Controls.Add(Me.TPEmp1)
+        Me.TabEmpaque.Controls.Add(Me.TabPage2)
+        Me.TabEmpaque.Controls.Add(Me.TabPage3)
+        Me.TabEmpaque.Controls.Add(Me.TabPage4)
+        Me.TabEmpaque.Location = New System.Drawing.Point(28, 58)
+        Me.TabEmpaque.Name = "TabEmpaque"
+        Me.TabEmpaque.SelectedIndex = 0
+        Me.TabEmpaque.Size = New System.Drawing.Size(690, 647)
+        Me.TabEmpaque.TabIndex = 40
         '
         'TPEmp1
         '
@@ -199,7 +201,7 @@ Partial Class Empaque
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.TPesoTot1)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TPreskg1)
+        Me.GroupBox1.Controls.Add(Me.TPresKg1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -365,17 +367,17 @@ Partial Class Empaque
         '
         'ChTorta1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.ChTorta1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ChTorta1.Legends.Add(Legend2)
+        ChartArea3.Name = "ChartArea1"
+        Me.ChTorta1.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.ChTorta1.Legends.Add(Legend3)
         Me.ChTorta1.Location = New System.Drawing.Point(352, 20)
         Me.ChTorta1.Name = "ChTorta1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.ChTorta1.Series.Add(Series2)
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.ChTorta1.Series.Add(Series3)
         Me.ChTorta1.Size = New System.Drawing.Size(268, 217)
         Me.ChTorta1.TabIndex = 68
         Me.ChTorta1.Text = "Chart1"
@@ -756,14 +758,14 @@ Partial Class Empaque
         Me.Label9.TabIndex = 34
         Me.Label9.Text = "Tam. Desc"
         '
-        'TPreskg1
+        'TPresKg1
         '
-        Me.TPreskg1.BackColor = System.Drawing.Color.White
-        Me.TPreskg1.Location = New System.Drawing.Point(84, 112)
-        Me.TPreskg1.Name = "TPreskg1"
-        Me.TPreskg1.Size = New System.Drawing.Size(43, 21)
-        Me.TPreskg1.TabIndex = 33
-        Me.TPreskg1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TPresKg1.BackColor = System.Drawing.Color.White
+        Me.TPresKg1.Location = New System.Drawing.Point(84, 112)
+        Me.TPresKg1.Name = "TPresKg1"
+        Me.TPresKg1.Size = New System.Drawing.Size(43, 21)
+        Me.TPresKg1.TabIndex = 33
+        Me.TPresKg1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -908,18 +910,22 @@ Partial Class Empaque
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Empacadora 4"
         '
+        'TimVisuliza
+        '
+        Me.TimVisuliza.Interval = 2000
+        '
         'Empaque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(802, 733)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.TabEmpaque)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "Empaque"
         Me.Text = "Empaque"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
+        Me.TabEmpaque.ResumeLayout(False)
         Me.TPEmp1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -936,7 +942,7 @@ Partial Class Empaque
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BSalir As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabEmpaque As System.Windows.Forms.TabControl
     Friend WithEvents TPEmp1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
@@ -955,7 +961,7 @@ Partial Class Empaque
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents TPesoTot1 As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TPreskg1 As System.Windows.Forms.TextBox
+    Friend WithEvents TPresKg1 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -1008,4 +1014,5 @@ Partial Class Empaque
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TSacxMin1 As System.Windows.Forms.TextBox
     Friend WithEvents BProcesa1 As System.Windows.Forms.Button
+    Friend WithEvents TimVisuliza As System.Windows.Forms.Timer
 End Class
