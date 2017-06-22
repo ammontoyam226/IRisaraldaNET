@@ -219,7 +219,7 @@ Public Class GraficosEmp
                 selectedDataPoint = CType(hitResult.Object, DataPoint)
                 If TCodProd.Text = "" Then Return
 
-                DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=2 and FECHA between '" + TFechaIni.Text + "' and '" + TFechaFin.Text + "' order by Fecha")
+                DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=2 and FECHA between '" + Format(CDate(TFechaIni.Text), "yyyyMMdd HH:mm:ss") + "' and '" + Format(CDate(TFechaFin.Text), "yyyyMMdd HH:mm:ss") + "' order by Fecha")
                 If DVarios.RecordCount = 0 Then Exit Sub
 
                 For Each Fila As DataRow In DVarios.Rows
@@ -265,7 +265,7 @@ Public Class GraficosEmp
                 selectedDataPoint = CType(hitResult.Object, DataPoint)
                 If TCodProd.Text = "" Then Return
 
-                DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=1 and FECHA between '" + TFechaIni.Text + "' and '" + TFechaFin.Text + "' order by Fecha")
+                DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=1 and FECHA between '" + Format(CDate(TFechaIni.Text), "yyyyMMdd HH:mm:ss") + "' and '" + Format(CDate(TFechaFin.Text), "yyyyMMdd HH:mm:ss") + "' order by Fecha")
                 If DVarios.RecordCount = 0 Then Exit Sub
 
                 For Each Fila As DataRow In DVarios.Rows
@@ -316,7 +316,7 @@ Public Class GraficosEmp
                 selectedDataPoint = CType(hitResult.Object, DataPoint)
                 If TCodProd.Text = "" Then Return
 
-                DVarios.Open("select * from REPESO where MAQUINA=" + Empacadora.ToString + " and FECHA between '" + TFechaIniRep.Text + "' and '" + TFechaFinRep.Text + "' order by Fecha")
+                DVarios.Open("select * from REPESO where MAQUINA=" + Empacadora.ToString + " and FECHA between '" + Format(CDate(TFechaIniRep.Text), "yyyyMMdd HH:mm:ss") + "' and '" + Format(CDate(TFechaFinRep.Text), "yyyyMMdd HH:mm:ss") + "' order by Fecha")
                 If DVarios.RecordCount = 0 Then Exit Sub
 
                 For Each Fila As DataRow In DVarios.Rows

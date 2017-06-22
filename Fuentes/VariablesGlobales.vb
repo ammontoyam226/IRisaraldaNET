@@ -602,6 +602,7 @@ Module VariablesGlobales
             DAlArmas.AddNew()
             DAlArmas.RecordSet("ALARMA") = CLeft(Mensaje, 100)
             DAlArmas.RecordSet("FECHA") = Format(Now, "yyyy/MM/dd HH:mm:ss")
+            DAlArmas.RecordSet("NOMBREPC") = NombrePC
             DAlArmas.Update()
 
             If VerAlarmas Then

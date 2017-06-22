@@ -188,7 +188,7 @@ Public Class Fondo1
     '    Acceso.ShowDialog()
     'End Sub
 
-    Private Sub BMaquinas_Click(sender As System.Object, e As System.EventArgs) Handles BMaquinas.Click
+    Private Sub BMaquinas_Click(sender As System.Object, e As System.EventArgs)
         Try
             'If DRUsuario("VerMaq") Then
             'Else
@@ -355,6 +355,10 @@ Public Class Fondo1
 
     Private Sub BEmpaque_Click(sender As System.Object, e As System.EventArgs) Handles BEmpaque.Click
         Try
+            If Empacadora = 99 Then
+                MsgBox("No tiene permiso para ejecutar la acción solicitada", MsgBoxStyle.Information)
+                Exit Sub
+            End If
             Empaque.ShowDialog()
         Catch ex As Exception
             MsgError(ex.ToString)

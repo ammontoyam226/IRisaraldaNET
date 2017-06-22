@@ -144,8 +144,8 @@ Public Class GraficaRep
             FechaFin = DateAdd(DateInterval.Hour, _Intervalo, _FechaIni)
             FechaIni = _FechaIni
 
-            FechaIniString = FechaIni.ToString("yyyy-MM-dd HH:00:00")
-            FechaFinString = FechaFin.ToString("yyyy-MM-dd HH:00:00")
+            FechaIniString = FechaIni.ToString("yyyyMMdd HH:00:00")
+            FechaFinString = FechaFin.ToString("yyyyMMdd HH:00:00")
 
             If _Intervalo = 1 Then
                 Incremento = 0.1

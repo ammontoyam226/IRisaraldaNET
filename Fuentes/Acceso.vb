@@ -182,6 +182,8 @@ Public Class Acceso
 
             DConfig.Open("Select * from CONFIG")
 
+            Empacadora = 99
+
             For i = 1 To 4
                 If NombrePC = DConfig.RecordSet("ENSACADORA" + i.ToString) Then
                     Empacadora = i
