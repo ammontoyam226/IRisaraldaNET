@@ -15,6 +15,7 @@ Public Class Grafica
     Private _Tabla As String
     Private ValorEjeX As Double
     Private ValorEjeY As Double
+    Private X As Single
     Private _Incremento As Int16
     Private _Intervalo As Int16
     Private XLimSup As Int16
@@ -231,7 +232,7 @@ Public Class Grafica
 
             Grafica.Series.Add("Peso")
             Grafica.Series("Peso").ChartType = SeriesChartType.Line
-            Grafica.Series("Peso").XValueType = ChartValueType.Time
+            Grafica.Series("Peso").XValueType = ChartValueType.Double
             Grafica.Series("Peso").YValueType = ChartValueType.Double
             Grafica.Series("Peso").Color = Color.Red
             Grafica.Series("Peso").BorderWidth = 1.5
@@ -239,7 +240,7 @@ Public Class Grafica
 
             Grafica.Series.Add("LimInf")
             Grafica.Series("LimInf").ChartType = SeriesChartType.FastLine
-            Grafica.Series("LimInf").XValueType = ChartValueType.Time
+            Grafica.Series("LimInf").XValueType = ChartValueType.Double
             Grafica.Series("LimInf").YValueType = ChartValueType.Double
             Grafica.Series("LimInf").Color = Color.Blue
             Grafica.Series("LimInf").BorderWidth = 0.5
@@ -247,7 +248,7 @@ Public Class Grafica
 
             Grafica.Series.Add("LimSup")
             Grafica.Series("LimSup").ChartType = SeriesChartType.FastLine
-            Grafica.Series("LimSup").XValueType = ChartValueType.Time
+            Grafica.Series("LimSup").XValueType = ChartValueType.Double
             Grafica.Series("LimSup").YValueType = ChartValueType.Double
             Grafica.Series("LimSup").BorderDashStyle = ChartDashStyle.Dash
             Grafica.Series("LimSup").Color = Color.Blue
@@ -255,7 +256,7 @@ Public Class Grafica
 
             Grafica.Series.Add("PesoNom")
             Grafica.Series("PesoNom").ChartType = SeriesChartType.FastLine
-            Grafica.Series("PesoNom").XValueType = ChartValueType.Time
+            Grafica.Series("PesoNom").XValueType = ChartValueType.Double
             Grafica.Series("PesoNom").YValueType = ChartValueType.Double
             Grafica.Series("PesoNom").BorderDashStyle = ChartDashStyle.Dash
             Grafica.Series("PesoNom").Color = Color.Green
@@ -263,7 +264,7 @@ Public Class Grafica
 
             Grafica.Series.Add("PesoPunto")
             Grafica.Series("PesoPunto").ChartType = SeriesChartType.Point
-            Grafica.Series("PesoPunto").XValueType = ChartValueType.Time
+            Grafica.Series("PesoPunto").XValueType = ChartValueType.Double
             Grafica.Series("PesoPunto").YValueType = ChartValueType.Double
             Grafica.Series("PesoPunto").BorderDashStyle = ChartDashStyle.Solid
             Grafica.Series("PesoPunto").Color = Color.Black
@@ -281,20 +282,24 @@ Public Class Grafica
 
             Grafica.ChartAreas(0).AxisY.Minimum = LimInf - 0.1
             Grafica.ChartAreas(0).AxisY.Maximum = LimSup + 0.1
-            Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
+            Grafica.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Number
+            Grafica.ChartAreas(0).AxisX.LabelStyle.Format = "##.##"
             Grafica.ChartAreas(0).AxisX.Interval = _Incremento
 
             Grafica.ChartAreas(0).AxisX.IsLabelAutoFit = False
 
-            Grafica.ChartAreas(0).CursorX.IsUserSelectionEnabled = True
-            Grafica.ChartAreas(0).CursorX.IsUserEnabled = True
+            'Grafica.ChartAreas(0).CursorX.IsUserSelectionEnabled = True
+            'Grafica.ChartAreas(0).CursorX.IsUserEnabled = True
 
             'Graficamos los límites y el peso nominal
 
+            Dim k As Int16 = 0
             For Each Fila As DataRow In DVarios.Rows
+
                 ValorEjeY = Math.Round(Fila("PESO"), 1)
-                Dim X As Date = Fila("FECHA")
-                'Dim X As Single = Eval(Minute(Fila("FECHA")) + Second(Fila("FECHA")) / 100)
+                'Dim X As Date = Fila("FECHA")
+                X = Eval(Minute(Fila("FECHA")) + Second(Fila("FECHA")) / 100)
+                If k = 0 Then Grafica.ChartAreas(0).AxisX.Minimum = Int(X)
                 'ValorEjeX = Math.Round(DateDiff(DateInterval.Second, CDate(FechaIni), CDate(Fila("Fecha"))) / 60, 2)
                 If ValorEjeY < 0 Then ValorEjeY = 0
                 'Grafica.Series("Peso").Points.AddXY(ValorEjeX, ValorEjeY)
@@ -304,7 +309,7 @@ Public Class Grafica
                 Grafica.Series("LimInf").Points.AddXY(X, LimInf)
                 'Grafica.Series("LimInf").Points.AddXY(X, 49.8)
                 Grafica.Series("LimSup").Points.AddXY(X, LimSup)
-
+                k += 1
             Next
 
             'Grafica.DataSource = DVarios.DataTable

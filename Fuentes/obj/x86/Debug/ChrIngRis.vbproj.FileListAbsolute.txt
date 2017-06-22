@@ -32,3 +32,5 @@ C:\Users\avargase\Documents\GitHub\IRisaraldaNET\ChronoSoftNet.exe.config
 C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.exe
 C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.xml
 C:\Users\avargase\Documents\GitHub\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.pdb
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.EnsaqueMan.resources
+D:\GD\Ingenio Risaralda\IRisaraldaNET\Fuentes\obj\x86\Debug\ChronoSoftNet.TablaEnsaque.resources

@@ -11,18 +11,7 @@
     End Sub
 
     
-    Private Sub DatosGraf_Shown(sender As System.Object, e As System.EventArgs) Handles MyBase.Shown
-        Try
-
-            DProd = New AdoSQL("PRODUCTOS")
-            DPesos = New AdoSQL("PESOS")
-            DPesosChk = New AdoSQL("PESOSCHK")
-
-            TMenSacChK.Visible = False
-        Catch ex As Exception
-            MsgError(ex.ToString)
-        End Try
-    End Sub
+    
 
     Public Sub BGrafEnsac_Click(sender As System.Object, e As System.EventArgs) Handles BGrafEnsac.Click
         Try
@@ -77,6 +66,19 @@
             TPesoReal.Text = "PesoReal"
             DGPesos.Visible = False
 
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
+    End Sub
+
+    Public Sub DatosGraf_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        Try
+
+            DProd = New AdoSQL("PRODUCTOS")
+            DPesos = New AdoSQL("PESOS")
+            DPesosChk = New AdoSQL("PESOSCHK")
+
+            TMenSacChK.Visible = False
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try

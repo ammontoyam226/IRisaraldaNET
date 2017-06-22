@@ -222,6 +222,7 @@ Partial Class DatosGraf
         Me.TBascula.Size = New System.Drawing.Size(71, 20)
         Me.TBascula.TabIndex = 55
         Me.TBascula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TBascula.Visible = False
         '
         'TID
         '
@@ -230,6 +231,7 @@ Partial Class DatosGraf
         Me.TID.Size = New System.Drawing.Size(71, 20)
         Me.TID.TabIndex = 56
         Me.TID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TID.Visible = False
         '
         'TMenSacChK
         '
@@ -251,6 +253,7 @@ Partial Class DatosGraf
         Me.BGrafEnsac.TabIndex = 58
         Me.BGrafEnsac.Text = "BGrafEnsac"
         Me.BGrafEnsac.UseVisualStyleBackColor = True
+        Me.BGrafEnsac.Visible = False
         '
         'BGrafRep
         '
@@ -260,6 +263,7 @@ Partial Class DatosGraf
         Me.BGrafRep.TabIndex = 59
         Me.BGrafRep.Text = "BGrafRep"
         Me.BGrafRep.UseVisualStyleBackColor = True
+        Me.BGrafRep.Visible = False
         '
         'DatosGraf
         '

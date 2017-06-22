@@ -383,7 +383,7 @@ Partial Class GraficosEmp
         Me.ChActAutom.AutoSize = True
         Me.ChActAutom.Checked = True
         Me.ChActAutom.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChActAutom.Location = New System.Drawing.Point(408, 4)
+        Me.ChActAutom.Location = New System.Drawing.Point(280, 5)
         Me.ChActAutom.Name = "ChActAutom"
         Me.ChActAutom.Size = New System.Drawing.Size(145, 17)
         Me.ChActAutom.TabIndex = 45

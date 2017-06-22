@@ -8,6 +8,7 @@ Public Class GraficosEmp
     Public GraficasRep As GraficaRep
     Private GrafOk As Boolean
     Private DVarios As AdoSQL
+    Private CompararX As Single
     
     Private Sub BSalir_Click(sender As System.Object, e As System.EventArgs)
         Me.Hide()
@@ -205,26 +206,44 @@ Public Class GraficosEmp
     Private Sub ChEmpB2_MouseDown(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles ChEmpB2.MouseDown
         Try
 
-            If TCodProd.Text = "" Then Return
+            Dim hitResult As HitTestResult = ChEmpB1.HitTest(e.X, e.Y)
+            Dim selectedDataPoint As DataPoint = Nothing
 
-            DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=2 and FECHA between '" + TFechaIni.Text + "' and '" + TFechaFin.Text + "' order by Fecha")
-            If DVarios.RecordCount = 0 Then Exit Sub
+            If hitResult.Series Is Nothing Then Return
+            If hitResult.Series.Name <> "PesoPunto" Then
+                hitResult = Nothing
+                Return
+            End If
 
-            For Each Fila As DataRow In DVarios.Rows
-                If Fila("Fecha") >= e.X - 0.3 And Fila("Fecha") <= e.X + 0.3 Then
-                    DatosGraf.TCodProd.Text = Fila("CODPROD")
-                    DatosGraf.TID.Text = Fila("ID")
-                    DatosGraf.TMaquina.Text = Fila("MAQUINA")
-                    DatosGraf.TProm.Text = Fila("PESO")
-                    DatosGraf.TNomProd.Text = Fila("NOMPROD")
-                    DatosGraf.TPresKg.Text = Fila("PRESKG")
-                    DatosGraf.TBascula.Text = Fila("BASCULA")
-                    DatosGraf.TFecha.Text = Fila("FECHA")
-                    DatosGraf.BGrafEnsac_Click(Nothing, Nothing)
-                    DatosGraf.Show()
-                    Exit For
-                End If
-            Next
+            If hitResult.ChartElementType = ChartElementType.DataPoint Then
+                selectedDataPoint = CType(hitResult.Object, DataPoint)
+                If TCodProd.Text = "" Then Return
+
+                DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=2 and FECHA between '" + TFechaIni.Text + "' and '" + TFechaFin.Text + "' order by Fecha")
+                If DVarios.RecordCount = 0 Then Exit Sub
+
+                For Each Fila As DataRow In DVarios.Rows
+                    CompararX = Math.Round(Eval(Minute(Fila("FECHA")) + Second(Fila("FECHA")) / 100), 2)
+                    If CompararX >= selectedDataPoint.XValue - 0.3 And CompararX <= selectedDataPoint.XValue + 0.3 Then
+                        DatosGraf.TCodProd.Text = Fila("CODPROD")
+                        DatosGraf.TID.Text = Fila("ID")
+                        DatosGraf.TMaquina.Text = Fila("MAQUINA")
+                        DatosGraf.TProm.Text = Fila("PESO")
+                        DatosGraf.TNomProd.Text = Fila("NOMPROD")
+                        DatosGraf.TPresKg.Text = Fila("PRESKG")
+                        DatosGraf.TBascula.Text = Fila("BASCULA")
+                        DatosGraf.TFecha.Text = Format(Fila("FECHA"), "yyyy-MM-dd HH:mm:ss")
+                        DatosGraf.DatosGraf_Load(Nothing, Nothing)
+                        DatosGraf.BGrafEnsac_Click(Nothing, Nothing)
+                        DatosGraf.Show()
+                        Exit For
+                    End If
+                Next
+
+
+            End If
+
+            hitResult = Nothing
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try
@@ -232,34 +251,53 @@ Public Class GraficosEmp
 
     Private Sub ChEmpB1_MouseDown(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles ChEmpB1.MouseDown
         Try
+            Dim hitResult As HitTestResult = ChEmpB1.HitTest(e.X, e.Y)
+            Dim selectedDataPoint As DataPoint = Nothing
 
-            If TCodProd.Text = "" Then Return
+            If hitResult.Series Is Nothing Then Return
+            If hitResult.Series.Name <> "PesoPunto" Then
+                hitResult = Nothing
+                Return
+            End If
 
-            
-            Dim Ubic As System.Drawing.Point = Me.PointToClient(e.Location)
 
-            DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=1 and FECHA between '" + TFechaIni.Text + "' and '" + TFechaFin.Text + "' order by Fecha")
-            If DVarios.RecordCount = 0 Then Exit Sub
+            If hitResult.ChartElementType = ChartElementType.DataPoint Then
+                selectedDataPoint = CType(hitResult.Object, DataPoint)
+                If TCodProd.Text = "" Then Return
 
-            For Each Fila As DataRow In DVarios.Rows
-                If Fila("Fecha") >= e.X - 0.3 And Fila("Fecha") <= e.X + 0.3 Then
-                    DatosGraf.TCodProd.Text = Fila("CODPROD")
-                    DatosGraf.TID.Text = Fila("ID")
-                    DatosGraf.TMaquina.Text = Fila("MAQUINA")
-                    DatosGraf.TProm.Text = Fila("PESO")
-                    DatosGraf.TNomProd.Text = Fila("NOMPROD")
-                    DatosGraf.TPresKg.Text = Fila("PRESKG")
-                    DatosGraf.TBascula.Text = Fila("BASCULA")
-                    DatosGraf.TFecha.Text = Fila("FECHA")
-                    DatosGraf.BGrafEnsac_Click(Nothing, Nothing)
-                    DatosGraf.Show()
-                    Exit For
-                End If
-            Next
+                DVarios.Open("select * from PESOSCHK where CODPROD='" + TCodProd.Text + "' and MAQUINA=" + Empacadora.ToString + " and BASCULA=1 and FECHA between '" + TFechaIni.Text + "' and '" + TFechaFin.Text + "' order by Fecha")
+                If DVarios.RecordCount = 0 Then Exit Sub
+
+                For Each Fila As DataRow In DVarios.Rows
+                    CompararX = Math.Round(Eval(Minute(Fila("FECHA")) + Second(Fila("FECHA")) / 100), 2)
+                    If CompararX >= selectedDataPoint.XValue - 0.3 And CompararX <= selectedDataPoint.XValue + 0.3 Then
+                        DatosGraf.TCodProd.Text = Fila("CODPROD")
+                        DatosGraf.TID.Text = Fila("ID")
+                        DatosGraf.TMaquina.Text = Fila("MAQUINA")
+                        DatosGraf.TProm.Text = Fila("PESO")
+                        DatosGraf.TNomProd.Text = Fila("NOMPROD")
+                        DatosGraf.TPresKg.Text = Fila("PRESKG")
+                        DatosGraf.TBascula.Text = Fila("BASCULA")
+                        DatosGraf.TFecha.Text = Format(Fila("FECHA"), "yyyy-MM-dd HH:mm:ss")
+                        DatosGraf.DatosGraf_Load(Nothing, Nothing)
+                        DatosGraf.BGrafEnsac_Click(Nothing, Nothing)
+                        DatosGraf.Show()
+                        Exit For
+                    End If
+                Next
+
+
+            End If
+
+            hitResult = Nothing
         Catch ex As Exception
             MsgError(ex.ToString)
         End Try
     End Sub
 
     
+    Private Sub BSalir_Click_1(sender As System.Object, e As System.EventArgs) Handles BSalir.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
 End Class
