@@ -47,6 +47,7 @@
 
             DPesos.Close()
             DPesos.Open("select * from PESOS where MAQUINA=" + Trim(TMaquina.Text) + " and ID=" + Trim(TID.Text) + " and BASCULA=" + Trim(TBascula.Text))
+            DGPesos.AutoGenerateColumns = False
             DGPesos.DataSource = DPesos.DataTable
 
             DPesos.Close()
@@ -58,10 +59,10 @@
         End Try
     End Sub
 
-    Private Sub BGrafRep_Click(sender As System.Object, e As System.EventArgs) Handles BGrafRep.Click
+    Public Sub BGrafRep_Click(sender As System.Object, e As System.EventArgs) Handles BGrafRep.Click
         Try
 
-            TMensaje.Text = "Peso del sacos de la Comprobadora Graficado"
+            TMensaje.Text = "Peso del saco de la comprobadora graficado"
             TPeso.Text = "PesoBruto"
             TPesoReal.Text = "PesoReal"
             DGPesos.Visible = False

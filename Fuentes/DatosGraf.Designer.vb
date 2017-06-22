@@ -23,11 +23,15 @@ Partial Class DatosGraf
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DatosGraf))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BSalir = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DGPesos = New System.Windows.Forms.DataGridView()
         Me.TMensaje = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TCodProd = New System.Windows.Forms.TextBox()
@@ -47,6 +51,8 @@ Partial Class DatosGraf
         Me.TMenSacChK = New System.Windows.Forms.Label()
         Me.BGrafEnsac = New System.Windows.Forms.Button()
         Me.BGrafRep = New System.Windows.Forms.Button()
+        Me.DGPesos = New System.Windows.Forms.DataGridView()
+        Me.clasificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DGPesos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,7 +63,7 @@ Partial Class DatosGraf
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.BSalir, Me.ToolStripSeparator9})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(396, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(358, 25)
         Me.ToolStrip1.TabIndex = 38
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -80,19 +86,11 @@ Partial Class DatosGraf
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 25)
         '
-        'DGPesos
-        '
-        Me.DGPesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGPesos.Location = New System.Drawing.Point(250, 72)
-        Me.DGPesos.Name = "DGPesos"
-        Me.DGPesos.Size = New System.Drawing.Size(113, 158)
-        Me.DGPesos.TabIndex = 39
-        '
         'TMensaje
         '
         Me.TMensaje.AutoSize = True
         Me.TMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TMensaje.Location = New System.Drawing.Point(57, 29)
+        Me.TMensaje.Location = New System.Drawing.Point(37, 29)
         Me.TMensaje.Name = "TMensaje"
         Me.TMensaje.Size = New System.Drawing.Size(302, 13)
         Me.TMensaje.TabIndex = 40
@@ -247,7 +245,7 @@ Partial Class DatosGraf
         '
         'BGrafEnsac
         '
-        Me.BGrafEnsac.Location = New System.Drawing.Point(267, 81)
+        Me.BGrafEnsac.Location = New System.Drawing.Point(267, 125)
         Me.BGrafEnsac.Name = "BGrafEnsac"
         Me.BGrafEnsac.Size = New System.Drawing.Size(75, 23)
         Me.BGrafEnsac.TabIndex = 58
@@ -257,7 +255,7 @@ Partial Class DatosGraf
         '
         'BGrafRep
         '
-        Me.BGrafRep.Location = New System.Drawing.Point(267, 109)
+        Me.BGrafRep.Location = New System.Drawing.Point(267, 153)
         Me.BGrafRep.Name = "BGrafRep"
         Me.BGrafRep.Size = New System.Drawing.Size(75, 23)
         Me.BGrafRep.TabIndex = 59
@@ -265,11 +263,71 @@ Partial Class DatosGraf
         Me.BGrafRep.UseVisualStyleBackColor = True
         Me.BGrafRep.Visible = False
         '
+        'DGPesos
+        '
+        Me.DGPesos.AllowUserToAddRows = False
+        Me.DGPesos.AllowUserToDeleteRows = False
+        Me.DGPesos.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        Me.DGPesos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGPesos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGPesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGPesos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clasificacion})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGPesos.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DGPesos.EnableHeadersVisualStyles = False
+        Me.DGPesos.Location = New System.Drawing.Point(250, 87)
+        Me.DGPesos.Name = "DGPesos"
+        Me.DGPesos.ReadOnly = True
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGPesos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DGPesos.RowHeadersVisible = False
+        Me.DGPesos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DGPesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGPesos.Size = New System.Drawing.Size(79, 143)
+        Me.DGPesos.TabIndex = 60
+        '
+        'clasificacion
+        '
+        Me.clasificacion.DataPropertyName = "Peso"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        Me.clasificacion.DefaultCellStyle = DataGridViewCellStyle3
+        Me.clasificacion.HeaderText = "Pesos"
+        Me.clasificacion.Name = "clasificacion"
+        Me.clasificacion.ReadOnly = True
+        Me.clasificacion.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.clasificacion.Width = 60
+        '
         'DatosGraf
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(396, 298)
+        Me.ClientSize = New System.Drawing.Size(358, 298)
+        Me.ControlBox = False
         Me.Controls.Add(Me.BGrafRep)
         Me.Controls.Add(Me.BGrafEnsac)
         Me.Controls.Add(Me.TMenSacChK)
@@ -289,8 +347,8 @@ Partial Class DatosGraf
         Me.Controls.Add(Me.TCodProd)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TMensaje)
-        Me.Controls.Add(Me.DGPesos)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.DGPesos)
         Me.Name = "DatosGraf"
         Me.Text = "Datos Saco Graficado"
         Me.ToolStrip1.ResumeLayout(False)
@@ -304,7 +362,6 @@ Partial Class DatosGraf
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BSalir As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents DGPesos As System.Windows.Forms.DataGridView
     Friend WithEvents TMensaje As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TCodProd As System.Windows.Forms.TextBox
@@ -324,4 +381,6 @@ Partial Class DatosGraf
     Friend WithEvents TMenSacChK As System.Windows.Forms.Label
     Friend WithEvents BGrafEnsac As System.Windows.Forms.Button
     Friend WithEvents BGrafRep As System.Windows.Forms.Button
+    Friend WithEvents DGPesos As System.Windows.Forms.DataGridView
+    Friend WithEvents clasificacion As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

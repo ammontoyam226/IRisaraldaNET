@@ -206,7 +206,7 @@ Public Class GraficosEmp
     Private Sub ChEmpB2_MouseDown(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles ChEmpB2.MouseDown
         Try
 
-            Dim hitResult As HitTestResult = ChEmpB1.HitTest(e.X, e.Y)
+            Dim hitResult As HitTestResult = ChEmpB2.HitTest(e.X, e.Y)
             Dim selectedDataPoint As DataPoint = Nothing
 
             If hitResult.Series Is Nothing Then Return
@@ -299,5 +299,46 @@ Public Class GraficosEmp
     Private Sub BSalir_Click_1(sender As System.Object, e As System.EventArgs) Handles BSalir.Click
         Me.Close()
         Me.Dispose()
+    End Sub
+
+    Private Sub ChRep_MouseDown(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles ChRep.MouseDown
+        Try
+            Dim hitResult As HitTestResult = ChRep.HitTest(e.X, e.Y)
+            Dim selectedDataPoint As DataPoint = Nothing
+
+            If hitResult.Series Is Nothing Then Return
+            If hitResult.Series.Name <> "PesoPunto" Then
+                hitResult = Nothing
+                Return
+            End If
+
+            If hitResult.ChartElementType = ChartElementType.DataPoint Then
+                selectedDataPoint = CType(hitResult.Object, DataPoint)
+                If TCodProd.Text = "" Then Return
+
+                DVarios.Open("select * from REPESO where MAQUINA=" + Empacadora.ToString + " and FECHA between '" + TFechaIniRep.Text + "' and '" + TFechaFinRep.Text + "' order by Fecha")
+                If DVarios.RecordCount = 0 Then Exit Sub
+
+                For Each Fila As DataRow In DVarios.Rows
+                    CompararX = Math.Round(Eval(Minute(Fila("FECHA")) + Second(Fila("FECHA")) / 100), 2)
+                    If CompararX >= selectedDataPoint.XValue - 0.3 And CompararX <= selectedDataPoint.XValue + 0.3 Then
+                        DatosGraf.TCodProd.Text = Fila("CODPROD")
+                        DatosGraf.TMaquina.Text = Fila("MAQUINA")
+                        DatosGraf.TProm.Text = Fila("PESO")
+                        DatosGraf.TNomProd.Text = Fila("NOMPROD")
+                        DatosGraf.TPresKg.Text = Fila("PRESEMPKG")
+                        DatosGraf.TFecha.Text = Format(Fila("FECHA"), "yyyy-MM-dd HH:mm:ss")
+                        DatosGraf.DatosGraf_Load(Nothing, Nothing)
+                        DatosGraf.BGrafRep_Click(Nothing, Nothing)
+                        DatosGraf.Show()
+                        Exit For
+                    End If
+                Next
+            End If
+
+            hitResult = Nothing
+        Catch ex As Exception
+            MsgError(ex.ToString)
+        End Try
     End Sub
 End Class
